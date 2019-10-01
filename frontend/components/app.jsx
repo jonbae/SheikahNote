@@ -10,7 +10,7 @@ import {
 
 import GreetingContainer from './greeting/greeting_container';
 
-import { AuthRoute, ProtectedRoute } from '../util/route_util';
+// import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
   <>
@@ -29,3 +29,5 @@ const App = () => (
     </Switch> */}
   </> 
 )
+
+export default App;
