@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :notebooks
   has_many :notes 
 
-  attr_reader: :password
+  attr_reader :password
   after_initialize :ensure_session_token 
 
   def self.find_by_credentials(username, password) 
