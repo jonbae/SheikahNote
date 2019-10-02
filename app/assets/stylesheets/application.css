@@ -44,6 +44,7 @@ header {
   border: 2px solid black;
   border-radius: 4px;
   box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
+  margin: 0px auto 28px auto;
 
 }
 
@@ -84,9 +85,38 @@ input.login-input {
 
 p.project-name, p.tagline,
 p.bottom-login-message, a.bottom-login, 
-p.bottom-signup-message, a.bottom-signup {
+p.bottom-signup-message, a.bottom-signup,
+span.auth-or {
   display: flex;
   justify-content: center;
+}
+
+/* span.auth-or{
+  align-items: center;
+} */
+.auth-or-line{
+  display: flex;
+  align-items: center;
+}
+
+p.auth-or:before, p.auth-or:after  {
+  content: "";
+  display: block;
+  border: 1px solid grey;
+  width: 40%;
+  margin: 20px auto;
+}
+
+p.auth-or {
+  display: flex;
+  align-items: center;
+  /* width: 75%; */
+  /* justify-content: center; */
+  justify-content: center;
+  /* text-align: center; */
+  margin: 0 auto;
+  width: 100%;
+  justify-content: space-evenly;
 }
 
 p.tagline {

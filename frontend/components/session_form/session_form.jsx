@@ -54,7 +54,7 @@ class SessionForm extends React.Component {
             <p className="tagline"> Remember everything important </p>
             <br />
        
-              <input type="text"
+              {/* <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
                 placeholder ="username"
@@ -62,8 +62,15 @@ class SessionForm extends React.Component {
               />
        
 
-            <br />
-   
+            <br /> */}
+            <button className="button-demo-user">
+              Demo User
+            </button>
+
+
+            <div className="auth-or-line">
+              <p className="auth-or">or</p>
+            </div>
               <input type="text"
                 value={this.state.email}
                 onChange={this.update('email')}
