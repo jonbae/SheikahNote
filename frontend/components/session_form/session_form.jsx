@@ -4,7 +4,7 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
+      // username: '',
       email: '',
       password: ''
     };
@@ -35,6 +35,10 @@ class SessionForm extends React.Component {
     );
   }
 
+  autofill(){
+
+  }
+
   render() {
     return (
       <div className="login-form-container">
@@ -63,7 +67,7 @@ class SessionForm extends React.Component {
        
 
             <br /> */}
-            <button className="button-demo-user">
+            <button className="button-demo-user" type="submit" >
               Demo User
             </button>
 
@@ -71,6 +75,7 @@ class SessionForm extends React.Component {
             <div className="auth-or-line">
               <p className="auth-or">or</p>
             </div>
+            
               <input type="text"
                 value={this.state.email}
                 onChange={this.update('email')}
@@ -91,7 +96,9 @@ class SessionForm extends React.Component {
         
             <br />
             {this.renderErrors()}
-            <input className="session-submit" type="submit" value={this.props.formType} />
+
+            <button className="session-submit" type="submit">{this.props.formType}</button>
+            {/* <input className="session-submit" type="submit" value={this.props.formType} /> */}
             <div className="bottom-auth-options"> 
               {this.props.navLink}
             </div>
