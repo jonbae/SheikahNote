@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom';
 import SplashContainer from "./splash/splash_container";
 import GreetingContainer from './greeting/greeting_container';
+import EditorContainer from "./editor/editor_container"
 import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
@@ -27,6 +28,7 @@ const App = () => (
      <Switch>
         <AuthRoute exact path="/login" component={LogInFormContainer} />
         <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+        <ProtectedRoute exact path="/notes" component={EditorContainer} />
         <Route path="/" component={SplashContainer} /> 
      </Switch>
   </> 
