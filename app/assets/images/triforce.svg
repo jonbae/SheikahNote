@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.0"
+   width="1000" height="868"
+   viewBox="0 0 200 173.6"
+   sodipodi:docname="Triforce.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+  <metadata>
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs>
+    <linearGradient
+       id="orange-brown">
+      <stop
+         id="stop4668"
+         style="stop-color: rgb(255, 204, 0); stop-opacity: 1;"
+         offset="0" />
+      <stop
+         id="stop4670"
+         style="stop-color: rgb(193, 154, 0); stop-opacity: 1;"
+         offset="1" />
+    </linearGradient>
+    <linearGradient
+       id="White-Yellow">
+      <stop
+         id="stop3175"
+         style="stop-color: rgb(255, 255, 186); stop-opacity: 1;"
+         offset="0" />
+      <stop
+         id="stop3177"
+         style="stop-color: rgb(255, 255, 0); stop-opacity: 1;"
+         offset="1" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#orange-brown"
+       id="linearGradient2404"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(-1,0,0,1,320,0)"
+       x1="150.62578"
+       y1="150.62578"
+       x2="208.1227"
+       y2="205.42331" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#White-Yellow"
+       id="radialGradient2406"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1,0,0,0.86558,0,9.23089)"
+       cx="114.31902"
+       cy="58.69239"
+       fx="114.31902"
+       fy="58.69239"
+       r="43.125" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#White-Yellow"
+       id="radialGradient2408"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1,0,0,0.86558,0,20.8708)"
+       cx="56.490795"
+       cy="172.72972"
+       fx="56.490795"
+       fy="172.72972"
+       r="43.125" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#White-Yellow"
+       id="radialGradient2410"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1,0,0,0.86558,0,20.8708)"
+       cx="157.84048"
+       cy="150.89961"
+       fx="157.84048"
+       fy="150.89961"
+       r="43.125" />
+  </defs>
+  <g transform="translate(-10,-23)">
+    <use xlink:href="#use2398" transform="translate(50,-87)"/>
+    <use xlink:href="#Back-Tri" x="-100" id="use2398"/>
+    <polygon
+       style="fill:url(#linearGradient2404);fill-opacity:1"
+       id="Back-Tri"
+       transform="matrix(-1,0,0,1,320,0)"
+       points="160,110 210,196.6 110,196.6 160,110 " />
+    <path
+       style="fill:url(#radialGradient2406);fill-opacity:1"
+       id="Power"
+       d="M 66.875,106 C 95.625,106 124.375,106 153.125,106 C 138.75,81.114583 124.375,56.229167 110,31.34375 C 95.625,56.229167 81.25,81.114583 66.875,106 z" />
+    <path
+       style="fill:url(#radialGradient2408);fill-opacity:1"
+       id="Courage"
+       d="M 16.875,192.59375 C 45.625,192.59375 74.375,192.59375 103.125,192.59375 C 88.75,167.70833 74.375,142.82292 60,117.9375 C 45.625,142.82292 31.25,167.70833 16.875,192.59375 z" />
+    <path
+       style="fill:url(#radialGradient2410);fill-opacity:1"
+       id="Wisdom"
+       d="M 116.875,192.59375 C 145.625,192.59375 174.375,192.59375 203.125,192.59375 C 188.75,167.70833 174.375,142.82292 160,117.9375 C 145.625,142.82292 131.25,167.70833 116.875,192.59375 z" />
+  </g>
+</svg>

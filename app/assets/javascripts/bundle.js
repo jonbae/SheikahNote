@@ -476,10 +476,19 @@ function (_React$Component) {
       password: ''
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.autofill = _this.autofill.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(SessionForm, [{
+    key: "autofill",
+    value: function autofill() {
+      this.setState({
+        email: 'demo@mail.com',
+        password: 'password'
+      });
+    }
+  }, {
     key: "update",
     value: function update(field) {
       var _this2 = this;
@@ -505,12 +514,11 @@ function (_React$Component) {
       }));
     }
   }, {
-    key: "autofill",
-    value: function autofill() {}
-  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "login-form-wrapper"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-form-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit,
@@ -526,7 +534,8 @@ function (_React$Component) {
         className: "tagline"
       }, " Remember everything important "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "button-demo-user",
-        type: "submit"
+        type: "submit",
+        onClick: this.autofill
       }, "Demo User"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "auth-or-line"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
@@ -548,7 +557,7 @@ function (_React$Component) {
         type: "submit"
       }, this.props.formType), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "bottom-auth-options"
-      }, this.props.navLink))));
+      }, this.props.navLink)))));
     }
   }]);
 
@@ -33585,7 +33594,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

@@ -8,9 +8,12 @@
     border-radius: 4px;
     box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
     margin: 0px auto 28px auto;
-  
+    background-color: black;  
   }
   
+.login-form p{
+  color: white;
+}
 a.bottom-signup, a.bottom-login {
     text-decoration: none;
     color: #68f8f9;
@@ -87,3 +90,18 @@ top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
 }
+/* 
+.login-form-wrapper{ 
+  position: absolute;
+  background-color: black;
+  background-image: url(${"/app/assets/images/triforce.svg"});
+  background-repeat: space; 
+  background-size: 150px;
+} */
+
+
+/* .login-form-wrapper > img{
+
+} */
+
+
