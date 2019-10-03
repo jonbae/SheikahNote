@@ -544,13 +544,13 @@ function (_React$Component) {
         type: "text",
         value: this.state.email,
         onChange: this.update('email'),
-        placeholder: "email",
+        placeholder: "Email",
         className: "login-input"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "password",
         value: this.state.password,
         onChange: this.update('password'),
-        placeholder: "password",
+        placeholder: "Password",
         className: "login-input"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "session-submit",
@@ -661,7 +661,38 @@ var Splash = function Splash() {
     className: "content-left"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi aspernatur ad laboriosam quo distinctio maxime quod placeat delectus! Quae iure laudantium beatae reprehenderit tempora placeat eum corrupti nesciunt quod saepe.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "content-right"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto doloribus, pariatur obcaecati ab odit optio ipsa sunt dolor. Pariatur, quae. Eius incidunt officiis, laboriosam quaerat quam repudiandae eaque adipisci aspernatur?")))));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto doloribus, pariatur obcaecati ab odit optio ipsa sunt dolor. Pariatur, quae. Eius incidunt officiis, laboriosam quaerat quam repudiandae eaque adipisci aspernatur?")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+    className: "card-one"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "subcard-rune-images"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: window.roundBombURL,
+    alt: "Round Bomb"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: window.squareBombURL,
+    alt: "Square Bomb"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: window.magnesisURL,
+    alt: "Magnesis"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: window.stasisURL,
+    alt: "Stasis"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: window.cryonisURL,
+    alt: "Cryonis"
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    className: "subcard-one-tagline"
+  }, "Explore the world"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "subcards"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "subcard-one"
+  }, "Remote Bomb"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "subcard-two"
+  }, "Magnesis"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "subcard-three"
+  }, "Stasis"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "subcard-three"
+  }, "Cryonis"))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Splash);

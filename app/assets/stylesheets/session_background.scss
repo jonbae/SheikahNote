@@ -1,0 +1,44 @@
+/* .login-form-wrapper{ 
+  position: absolute;
+  background-color: black;
+  background-image: url(${"/app/assets/images/triforce.svg"});
+  background-repeat: space; 
+  background-size: 150px;
+} */
+
+// .login-form-wrapper{
+//     background-image: image-url('triforce.svg');
+//     height: 1114px;
+//     // max-width: 100%;
+//     // height: auto; 
+//     max-height:100%;
+
+// }
+
+.login-form-wrapper:before{ 
+    
+    // min-width: 100%; 
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    min-width: 50%;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.6;
+    background-image: image-url('triforce.svg');
+    // background-repeat: no-repeat;
+    // background-position: 50% 0;
+    // -ms-background-size: cover;
+    // -o-background-size: cover;
+    // -moz-background-size: cover;
+    // -webkit-background-size: cover;
+    // background-size: cover;
+    
+    background-size: 150px;
+    background-color: black;
+
+
+}

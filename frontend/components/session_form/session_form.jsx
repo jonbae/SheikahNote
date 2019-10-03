@@ -1,6 +1,7 @@
 import React from 'react';
 
 
+
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
@@ -95,7 +96,7 @@ class SessionForm extends React.Component {
                   <input type="text"
                     value={this.state.email}
                     onChange={this.update('email')}
-                    placeholder="email"
+                    placeholder="Email"
                     className="login-input"
                   />
       
@@ -106,7 +107,7 @@ class SessionForm extends React.Component {
                   <input type="password"
                     value={this.state.password}
                     onChange={this.update('password')}
-                    placeholder="password"
+                    placeholder="Password"
                     className="login-input"
                   />
             

@@ -1,0 +1,36 @@
+ul.subcard-rune-images {
+    display: flex;
+    justify-content: center;
+}
+
+ul.subcards {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+section.card-one {
+    background-color: black;
+    padding-top: 120px;
+}
+
+ul.subcards li {
+    color: white;
+    font-size: 24px;
+}
+
+h3.subcard-one-tagline{
+    /* margin: 0 auto;  */
+    color: white;
+    font-size: 72px;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+ul.subcards li {
+    padding: 0 40px;
+}
+
+ul.subcards {
+    margin-bottom: 100px;
+}

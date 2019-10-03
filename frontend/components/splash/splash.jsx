@@ -33,6 +33,28 @@ const Splash = () => (
             </div>
         </section>
 
+        <section className="card-one">
+            <ul className="subcard-rune-images">
+                <img src={window.roundBombURL} alt="Round Bomb"/>
+                <img src={window.squareBombURL} alt="Square Bomb"/>
+                <img src={window.magnesisURL} alt="Magnesis"/>
+                <img src={window.stasisURL} alt="Stasis"/>
+                <img src={window.cryonisURL} alt="Cryonis"/>
+
+            </ul>
+            <h3 className="subcard-one-tagline">Explore the world</h3>
+            {/* refactor with maps and subcard detail */}
+            <ul className="subcards">
+                <li className="subcard-one">Remote Bomb</li>
+                <li className="subcard-two">Magnesis</li>
+                <li className="subcard-three">Stasis</li>
+                <li className="subcard-three">Cryonis</li>
+
+            </ul>
+
+
+        </section>
+
 
 
     </>

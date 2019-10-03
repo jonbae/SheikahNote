@@ -1,3 +1,7 @@
+p{
+    color: white;
+}
+
 header {
     display: flex;
     justify-content: space-around;
@@ -56,8 +60,16 @@ nav.header-links-auth li {
     display: inline-flex;
     justify-content: center;
     align-items: center;
+
+   
 }
 
+.li-signup:hover{
+    
+    box-shadow: 0 0 6px rgba(35, 173, 255, 1);
+    text-shadow: 0 0 6px rgba(35, 173, 255, 1);
+    
+}
 
 .li-signup .signup-a{
     color: #68f8f9;
@@ -70,9 +82,9 @@ nav.header-links-auth li {
     padding: 60px 77.5px;
 }
 
-.content-container div p {
+/* .content-container div p {
     color: grey;
-}
+} */
 
 .content-frame img{
     max-width: 100%; 

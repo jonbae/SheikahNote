@@ -90,8 +90,8 @@ top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
 }
-/* 
-.login-form-wrapper{ 
+
+/* .login-form-wrapper{ 
   position: absolute;
   background-color: black;
   background-image: url(${"/app/assets/images/triforce.svg"});
