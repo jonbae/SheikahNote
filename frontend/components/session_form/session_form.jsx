@@ -8,10 +8,19 @@ class SessionForm extends React.Component {
     this.state = {
       // username: '',
       email: '',
-      password: ''
+      password: '',
+      isHidden:true, 
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleContinue = this.handleContinue.bind(this);
     this.autofill = this.autofill.bind(this);
+
+  }
+
+  handleContinue(e){
+    e.preventDefault();
+    this.setState({ isHidden: false })
+   
   }
 
   autofill(){
@@ -47,8 +56,9 @@ class SessionForm extends React.Component {
 
 
   render() {
- 
-
+    const hiddenClass = this.state.isHidden ? "hidden" : "" 
+    const isContinueButton = this.state.isHidden ? "Continue" : this.props.formType
+    const onContinueClick = this.state.isHidden ? this.handleContinue : {}   
     return (
 
         <div className="login-form-wrapper">
@@ -80,7 +90,7 @@ class SessionForm extends React.Component {
           
 
                 <br /> */}
-                <button className="button-demo-user" type="submit" onClick={this.autofill} >
+                <button className="session-demo-user" type="submit" onClick={this.autofill} >
                   Demo User
                 </button>
 
@@ -101,6 +111,7 @@ class SessionForm extends React.Component {
                   />
       
                 <br />
+                
 
 
             
@@ -108,13 +119,23 @@ class SessionForm extends React.Component {
                     value={this.state.password}
                     onChange={this.update('password')}
                     placeholder="Password"
-                    className="login-input"
+                    className={" login-input " + hiddenClass} // passClass 
+                    
                   />
             
                 <br />
                 {this.renderErrors()}
 
-                <button className="session-submit" type="submit">{this.props.formType}</button>
+                {/* will not work */}
+                {/* <button className={"session-continue " + !hiddenClass} onClick={this.handleContinue} >
+                  Continue
+                </button> */}
+
+
+                <button 
+                  className="session-submit "
+                  onClick = {onContinueClick}
+                > {isContinueButton} </button>
                 {/* <input className="session-submit" type="submit" value={this.props.formType} /> */}
                 <div className="bottom-auth-options"> 
                   {this.props.navLink}

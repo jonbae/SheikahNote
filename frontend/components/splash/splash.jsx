@@ -34,6 +34,12 @@ const Splash = () => (
         </section>
 
         <section className="card-one">
+            
+            <div className="subcard-pan">
+                <img src={window.leavingSORURL} alt="panshot"/>
+            </div>
+            <h3 className="subcard-one-tagline">Explore the world</h3>
+           
             <ul className="subcard-rune-images">
                 <img src={window.roundBombURL} alt="Round Bomb"/>
                 <img src={window.squareBombURL} alt="Square Bomb"/>
@@ -42,18 +48,32 @@ const Splash = () => (
                 <img src={window.cryonisURL} alt="Cryonis"/>
 
             </ul>
-            <h3 className="subcard-one-tagline">Explore the world</h3>
             {/* refactor with maps and subcard detail */}
-            <ul className="subcards">
+            {/* <ul className="subcards">
                 <li className="subcard-one">Remote Bomb</li>
                 <li className="subcard-two">Magnesis</li>
                 <li className="subcard-three">Stasis</li>
                 <li className="subcard-three">Cryonis</li>
 
-            </ul>
+            </ul> */}
 
 
         </section>
+
+
+        <footer>
+            <div className="footer-header">
+                <img className="icon" src={window.vahRutaURL} /> 
+                <p className="project-name">SheikahNote</p>
+            </div>
+            <ul className="social-links">
+                <li> <a href="#" className="icon-github"> Github </a> </li>
+                <li> <a href="#" className="icon-linkedin"> Linkedin </a> </li> 
+                {/* linkedin favicon is blank */}
+
+            </ul>
+
+        </footer>
 
 
 

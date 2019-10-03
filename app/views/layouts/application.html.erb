@@ -6,7 +6,8 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
-    
+    <%= favicon_link_tag asset_path('github_favicon.png') %> 
+    <%= favicon_link_tag asset_path('linkedin_favicon.png') %> 
     <%= javascript_include_tag 'application' %>
     <script type="text/javascript"> 
       window.vahRutaURL = "<%= image_url('vah_ruta_icon.jpg') %>"
@@ -17,6 +18,9 @@
       window.cryonisURL = "<%= image_url('cryonis.png') %>"
       window.magnesisURL = "<%= image_url('magnesis.png') %>"
       window.stasisURL = "<%= image_url('stasis.png') %>"
+      window.leavingSORURL = "<%= image_url('leavingSOR.jpg') %>"
+    
+
     </script>
   </head>
 

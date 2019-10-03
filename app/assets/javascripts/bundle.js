@@ -404,7 +404,7 @@ var mapStateToProps = function mapStateToProps(_ref) {
   var errors = _ref.errors;
   return {
     errors: errors.session,
-    formType: 'login',
+    formType: 'Login',
     navLink: react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
       className: "bottom-signup-message"
     }, "Dont't have an account?"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
@@ -473,14 +473,24 @@ function (_React$Component) {
     _this.state = {
       // username: '',
       email: '',
-      password: ''
+      password: '',
+      isHidden: true
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.handleContinue = _this.handleContinue.bind(_assertThisInitialized(_this));
     _this.autofill = _this.autofill.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(SessionForm, [{
+    key: "handleContinue",
+    value: function handleContinue(e) {
+      e.preventDefault();
+      this.setState({
+        isHidden: false
+      });
+    }
+  }, {
     key: "autofill",
     value: function autofill() {
       this.setState({
@@ -516,6 +526,9 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var hiddenClass = this.state.isHidden ? "hidden" : "";
+      var isContinueButton = this.state.isHidden ? "Continue" : this.props.formType;
+      var onContinueClick = this.state.isHidden ? this.handleContinue : {};
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-form-wrapper"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -533,7 +546,7 @@ function (_React$Component) {
       }, " SheikahNote "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "tagline"
       }, " Remember everything important "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "button-demo-user",
+        className: "session-demo-user",
         type: "submit",
         onClick: this.autofill
       }, "Demo User"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -551,11 +564,12 @@ function (_React$Component) {
         value: this.state.password,
         onChange: this.update('password'),
         placeholder: "Password",
-        className: "login-input"
+        className: " login-input " + hiddenClass // passClass 
+
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "session-submit",
-        type: "submit"
-      }, this.props.formType), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "session-submit ",
+        onClick: onContinueClick
+      }, " ", isContinueButton, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "bottom-auth-options"
       }, this.props.navLink)))));
     }
@@ -593,7 +607,7 @@ var mapStateToProps = function mapStateToProps(_ref) {
   var errors = _ref.errors;
   return {
     errors: errors.session,
-    formType: 'signup',
+    formType: 'Signup',
     navLink: react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
       className: "bottom-login-message"
     }, " Already have an account? "), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
@@ -663,7 +677,14 @@ var Splash = function Splash() {
     className: "content-right"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto doloribus, pariatur obcaecati ab odit optio ipsa sunt dolor. Pariatur, quae. Eius incidunt officiis, laboriosam quaerat quam repudiandae eaque adipisci aspernatur?")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
     className: "card-one"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "subcard-pan"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: window.leavingSORURL,
+    alt: "panshot"
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    className: "subcard-one-tagline"
+  }, "Explore the world"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     className: "subcard-rune-images"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: window.roundBombURL,
@@ -680,19 +701,22 @@ var Splash = function Splash() {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: window.cryonisURL,
     alt: "Cryonis"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-    className: "subcard-one-tagline"
-  }, "Explore the world"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-    className: "subcards"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "subcard-one"
-  }, "Remote Bomb"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "subcard-two"
-  }, "Magnesis"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "subcard-three"
-  }, "Stasis"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "subcard-three"
-  }, "Cryonis"))));
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "footer-header"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "icon",
+    src: window.vahRutaURL
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "project-name"
+  }, "SheikahNote")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "social-links"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "#",
+    className: "icon-github"
+  }, " Github "), " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "#",
+    className: "icon-linkedin"
+  }, " Linkedin "), " "))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Splash);

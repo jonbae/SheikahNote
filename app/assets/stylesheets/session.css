@@ -19,7 +19,7 @@ a.bottom-signup, a.bottom-login {
     color: #68f8f9;
   }
 
-button.session-submit, button.button-demo-user {
+button.session-submit, button.session-demo-user, button.session-continue {
     height: 40px;
     background-color: #68f8f9; 
     border: 0px;
@@ -89,6 +89,10 @@ position: absolute;
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
+}
+
+.hidden{ 
+  display: none;
 }
 
 /* .login-form-wrapper{ 

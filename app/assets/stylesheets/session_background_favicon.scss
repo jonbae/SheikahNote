@@ -42,3 +42,30 @@
 
 
 }
+
+
+
+.icon-github{
+  background-image: image-url('github_favicon.png');
+  display: inline-block;
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  vertical-align: bottom;
+  overflow: hidden;
+  height: 0;
+  width: 25px;
+  padding-top: 25px;
+
+}
+
+.icon-linkedin{
+  background-image: image-url('linkedin_favicon.png') ;
+  display: inline-block;
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  vertical-align: bottom;
+  overflow: hidden;
+  height: 0;
+  width: 25px;
+  padding-top: 25px;
+}
