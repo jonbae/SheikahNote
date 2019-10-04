@@ -11,9 +11,9 @@
   background-color: white;  
 }
   
-.login-form p{
+/* .login-form p{
   
-}
+} */
 a.bottom-signup, a.bottom-login {
     text-decoration: none;
     color: #68f8f9;
@@ -47,7 +47,7 @@ input.login-input {
 
   border: 1px solid #e6e6e6;
 }
-}
+
 
 p.project-name, p.tagline,
 p.bottom-login-message, a.bottom-login, 
