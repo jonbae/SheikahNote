@@ -56,9 +56,9 @@ class SessionForm extends React.Component {
 
 
   render() {
-    const hiddenClass = this.state.isHidden ? "hidden" : "" 
-    const isContinueButton = this.state.isHidden ? "Continue" : this.props.formType
-    const onContinueClick = this.state.isHidden ? this.handleContinue : {}   
+    const hiddenClass = this.state.isHidden ? "hidden" : "show" ;
+    const isContinueButton = this.state.isHidden ? "Continue" : this.props.formType;
+    const onContinueClick = this.state.isHidden ? this.handleContinue : {}   ;
     return (
 
         <div className="login-form-wrapper">

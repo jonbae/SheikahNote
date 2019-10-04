@@ -526,7 +526,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var hiddenClass = this.state.isHidden ? "hidden" : "";
+      var hiddenClass = this.state.isHidden ? "hidden" : "show";
       var isContinueButton = this.state.isHidden ? "Continue" : this.props.formType;
       var onContinueClick = this.state.isHidden ? this.handleContinue : {};
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -643,6 +643,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 
 
+var emptyEmail = "Required data missing";
+var emptyPassword = "This is a required field";
+var incorrectPassword = "Incorrect Password";
 
 var Splash = function Splash() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
@@ -673,7 +676,7 @@ var Splash = function Splash() {
     className: "content-container"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "content-left"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi aspernatur ad laboriosam quo distinctio maxime quod placeat delectus! Quae iure laudantium beatae reprehenderit tempora placeat eum corrupti nesciunt quod saepe.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "A rich-text editor with a spin"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Take notes anywhere. Find information faster. Share ideas with anyone. Meeting notes, web pages, projects, to-do lists\u2014 with Evernote as your note taking app, nothing falls through the cracks.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "content-right"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto doloribus, pariatur obcaecati ab odit optio ipsa sunt dolor. Pariatur, quae. Eius incidunt officiis, laboriosam quaerat quam repudiandae eaque adipisci aspernatur?")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
     className: "card-one"

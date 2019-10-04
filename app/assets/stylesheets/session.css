@@ -93,6 +93,12 @@ transform: translate(-50%, -50%);
 
 .hidden{ 
   display: none;
+  transition-property: display; 
+  transition-duration: 6s; 
+}
+
+.show{ 
+  display: block; 
 }
 
 /* .login-form-wrapper{ 
