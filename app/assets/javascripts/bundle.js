@@ -226,10 +226,10 @@ __webpack_require__.r(__webpack_exports__);
 var Editor = function Editor(_ref) {
   var currentUser = _ref.currentUser,
       logout = _ref.logout;
-  react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "header-button",
     onClick: logout
-  }, "Log Out");
+  }, "Log Out"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Editor);
@@ -987,7 +987,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 document.addEventListener("DOMContentLoaded", function () {
   //Testing start 
-  //Testing end
+  window.currentUser = currentUser; //Testing end
+
   var store;
 
   if (window.currentUser) {
@@ -1071,7 +1072,7 @@ var Auth = function Auth(_ref) {
     exact: exact,
     render: function render(props) {
       return !loggedIn ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Component, props) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
-        to: "/"
+        to: "/notes"
       });
     }
   });
