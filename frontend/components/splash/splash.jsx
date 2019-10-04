@@ -28,7 +28,7 @@ const Splash = () => (
             </nav>
         </header>
         <section className="content-frame">
-            <img src={window.sheikahSlateURL} alt="sheikah_slate_background"/>
+            {/* <img src={window.sheikahSlateURL} alt="sheikah_slate_background"/> */}
             <div className="content-container">
                 
                 <div className="content-left">

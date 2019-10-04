@@ -97,9 +97,9 @@ transform: translate(-50%, -50%);
   transition-duration: 6s; 
 }
 
-.show{ 
+/* .show{ 
   display: block; 
-}
+} */
 
 /* .login-form-wrapper{ 
   position: absolute;
@@ -114,4 +114,7 @@ transform: translate(-50%, -50%);
 
 } */
 
-
+.session-errors{
+  color: red;
+  margin-bottom: 8px; 
+}

@@ -83,6 +83,7 @@ nav.header-links-auth li {
     /* margin: 0 77.5px;
     padding: 60px 0; */
     padding: 60px 77.5px;
+
 }
 
 /* .content-container div p {
@@ -98,10 +99,10 @@ section.content-frame{
     position: relative;
     overflow: hidden;
 }
-
+/* 
 .content-container {
     position: absolute; 
     left: 0; 
     top: 0; 
 
-}
+} */
