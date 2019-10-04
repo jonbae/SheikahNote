@@ -716,9 +716,15 @@ var Splash = function Splash() {
     className: "content-container"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "content-left"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "A rich-text editor with a spin"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Take notes anywhere. Find information faster. Share ideas with anyone. Meeting notes, web pages, projects, to-do lists\u2014 with Evernote as your note taking app, nothing falls through the cracks.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "content-left-title"
+  }, "A rich-text editor with a spin"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "content-left-tagline"
+  }, "Take notes anywhere. Find information faster. Share ideas with anyone. Meeting notes, web pages, projects, to-do lists\u2014 with Evernote as your note taking app, nothing falls through the cracks.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "content-right"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto doloribus, pariatur obcaecati ab odit optio ipsa sunt dolor. Pariatur, quae. Eius incidunt officiis, laboriosam quaerat quam repudiandae eaque adipisci aspernatur?")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "content-right-para"
+  }, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto doloribus, pariatur obcaecati ab odit optio ipsa sunt dolor. Pariatur, quae. Eius incidunt officiis, laboriosam quaerat quam repudiandae eaque adipisci aspernatur?")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
     className: "card-one"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "subcard-pan"

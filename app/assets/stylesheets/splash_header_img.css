@@ -106,3 +106,15 @@ section.content-frame{
     top: 0; 
 
 } */
+
+p.content-left-title {
+    font-size: 36px;
+}
+
+div.content-left{
+    margin-right: 70px; 
+}
+
+div.content-right{
+    margin-left: 70px; 
+}

@@ -33,8 +33,8 @@ const Splash = () => (
                 
                 <div className="content-left">
                     {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi aspernatur ad laboriosam quo distinctio maxime quod placeat delectus! Quae iure laudantium beatae reprehenderit tempora placeat eum corrupti nesciunt quod saepe.</p> */}
-                    <p>A rich-text editor with a spin</p>
-                    <p>Take notes anywhere. 
+                    <p className="content-left-title">A rich-text editor with a spin</p>
+                    <p className="content-left-tagline">Take notes anywhere. 
                         Find information faster. 
                         Share ideas with anyone. 
                         Meeting notes, web pages, projects, to-do lists—
@@ -43,7 +43,7 @@ const Splash = () => (
                     </p>
                 </div>
                 <div className="content-right">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto doloribus, pariatur obcaecati ab odit optio ipsa sunt dolor. Pariatur, quae. Eius incidunt officiis, laboriosam quaerat quam repudiandae eaque adipisci aspernatur?</p>
+                    <p className="content-right-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto doloribus, pariatur obcaecati ab odit optio ipsa sunt dolor. Pariatur, quae. Eius incidunt officiis, laboriosam quaerat quam repudiandae eaque adipisci aspernatur?</p>
                 </div>
             </div>
         </section>
