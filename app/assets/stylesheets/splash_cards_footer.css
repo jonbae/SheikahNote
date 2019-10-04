@@ -9,18 +9,18 @@ ul.subcards {
 }
 
 section.card-one {
-    background-color: black;
+
     padding-top: 120px;
 }
 
 ul.subcards li {
-    color: white;
+
     font-size: 24px;
 }
 
 h3.subcard-one-tagline{
     /* margin: 0 auto;  */
-    color: white;
+
     font-size: 72px;
     text-align: center;
     margin-top: 100px;
@@ -41,7 +41,7 @@ ul.subcards {
 }
 
 .subcard-pan img{
-    max-width: 75%;
+    max-width: 45%;
 }
 
 
@@ -51,7 +51,7 @@ footer {
     align-items: center;
     padding: 0 77.5px;
     height: 130px;
-    background-color: black;
+
     justify-content: space-between;
 }
 

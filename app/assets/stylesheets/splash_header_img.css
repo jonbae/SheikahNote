@@ -1,5 +1,5 @@
 p{
-    color: white;
+  
 }
 
 header {
@@ -9,6 +9,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 30;
+    background-color: white;
   }
   
 
@@ -18,7 +19,7 @@ header {
 }
 
 .header-icon-logo p, nav.header-links-auth, nav.header-links-auth li a{
-    color: white;
+    
 }
 
 
@@ -28,7 +29,7 @@ header {
     align-items: center;
     padding: 0 77.5px;
     height: 130px;
-    background-color: black
+
 }
 
 div.header-icon-logo > p.project-name {
@@ -47,7 +48,7 @@ nav.header-links-auth li {
 
 .header-links-auth li  a {
     text-decoration: none;
-    color: black;
+
 }
 
 
@@ -89,9 +90,6 @@ nav.header-links-auth li {
 
 }
 
-/* .content-container div p {
-    color: grey;
-} */
 
 .content-frame img{
     max-width: 100%; 
@@ -102,13 +100,7 @@ section.content-frame{
     position: relative;
     overflow: hidden;
 }
-/* 
-.content-container {
-    position: absolute; 
-    left: 0; 
-    top: 0; 
 
-} */
 
 p.content-left-title {
     font-size: 36px;
