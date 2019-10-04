@@ -720,7 +720,7 @@ var Splash = function Splash() {
     className: "content-left-title"
   }, "A rich-text editor with a spin"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "content-left-tagline"
-  }, "Take notes anywhere. Find information faster. Share ideas with anyone. Meeting notes, web pages, projects, to-do lists\u2014 with Evernote as your note taking app, nothing falls through the cracks.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Take notes anywhere. Find information faster. Share ideas with anyone. Meeting notes, web pages, projects, to-do lists\u2014 with SheikahNote as your note taking app, nothing falls through the cracks.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "content-right"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "content-right-para"

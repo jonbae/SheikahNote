@@ -38,7 +38,7 @@ const Splash = () => (
                         Find information faster. 
                         Share ideas with anyone. 
                         Meeting notes, web pages, projects, to-do lists—
-                        with Evernote as your note taking app, 
+                        with SheikahNote as your note taking app, 
                         nothing falls through the cracks.
                     </p>
                 </div>

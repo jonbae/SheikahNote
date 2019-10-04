@@ -83,6 +83,9 @@ nav.header-links-auth li {
     /* margin: 0 77.5px;
     padding: 60px 0; */
     padding: 60px 77.5px;
+    box-sizing: border-box;
+    min-height: 609px;
+    align-items: center;
 
 }
 
