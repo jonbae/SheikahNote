@@ -19,10 +19,13 @@ const Splash = () => (
    
             <nav className="header-links-auth">
 
-                <li><Link to="/login" className="login-a">Login</Link></li>
-                <li>or</li>
-                <li className="li-signup"><Link to="/signup" className="signup-a">Sign up!</Link></li> 
+                
 
+                <li><Link to="/signup" className="signup-a">Sign up</Link></li>
+                <li>or</li>
+
+                <li className="li-login "><Link to="/login" className="login-a ">Log in</Link></li> 
+                {/* refactor this  */}
             </nav>
         </header>
         <section className="content-frame">
@@ -30,8 +33,9 @@ const Splash = () => (
             <div className="content-container">
                 
                 <div className="content-left">
-                    <p className="content-left-title">A rich-text editor with a spin</p>
-                    <p className="content-left-tagline">Take notes anywhere. 
+                    <p className="content-left-title">Log <br/> your journey with <br/> SheikahNote </p>
+                    <p className="content-left-tagline">
+                        Take notes anywhere. 
                         Find information faster. 
                         Share ideas with anyone. 
                         Meeting notes, web pages, projects, to-do lists—
@@ -40,7 +44,8 @@ const Splash = () => (
                     </p>
                 </div>
                 <div className="content-right">
-                    <p className="content-right-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto doloribus, pariatur obcaecati ab odit optio ipsa sunt dolor. Pariatur, quae. Eius incidunt officiis, laboriosam quaerat quam repudiandae eaque adipisci aspernatur?</p>
+                    
+                    {/* <p className="content-right-para"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa excepturi inventore, sed sit non placeat minima? Consectetur amet voluptatem nulla? Error eveniet quisquam voluptatem quos sunt quia doloremque, voluptatibus velit. </p> */}
                 </div>
             </div>
         </section>

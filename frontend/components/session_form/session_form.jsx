@@ -128,7 +128,7 @@ class SessionForm extends React.Component {
                 <br/>
                 {/* little note  */}
                 <p className="tagline"> Remember everything important </p>
-                <br />
+   
           
                   {/* <input type="text"
                     value={this.state.username}
@@ -163,9 +163,7 @@ class SessionForm extends React.Component {
                     placeholder="Email"
                     className="login-input"
                   />
-      
-                <br />
-                
+   
          
                 <p className={` error-continue ${hideError} `}>Data field required</p>
             
@@ -177,7 +175,7 @@ class SessionForm extends React.Component {
                     
                   />
             
-                <br />
+                
                 {this.renderErrors()}
 
                 {/* will not work */}

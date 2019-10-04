@@ -1,16 +1,16 @@
-.content-container div p{
+/* .content-container div p{
     color: white;
-}
+} */
 
 header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    position: sticky;
+    /* position: sticky; */
     top: 0;
     z-index: 30;
     background-color: white;
-  }
+}
   
 
 .header-icon-logo {
@@ -18,18 +18,19 @@ header {
     align-items: center;
 }
 
-.header-icon-logo p, nav.header-links-auth, nav.header-links-auth li a{
+/* .header-icon-logo p, nav.header-links-auth, nav.header-links-auth li a{
     
-}
+} */
 
 
 .header-splash {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 77.5px;
+    /* padding: 0 30px; */
     height: 130px;
-
+    margin: 0 auto;
+    max-width: 1220px;
 }
 
 div.header-icon-logo > p.project-name {
@@ -52,30 +53,32 @@ nav.header-links-auth li {
 }
 
 
-.li-signup {
-    border: 2px solid #68f8f9;
+.li-login {
+    border: 2px solid #057a7a;
     border-radius: 3px;
     height: 40px;
-    min-width: 120px;
+    width: 120px;
     font-size: 17px;
     letter-spacing: .5px;
     text-align: center;
-  
     display: inline-flex;
     justify-content: center;
     align-items: center;
-
-   
 }
 
-.li-signup:hover{
+.li-login:hover{
     
-    box-shadow: 0 0 6px rgba(35, 173, 255, 1);
-    text-shadow: 0 0 6px rgba(35, 173, 255, 1);
+    /* box-shadow: 0 0 6px rgba(35, 173, 255, 1);
+    text-shadow: 0 0 6px rgba(35, 173, 255, 1); */
+    border: 2px solid #68f8f9;
     
 }
 
-.li-signup .signup-a{
+.li-login .login-a{
+    color: #057a7a;
+}
+
+.signup-a{
     color: #68f8f9;
 }
 
@@ -83,11 +86,12 @@ nav.header-links-auth li {
     display: flex;
     /* margin: 0 77.5px;
     padding: 60px 0; */
-    padding: 60px 77.5px;
+    /* padding: 60px 77.5px; */
     box-sizing: border-box;
     min-height: 609px;
     align-items: center;
-
+    max-width: 1220px; 
+    margin: 0 auto;
 }
 
 
@@ -103,13 +107,25 @@ section.content-frame{
 
 
 p.content-left-title {
-    font-size: 36px;
+    font-size: 56px;
 }
 
 div.content-left{
-    margin-right: 70px; 
+    margin-right: 50%; 
+ 
+}
+
+div.content-left > .content-left-title{
+    line-height: 72px;
+}
+
+div.content-left > .content-left-tagline{
+    line-height: 36px;
 }
 
 div.content-right{
+    /* position: relative; */
     margin-left: 70px; 
+    /* z-index: -1; */
+    
 }
