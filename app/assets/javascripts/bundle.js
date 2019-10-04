@@ -574,9 +574,6 @@ function (_React$Component) {
         className: "login-form-wrapper"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-form-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        onSubmit: this.handleSubmit,
-        className: "login-form-box"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -586,22 +583,27 @@ function (_React$Component) {
         className: "project-name"
       }, " SheikahNote "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "tagline"
-      }, " Remember everything important "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, " Remember everything important "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.handleSubmit
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "session-demo-user",
         type: "submit",
         onClick: this.autofill
-      }, "Demo User"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Demo User")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "auth-or-line"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "auth-or"
-      }, "or")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, "or")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.handleSubmit,
+        className: "login-form-box"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: this.state.email,
         onChange: this.update('email'),
         placeholder: "Email",
         className: "login-input"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: " ".concat(hideError, " ")
+        className: " error-continue ".concat(hideError, " ")
       }, "Data field required"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "password",
         value: this.state.password,
@@ -987,8 +989,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 document.addEventListener("DOMContentLoaded", function () {
   //Testing start 
-  window.currentUser = currentUser; //Testing end
-
+  // window.currentUser = currentUser;
+  //Testing end
   var store;
 
   if (window.currentUser) {

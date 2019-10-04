@@ -7,7 +7,7 @@ import configureStore from './store/store'
 document.addEventListener("DOMContentLoaded", () => {
   //Testing start 
   
-  window.currentUser = currentUser;
+  // window.currentUser = currentUser;
 
   //Testing end
   let store;

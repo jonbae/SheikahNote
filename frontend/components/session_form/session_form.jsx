@@ -114,7 +114,7 @@ class SessionForm extends React.Component {
           {/* <img src={window.triforceURL} alt="triforce-background"/> */}
 
           <div className="login-form-container">
-            <form onSubmit={this.handleSubmit} className="login-form-box">
+           
       
 
 
@@ -139,9 +139,11 @@ class SessionForm extends React.Component {
           
 
                 <br /> */}
-                <button className="session-demo-user" type="submit" onClick={this.autofill} >
-                  Demo User
-                </button>
+                <form onSubmit={this.handleSubmit}>
+                  <button className="session-demo-user" type="submit" onClick={this.autofill} >
+                    Demo User
+                  </button>
+                </form>
 
                 {/* <button className="session-submit" type="submit">
                 {this.props.formType}
@@ -151,7 +153,10 @@ class SessionForm extends React.Component {
                 <div className="auth-or-line">
                   <p className="auth-or">or</p>
                 </div>
-                
+
+                <form onSubmit={this.handleSubmit} className="login-form-box">
+
+
                   <input type="text"
                     value={this.state.email}
                     onChange={this.update('email')}
@@ -162,7 +167,7 @@ class SessionForm extends React.Component {
                 <br />
                 
          
-                <p className={` ${hideError} `}>Data field required</p>
+                <p className={` error-continue ${hideError} `}>Data field required</p>
             
                   <input type="password"
                     value={this.state.password}
@@ -192,8 +197,9 @@ class SessionForm extends React.Component {
                       {/* Welcome to SheikahNote!
               <br />
               Please {this.props.formType} or {this.props.navLink} */}
+              </form>
               </div>
-            </form>
+            
           </div>
         </div>
 
