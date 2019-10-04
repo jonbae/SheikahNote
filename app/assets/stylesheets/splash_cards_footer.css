@@ -70,3 +70,8 @@ footer {
     padding: 5px; 
     
 }
+
+ul.subcard-rune-images img {
+    width: 144px;
+    height: 144px;
+}
