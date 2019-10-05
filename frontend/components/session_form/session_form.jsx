@@ -156,7 +156,7 @@ class SessionForm extends React.Component {
 
                 <form onSubmit={this.handleSubmit} className="login-form-box">
 
-
+                  {/* autofocus */}
                   <input type="text"
                     value={this.state.email}
                     onChange={this.update('email')}

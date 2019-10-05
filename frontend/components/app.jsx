@@ -12,6 +12,7 @@ import GreetingContainer from './greeting/greeting_container';
 import EditorContainer from "./editor/editor_container"
 import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
+import NotebookIndexContainer from './notebook_index/notebook_index_container'
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
@@ -29,7 +30,10 @@ const App = () => (
         <AuthRoute exact path="/login" component={LogInFormContainer} />
         <AuthRoute exact path="/signup" component={SignUpFormContainer} />
         <ProtectedRoute exact path="/notes" component={EditorContainer} />
-        <Route path="/" component={SplashContainer} /> 
+        {/* <Route path="/notebooks/:notebook_id/notes/:note_id" component={NoteShowContainer} /> */}
+        <ProtectedRoute path="/notebooks" component={NotebookIndexContainer} /> 
+        
+        <Route exact path="/" component={SplashContainer} /> 
      </Switch>
   </> 
 )

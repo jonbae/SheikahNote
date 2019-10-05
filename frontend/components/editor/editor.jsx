@@ -5,7 +5,6 @@ const Editor = ({ currentUser, logout }) => {
     return (
         <>
 
-            <button className="header-button" onClick={logout}>Log Out</button>
 
         </>
     )
