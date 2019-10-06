@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink" 
+    width="14" 
+    height="14" 
+    viewBox="0 0 14 14" 
+    class="jxkaPwUYBVmrTvbO1GXEu">
+    <defs>
+        <path id="140a" 
+            d="M7 5.707l3.646 3.647.708-.708L7 4.293 2.646 8.646l.708.708z">
+        </path>			
+    </defs>
+    <use fill="#fff" 
+        fill-rule="nonzero" 
+        transform="matrix(1 0 0 -1 0 13.646)" 
+        xlink:href="#140a">
+    </use>
+</svg>

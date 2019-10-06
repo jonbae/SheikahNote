@@ -1,5 +1,90 @@
-nav.sidebar-frame {
-    width: 241px; 
-    background-color: #1a1a1a;
-    
+.sidebar-frame > * {
+  color: #cccccc;
 }
+
+.sidebar-frame ul > * {
+  padding: 0 8px 0 18px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-header {
+  padding: 0 8px 0 18px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-header p {
+  margin-left: 10px;
+  font-size: 13px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+nav.sidebar-frame {
+  display: flex;
+  flex-direction: column;
+  min-width: 241px;
+  background-color: #1a1a1a;
+  height: auto;
+}
+
+ul.sidebar-links {
+  display: flex;
+  flex-direction: column;
+}
+
+button.create-new-note {
+  display: flex;
+  margin: 13px 10px;
+  height: 36px;
+  padding: 4px;
+  border: 0;
+  background: #68f8f9;
+  border-radius: 20px;
+  align-items: center;
+  color: black;
+  width: 215px;
+}
+.avatar {
+  width: 28px;
+  height: 28px;
+  /* margin: 10px; */
+
+  border-radius: 50%;
+  -webkit-border-radius: 500px;
+  -moz-border-radius: 500px;
+}
+
+ul.sidebar-links li img {
+  width: 24px;
+  height: 32px;
+}
+
+.notebook-dropdown {
+  display: flex;
+  align-items: center;
+}
+
+.notebook-dropdown p {
+  margin: 3px;
+}
+
+ul.sidebar-links li a {
+  color: #cccccc;
+  text-decoration: none;
+}
+
+.filled-side-carat {
+  position: absolute;
+  max-height: 12px;
+  max-width: 8px;
+  left: 9px; /* do not change this! */
+}
+
+/* css animation for side carat */
+/* svg {
+    transform: rotate(90deg);
+} */
