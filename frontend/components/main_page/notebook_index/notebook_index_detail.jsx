@@ -15,7 +15,8 @@ const NotebookIndexItem = ({notebook}) => (
 
 
         {/* updated at */}
-
+        <span>{notebook.updated_at}</span>
+        
         {/* bonus: shared with  */}
 
         {/* actions: rename and delete */}

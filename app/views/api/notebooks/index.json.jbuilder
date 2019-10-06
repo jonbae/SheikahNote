@@ -1,4 +1,4 @@
-json.array! @notebooks, :id, :title, :author_id
+json.array! @notebooks, :id, :title, :author_id, :updated_at
 
 # alternatively
 

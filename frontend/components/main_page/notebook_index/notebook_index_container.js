@@ -1,9 +1,9 @@
 import {connect} from 'react-redux' ; 
 
 
-import { logout } from "../../actions/session_actions";
-import { selectAllNotebooks } from '../../reducers/selectors';
-import { requestAllNotebooks } from '../../actions/notebook_actions' ;
+import { logout } from "../../../actions/session_actions";
+import { selectAllNotebooks } from '../../../reducers/selectors';
+import { requestAllNotebooks } from '../../../actions/notebook_actions' ;
 import  NotebookIndex  from "./notebook_index";
 
 const msp = (state, ownProps) => ({
@@ -16,7 +16,7 @@ const msp = (state, ownProps) => ({
 
 const mdp = dispatch => ({
     requestAllNotebooks: () => dispatch(requestAllNotebooks()),
-    logout: () => dispatch(logout())
+
 })
 
-export default connect(msp,mdp)(NotebookIndex) ;
+export default connect(msp,mdp)(NotebookIndex);
