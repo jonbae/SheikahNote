@@ -47,6 +47,8 @@ button.create-new-note {
   align-items: center;
   color: black;
   width: 215px;
+  margin: 0 auto;
+  margin-bottom: 10px; /* double check px */
 }
 .avatar {
   width: 28px;
