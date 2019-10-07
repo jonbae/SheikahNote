@@ -1,12 +1,16 @@
+@font-face {
+  font-family: "hyliaserifbeta-regular";
+  src: font-url("hyliaserifbeta-regular-webfont.woff");
+  src: font-url("hyliaserifbeta-regular-webfont?#iefix") format("woff");
+}
 
 @font-face {
-  font-family:'hyliaserifbeta-regular';
-  src:font-url('hyliaserifbeta-regular-webfont.woff');
-  src:font-url('hyliaserifbeta-regular-webfont?#iefix') format('woff');
+  font-family: "calamity-regular";
+  src: font-url("calamity-regular-webfont.woff");
+  src: font-url("calamity-regular-webfont?#iefix") format("woff");
+}
 
-} 
-
-p.project-name {
-  font-family: 'hyliaserifbeta-regular';
+h2.project-name {
+  font-family: "hyliaserifbeta-regular";
   font-size: 36px;
 }

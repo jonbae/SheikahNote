@@ -12,7 +12,7 @@ const Sidebar = ({ currentUser, logout }) => {
           className="avatar"
         />
         {/* current user email */}
-        <p> {currentUser.email} </p>
+        <p className="sidebar-header-email"> {currentUser.email} </p>
       </li>
 
       {/* bonus: search bar  */}
@@ -20,7 +20,7 @@ const Sidebar = ({ currentUser, logout }) => {
       {/* create note button  */}
       <button className="create-new-note">
         <img src={window.whitePlusURL} alt="white_plus" />
-        <p>Create new note</p>
+        <p className="create-new-note-text">Create new note</p>
       </button>
       {/* all notes  */}
       <ul className="sidebar-links">
@@ -54,9 +54,9 @@ const Sidebar = ({ currentUser, logout }) => {
         {/* upgrade  */}
       </ul>
 
-      {/* <button className="header-button" onClick={logout}>
+      <button className="header-button" onClick={logout}>
         Log Out
-      </button> */}
+      </button>
     </nav>
   );
 };

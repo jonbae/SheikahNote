@@ -18,7 +18,7 @@
 
 .sidebar-header p {
   margin-left: 10px;
-  font-size: 13px;
+  font-size: 14px;
   text-overflow: ellipsis;
   overflow: hidden;
 }
@@ -50,6 +50,11 @@ button.create-new-note {
   margin: 0 auto;
   margin-bottom: 10px; /* double check px */
 }
+
+button.create-new-note p {
+  font-size: 15px;
+}
+
 .avatar {
   width: 28px;
   height: 28px;
