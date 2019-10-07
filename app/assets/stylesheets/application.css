@@ -37,3 +37,8 @@ main.main-page-frame {
   height: 100%;
   width: 100%;
 }
+
+div.main-section-frame {
+  width: 100%;
+  height: auto;
+}

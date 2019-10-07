@@ -1,27 +1,27 @@
-import React from 'react' ; 
-import { Link } from 'react-router-dom' ; 
+import React from "react";
+import { Link } from "react-router-dom";
 
+const NotebookIndexItem = ({ notebook }) => (
+  <ul className="notebooks-index-item">
+    {/* drop down arrow */}
 
-const NotebookIndexItem = ({notebook}) => (
-    <li className="notebook-index-item">
-        {/* drop down arrow */}
+    {/* notebook icon */}
 
-        {/* notebook icon */}
+    {/* notebook title  */}
+    <li>{notebook.title}</li>
 
-        {/* notebook title  */}
-        <span>{notebook.title}</span>
+    {/* bonus: notebook author */}
 
-        {/* bonus: notebook author */}
+    {/* updated at */}
+    <li>{notebook.updated_at}</li>
 
+    {/* bonus: shared with  */}
 
-        {/* updated at */}
-        <span>{notebook.updated_at}</span>
-        
-        {/* bonus: shared with  */}
-
-        {/* actions: rename and delete */}
-
+    {/* actions: rename and delete */}
+    <li>
+      <img src={window.ellipsisURL} alt="ellipsis" />
     </li>
-)
+  </ul>
+);
 
 export default NotebookIndexItem;

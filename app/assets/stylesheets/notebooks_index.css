@@ -1,3 +1,43 @@
-div.notebooks-index-frame{
-    display: flex; 
+div.notebooks-index-frame {
+  /* display: flex;  */
+  padding: 0 30px;
+}
+
+div.notebooks-index-header {
+  display: flex;
+  align-items: center;
+  height: 80px;
+}
+
+div.notebooks-index-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 24px;
+  margin: 10px 0;
+}
+
+div.notebooks-index-list-header > * {
+  font-size: 15px;
+}
+
+.notebooks-table {
+  width: 100%;
+  border-top: 2px solid black;
+}
+
+/* tr td {
+  padding: 8px;
+}
+
+.notebooks-table-header {
+  font-size: 11px;
+}
+
+.notebooks-table tr {
+  box-sizing: border-box;
+} */
+
+.notebooks-list ul:nth-child(odd) {
+  background-color: #ccc;
 }

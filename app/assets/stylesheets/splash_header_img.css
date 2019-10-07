@@ -4,7 +4,10 @@
 p,
 li,
 button,
-a {
+a,
+td,
+tr,
+th {
   font-family: "calamity-regular";
 }
 
@@ -17,7 +20,7 @@ h6 {
   font-family: "hyliaserifbeta-regular";
 }
 
-header {
+.header-splash {
   display: flex;
   justify-content: space-around;
   align-items: center;
