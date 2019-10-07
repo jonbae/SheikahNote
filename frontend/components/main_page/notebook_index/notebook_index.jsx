@@ -15,12 +15,17 @@ class NotebookIndex extends React.Component {
 
     return (
       <div className="notebooks-index-frame">
-        <div className="notebooks-index-header">Notebooks</div>
+        <div className="notebooks-index-header">
+          <span>Notebooks</span>
+        </div>
 
         <div className="notebooks-index-list-header">
           <p>My notebook list</p>
-          {/* <button>New Notebook</button> */}
-          <p>New Notebook</p>
+
+          <button className="new-notebook">
+            <img src={window.newNotebookURL} alt="new notebook" />
+            <p>New Notebook</p>
+          </button>
         </div>
 
         <section className="notebooks-frame">
@@ -31,7 +36,11 @@ class NotebookIndex extends React.Component {
               <li>ACTIONS</li>
             </ul>
             {notebooks.map(notebook => (
-              <NotebookIndexItem key={notebook.id} notebook={notebook} />
+              <NotebookIndexItem
+                key={notebook.id}
+                notebook={notebook}
+                className="notebooks-list-rows"
+              />
             ))}
           </ul>
         </section>

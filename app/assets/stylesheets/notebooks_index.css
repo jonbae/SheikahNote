@@ -7,6 +7,11 @@ div.notebooks-index-header {
   display: flex;
   align-items: center;
   height: 80px;
+  font-size: 20px;
+}
+
+ul.notebooks-list {
+  border-top: 2px solid black;
 }
 
 div.notebooks-index-list-header {
@@ -18,26 +23,81 @@ div.notebooks-index-list-header {
 }
 
 div.notebooks-index-list-header > * {
-  font-size: 15px;
+  font-size: 13px;
+  font-weight: bold;
+  /* maybe calamity font bold? */
 }
 
-.notebooks-table {
-  width: 100%;
-  border-top: 2px solid black;
+.notebooks-list ul:nth-child(odd) {
+  background-color: #f8f8f8;
 }
 
-/* tr td {
+.notebooks-list ul {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: 40px;
+}
+
+ul.notebooks-list ul li {
   padding: 8px;
 }
 
-.notebooks-table-header {
-  font-size: 11px;
+ul.notebooks-list ul.notebooks-list-header li {
+  font-size: 10px;
 }
 
-.notebooks-table tr {
-  box-sizing: border-box;
-} */
+ul.notebooks-list ul.notebooks-list-header {
+  height: 36px;
+}
 
-.notebooks-list ul:nth-child(odd) {
-  background-color: #ccc;
+ul.notebooks-list ul li {
+  width: 15%;
+}
+
+ul.notebooks-list ul li:first-child {
+  width: 68%;
+}
+
+ul.notebooks-list ul li:last-child {
+  text-align: end;
+}
+
+ul.notebooks-list ul li:last-child img {
+  height: 16px;
+  width: 16px;
+}
+
+img.black-filled-carat {
+  padding: 5px;
+}
+
+img.black-notebook {
+  margin-right: 2.5px;
+}
+
+button.new-notebook img {
+  margin: 2px;
+}
+
+button.new-notebook {
+  display: flex;
+  align-items: center;
+  color: #68f8f9;
+  border: 0;
+  background: none;
+  font-size: 14px;
+}
+
+.notebooks-index-item > li span {
+  font-size: 14px;
+  margin: 2.5px;
+}
+
+.notebooks-index-item > li {
+  font-size: 14px;
+}
+
+.notebooks-index-item > li span:last-child {
+  color: #ccc;
 }

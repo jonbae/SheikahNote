@@ -2,7 +2,7 @@
   color: #cccccc;
 }
 
-.sidebar-frame ul > * {
+.sidebar-frame ul > li {
   padding: 0 8px 0 18px;
   height: 32px;
   display: flex;
@@ -65,19 +65,19 @@ button.create-new-note p {
   -moz-border-radius: 500px;
 }
 
-ul.sidebar-links li img {
+ul.sidebar-links > li img {
   width: 24px;
   height: 32px;
 }
 
-.notebook-dropdown {
-  display: flex;
-  align-items: center;
+ul.sidebar-links li *:last-child {
+  margin: 3px;
+  font-size: 15px;
 }
 
-.notebook-dropdown p {
+/* .notebook-dropdown p {
   margin: 3px;
-}
+} */
 
 ul.sidebar-links li a {
   color: #cccccc;
@@ -91,7 +91,19 @@ ul.sidebar-links li a {
   left: 9px; /* do not change this! */
 }
 
+ul.notebook-dropdown > li img {
+  margin-left: 26px;
+}
+
+ul.sidebar-links li:hover {
+  background-color: #333333;
+}
+
+.hidden-dropdown {
+  display: none;
+}
+
 /* css animation for side carat */
-/* svg {
-    transform: rotate(90deg);
-} */
+.filled-down-carat {
+  transform: rotate(90deg);
+}
