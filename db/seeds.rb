@@ -17,26 +17,25 @@ mm_notebook = Notebook.create!(  {title: "Majora's Mask", author_id: demo.id} )
 botw_notebook = Notebook.create!(  {title: 'Breath of the Wild', author_id: zelda.id} ) 
 ww_notebook = Notebook.create!(    {title: 'Wind Waker', author_id: demo.id} )
 
-# user_list = [
-#     {username: 'test123', email: 'test@mail.com', password: 'password'},
-   
-#     { email: 'nousername@mail.com', password: 'password'}, 
-  
-#     {username: 'green_tunic_link', email: 'link@mail.com', password: 'password'}
-# ]
 
-# notebook_list = [
-     
-   
-  
-# ]
+diary1 = Note.create!( {title: "zelda's diary entry 1", content:"After meeting with the Champions, 
+I left to research the ancient technology, but nothing of note came of my research. 
+The return of Ganon looms—a dark force taunting us from afar. 
+I must learn all I can about the relics so we can stop him. 
+If the fortune-teller's prophecy is to be believed, there isn't much time left... 
+Ah, but turning over these thoughts in my head puts me ill at ease. 
+I suppose I should turn in for the night.
 
-# user_list.each do |attributes| #|username, email, password|
-#     User.create(attributes)
-# end
+P.S. Tomorrow my father is assigning HIM as my appointed knight...", author_id: zelda.id, notebook_id: botw_notebook.id })
 
-# notebook_list.each do |attributes| 
-#     Notebook.create(attributes)
-# end
+diary2 = Note.create!( {title: "zelda's diary entry 2", content:"I set out for Goron City today to make some adjustments to Divine Beast Vah Rudania. 
+I still recall feeling his eyes on me as I walked ahead. 
+The feeling stayed with me so long, I grew anxious and weary. 
+It is the same feeling I've felt before in his company... 
+And still, not a word passes his lips. I never know what he's thinking! 
+It makes my imagination run wild, guessing at what he is thinking but will not say. 
+What does the boy chosen by the sword that seals the darkness think of me? Will I ever truly know? Then, I suppose it's simple. 
+A daughter of Hyrule's royal family yet unable to use sealing magic... He must despise me." ,author_id: zelda.id, notebook_id: botw_notebook.id })
 
+note3 = Note.creat!( {title: "navi", content: "hey listen" , author_id: demo.id, notebook_id: ot_notebook.id})
 
