@@ -19,8 +19,11 @@ class Api::NotebooksController < ApplicationController
 
   end
 
-  def destory
+  def destroy
+    @notebook = Notebook.find(params[:id])
+    @notebook.destroy
 
+    render :index 
   end
 
   private

@@ -23,6 +23,8 @@ class Sidebar extends React.Component {
     return (
       <nav className="sidebar-frame">
         <li className="sidebar-header">
+          {" "}
+          {/* add an onClick  */}
           {/* profile pic  */}
           <img
             src={window.defaultUserURL}

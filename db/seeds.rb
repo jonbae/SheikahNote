@@ -8,6 +8,7 @@
 
 User.destroy_all
 Notebook.destroy_all
+Note.destroy_all
 
 demo = User.create!( {username: 'demo123', email: 'demo@mail.com', password: 'password'} )
 zelda = User.create!(  {username: 'zelda', email: 'zelda@mail.com', password: 'password'} )
@@ -37,5 +38,5 @@ It makes my imagination run wild, guessing at what he is thinking but will not s
 What does the boy chosen by the sword that seals the darkness think of me? Will I ever truly know? Then, I suppose it's simple. 
 A daughter of Hyrule's royal family yet unable to use sealing magic... He must despise me." ,author_id: zelda.id, notebook_id: botw_notebook.id })
 
-note3 = Note.creat!( {title: "navi", content: "hey listen" , author_id: demo.id, notebook_id: ot_notebook.id})
+note3 = Note.create!( {title: "navi", content: "hey listen" , author_id: demo.id, notebook_id: ot_notebook.id})
 
