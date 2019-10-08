@@ -106,12 +106,6 @@ button.new-notebook {
   color: #ccc;
 }
 
-/* .actions-dropdown {
-  position: absolute;
-  background-color: grey;
-  right: 30px;
-} */
-
 section.dropdown-menu.notebooks-action-position {
   right: 30px;
   width: 211px;

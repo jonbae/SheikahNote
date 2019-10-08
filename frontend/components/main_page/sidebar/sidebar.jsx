@@ -12,7 +12,7 @@ class Sidebar extends React.Component {
     };
     this.accountHidden = this.accountHidden.bind(this);
     this.toggleAccountHidden = this.toggleAccountHidden.bind(this);
-    // this.notebooksHidden = this.notebooksHidden.bind(this);
+
     this.toggleNotebooksHidden = this.toggleNotebooksHidden.bind(this);
   }
 
@@ -27,10 +27,6 @@ class Sidebar extends React.Component {
   toggleNotebooksHidden() {
     this.setState({ isNotebooksHidden: !this.state.isNotebooksHidden });
   }
-
-  // notebooksHidden() {
-  //   this.setState({ isNotebooksHidden: true });
-  // }
 
   render() {
     const hiddenAccountClass = this.state.isAccountHidden

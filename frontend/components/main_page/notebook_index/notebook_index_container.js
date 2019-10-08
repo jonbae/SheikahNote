@@ -24,7 +24,7 @@ const mdp = dispatch => ({
   requestNotebook: id => dispatch(requestNotebook(id)),
   createNotebook: notebook => dispatch(createNotebook(notebook)),
   updateNotebook: notebook => dispatch(updateNotebook(notebook)),
-  removeNotebook: id => dispatch(removeNotebook(id))
+  deleteNotebook: id => dispatch(deleteNotebook(id))
 });
 
 export default connect(

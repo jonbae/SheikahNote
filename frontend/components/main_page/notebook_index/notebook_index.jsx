@@ -6,6 +6,12 @@ import NotebookIndexItem from "./notebook_index_detail";
 // import { ProtectedRoute } from '../../util/route_util' ;
 
 class NotebookIndex extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+    // this.removeNotebook = this.removeNotebook.bind(this);
+  }
+
   componentDidMount() {
     this.props.requestAllNotebooks();
   }

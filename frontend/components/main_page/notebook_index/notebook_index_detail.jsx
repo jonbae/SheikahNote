@@ -71,7 +71,7 @@ class NotebookIndexItem extends React.Component {
           className={`dropdown-menu notebooks-action-position ${hiddenClass}`}
         >
           <p>Rename Notebook</p>
-          <p>Delete Notebook</p>
+          <p onClick={this.props.deleteNotebook}>Delete Notebook</p>
         </section>
 
         {/* <ul className="notebook-notes-index">
