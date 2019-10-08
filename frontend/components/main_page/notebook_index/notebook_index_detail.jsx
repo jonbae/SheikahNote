@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { setBlurListener } from "../../../util/blur_util";
 import NotebookNotesItem from "./notebook_notes_index";
 
 class NotebookIndexItem extends React.Component {
@@ -11,6 +11,7 @@ class NotebookIndexItem extends React.Component {
     };
     this.toggleHidden = this.toggleHidden.bind(this);
     this.hidden = this.hidden.bind(this);
+    this.blurRef = React.createRef();
   }
 
   toggleHidden() {
@@ -56,25 +57,34 @@ class NotebookIndexItem extends React.Component {
           {/* bonus: shared with  */}
 
           {/* actions: rename and delete */}
-          <li>
+          <li
+            onBlur={setBlurListener(this.blurRef, this.hidden)}
+            tabIndex="0"
+            ref={this.blurRef}
+          >
             <img
-              tabIndex="0"
               src={window.ellipsisURL}
               alt="ellipsis"
               onClick={this.toggleHidden}
               className="img-ellipsis"
             />
+
+            <section
+              tabIndex="1"
+              className={`dropdown-menu notebooks-action-position ${hiddenClass}`}
+            >
+              <p tabIndex="2">Rename Notebook</p>
+              <p
+                tabIndex="3"
+                onClick={() =>
+                  this.props.deleteNotebook(this.props.notebook.id)
+                }
+              >
+                Delete Notebook
+              </p>
+            </section>
           </li>
         </ul>
-
-        <section
-          className={`dropdown-menu notebooks-action-position ${hiddenClass}`}
-        >
-          <p>Rename Notebook</p>
-          <p onClick={() => this.props.deleteNotebook(this.props.notebook.id)}>
-            Delete Notebook
-          </p>
-        </section>
 
         {/* <ul className="notebook-notes-index">
   
