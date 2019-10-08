@@ -11,7 +11,17 @@ class NotebookIndex extends React.Component {
   }
 
   render() {
-    const notebooks = this.props.notebooks;
+    let notebooks;
+    // notebook.id returns a warning get this checked out
+    if (this.props.notebooks !== undefined && this.props.notebooks !== 0) {
+      notebooks = this.props.notebooks.map(notebook => (
+        <NotebookIndexItem
+          key={notebook.id}
+          notebook={notebook}
+          klass="notebooks-list-rows"
+        />
+      ));
+    }
 
     return (
       <div className="notebooks-index-frame">
@@ -35,13 +45,14 @@ class NotebookIndex extends React.Component {
               <li>UPDATED</li>
               <li>ACTIONS</li>
             </ul>
-            {notebooks.map(notebook => (
+            {/* {notebooks.map(notebook, idx => (
               <NotebookIndexItem
-                key={notebook.id}
+                key={idx}
                 notebook={notebook}
                 className="notebooks-list-rows"
               />
-            ))}
+            ))} */}
+            {notebooks}
           </ul>
         </section>
       </div>

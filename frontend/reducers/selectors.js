@@ -1,1 +1,5 @@
-export const selectAllNotebooks = state => Object.values(state.entities.notebooks);
+export const selectAllNotebooks = function(state) {
+  console.log(state.entities.notebooks);
+
+  return Object.values(state.entities.notebooks);
+};

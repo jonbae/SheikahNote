@@ -6,7 +6,6 @@ import configureStore from "./store/store";
 
 document.addEventListener("DOMContentLoaded", () => {
   //Testing start
-
   //Testing end
   let store;
   if (window.currentUser) {
@@ -21,6 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     store = configureStore();
   }
+
+  window.getState = store.getState();
 
   const root = document.getElementById("root");
   // const store = configureStore();

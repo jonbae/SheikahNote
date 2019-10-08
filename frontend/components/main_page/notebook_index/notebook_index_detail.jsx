@@ -1,49 +1,87 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 import NotebookNotesItem from "./notebook_notes_index";
 
-const NotebookIndexItem = ({ notebook }) => (
-  <>
-    <ul className="notebooks-index-item">
-      <li>
-        {/* drop down arrow */}
-        <img
-          className="black-filled-carat"
-          src={window.blackFilledSideCaratURL}
-          alt="black filled side carat"
-        />
-        {/* notebook icon */}
-        <img
-          className="black-notebook"
-          src={window.blackNotebookURL}
-          alt="black notebook"
-        />
-        {/* notebook title  */}
-        <span>{notebook.title}</span>
+class NotebookIndexItem extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isHidden: true
+    };
+    this.toggleHidden = this.toggleHidden.bind(this);
+    this.hidden = this.hidden.bind(this);
+  }
 
-        {/* number of notes  */}
-        <span>(1)</span>
-      </li>
+  toggleHidden() {
+    this.setState({ isHidden: !this.state.isHidden });
+  }
 
-      {/* bonus: notebook author */}
+  hidden() {
+    this.setState({ isHidden: true });
+  }
 
-      {/* updated at */}
-      <li>{notebook.updated_at}</li>
+  render() {
+    const hiddenClass = this.state.isHidden ? "hidden-dropdown" : "";
+    // let { notebook } = this.props.notebook;
+    return (
+      <>
+        <ul className="notebooks-index-item">
+          <li>
+            {/* drop down arrow */}
+            <img
+              className="black-filled-carat"
+              src={window.blackFilledSideCaratURL}
+              alt="black filled side carat"
+            />
+            {/* notebook icon */}
+            <img
+              className="black-notebook"
+              src={window.blackNotebookURL}
+              alt="black notebook"
+            />
+            {/* notebook title  */}
+            <span>{this.props.notebook.title}</span>
 
-      {/* bonus: shared with  */}
+            {/* number of notes  */}
+            <span>(1)</span>
+          </li>
 
-      {/* actions: rename and delete */}
-      <li>
-        <img src={window.ellipsisURL} alt="ellipsis" />
-      </li>
-    </ul>
+          {/* bonus: notebook author */}
 
-    {/* <ul className="notebook-notes-index">
+          {/* updated at */}
+          <li>{this.props.notebook.updated_at}</li>
 
+          {/* bonus: shared with  */}
 
-      <NotebookNotesItem />
-    </ul> */}
-  </>
-);
+          {/* actions: rename and delete */}
+          <li>
+            <img
+              onBlur={this.hidden}
+              tabIndex="0"
+              src={window.ellipsisURL}
+              alt="ellipsis"
+              onClick={this.toggleHidden}
+              className="img-ellipsis"
+            />
+          </li>
+        </ul>
+
+        <section
+          className={`dropdown-menu notebooks-action-position ${hiddenClass}`}
+        >
+          <p>Rename Notebook</p>
+          <p>Delete Notebook</p>
+        </section>
+
+        {/* <ul className="notebook-notes-index">
+  
+  
+        <NotebookNotesItem />
+      </ul> */}
+      </>
+    );
+  }
+}
 
 export default NotebookIndexItem;

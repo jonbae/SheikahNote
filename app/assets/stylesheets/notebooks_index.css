@@ -94,10 +94,29 @@ button.new-notebook {
   margin: 2.5px;
 }
 
+.img-ellipsis {
+  cursor: pointer;
+}
+
 .notebooks-index-item > li {
   font-size: 14px;
 }
 
 .notebooks-index-item > li span:last-child {
   color: #ccc;
+}
+
+/* .actions-dropdown {
+  position: absolute;
+  background-color: grey;
+  right: 30px;
+} */
+
+section.dropdown-menu.notebooks-action-position {
+  right: 30px;
+  width: 211px;
+}
+
+section.dropdown-menu.notebooks-action-position > p {
+  color: black;
 }

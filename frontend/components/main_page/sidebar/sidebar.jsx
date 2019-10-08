@@ -7,22 +7,56 @@ class Sidebar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isHidden: true
+      isAccountHidden: true,
+      isNotebooksHidden: true
     };
-    this.toggleHidden = this.toggleHidden.bind(this);
+    this.accountHidden = this.accountHidden.bind(this);
+    this.toggleAccountHidden = this.toggleAccountHidden.bind(this);
+    // this.notebooksHidden = this.notebooksHidden.bind(this);
+    this.toggleNotebooksHidden = this.toggleNotebooksHidden.bind(this);
   }
 
-  toggleHidden() {
-    this.setState({ isHidden: !this.state.isHidden });
+  toggleAccountHidden() {
+    this.setState({ isAccountHidden: !this.state.isAccountHidden });
   }
+
+  accountHidden() {
+    this.setState({ isAccountHidden: true });
+  }
+
+  toggleNotebooksHidden() {
+    this.setState({ isNotebooksHidden: !this.state.isNotebooksHidden });
+  }
+
+  // notebooksHidden() {
+  //   this.setState({ isNotebooksHidden: true });
+  // }
 
   render() {
-    const hiddenClass = this.state.isHidden ? "hidden-dropdown" : "";
-    const downCarat = this.state.isHidden ? "" : "filled-down-carat";
+    const hiddenAccountClass = this.state.isAccountHidden
+      ? "hidden-dropdown"
+      : "";
+    const hiddenNotebooksClass = this.state.isNotebooksHidden
+      ? "hidden-dropdown"
+      : "";
+    const downCarat = this.state.isNotebooksHidden ? "" : "filled-down-carat";
+
+    let notebooks;
+    // notebook.id returns a warning get this checked out
+    if (this.props.notebooks !== undefined && this.props.notebooks !== 0) {
+      notebooks = this.props.notebooks.map(notebook => (
+        <NotebookDropdownItem key={notebook.id} notebook={notebook} />
+      ));
+    }
 
     return (
       <nav className="sidebar-frame">
-        <li className="sidebar-header">
+        <li
+          onClick={this.toggleAccountHidden}
+          onBlur={this.accountHidden}
+          tabIndex="0"
+          className="sidebar-header"
+        >
           {" "}
           {/* add an onClick  */}
           {/* profile pic  */}
@@ -36,6 +70,29 @@ class Sidebar extends React.Component {
             {" "}
             {this.props.currentUser.email}{" "}
           </p>
+          {/* account dropdown  */}
+          <section
+            className={`dropdown-menu sidebar-position ${hiddenAccountClass}`}
+          >
+            <p className="sidebar-account-title">ACCOUNT</p>
+            {/* checkmark  */}
+            <div className="account-header">
+              <img
+                src={window.defaultUserURL}
+                alt="default user"
+                className="avatar"
+              />
+              <p className="sidebar-header-email dropdown-email">
+                {" "}
+                {this.props.currentUser.email}{" "}
+              </p>
+            </div>
+            <div className="grey-line"></div>
+            {/* <br className="grey-line" /> */}
+            <div className="header-button" onClick={this.props.logout}>
+              Log Out
+            </div>
+          </section>
         </li>
 
         {/* bonus: search bar  */}
@@ -53,7 +110,7 @@ class Sidebar extends React.Component {
             <Link to="/app/notebooks"> All Notes </Link>
           </li>
           {/* notebooks dropdown */}
-          <li onClick={this.toggleHidden}>
+          <li onClick={this.toggleNotebooksHidden}>
             {/* svg icon */}
             <img
               className={`filled-side-carat ${downCarat}`}
@@ -64,10 +121,11 @@ class Sidebar extends React.Component {
             <p>Notebooks</p>
           </li>
 
-          <ul className={`notebook-dropdown ${hiddenClass}`}>
-            {this.props.notebooks.map(notebook => (
+          <ul className={`notebook-dropdown ${hiddenNotebooksClass}`}>
+            {/* {this.props.notebooks.map(notebook => (
               <NotebookDropdownItem key={notebook.id} notebook={notebook} />
-            ))}
+            ))} */}
+            {notebooks}
           </ul>
 
           {/* bonus: shared with me  */}
@@ -82,10 +140,6 @@ class Sidebar extends React.Component {
 
           {/* upgrade  */}
         </ul>
-
-        <button className="header-button" onClick={this.props.logout}>
-          Log Out
-        </button>
       </nav>
     );
   }
