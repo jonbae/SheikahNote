@@ -16,10 +16,13 @@ export const receieveNotebook = notebook => ({
   notebook
 });
 
-export const removeNotebook = notebook => ({
-  type: REMOVE_NOTEBOOK,
-  notebookId: notebook.id
-});
+export const removeNotebook = id => {
+  debugger;
+  return {
+    type: REMOVE_NOTEBOOK,
+    notebookId: id
+  };
+};
 
 export const requestAllNotebooks = () => dispatch =>
   APIUtil.fetchAllNotebooks().then(notebooks =>
@@ -41,7 +44,9 @@ export const updateNotebook = notebook => dispatch =>
     dispatch(receieveNotebook(notebook))
   );
 
-export const deleteNotebook = id => dispatch =>
-  APIUtil.deleteNotebook(id).then(notebook =>
-    dispatch(removeNotebook(notebook.id))
+export const deleteNotebook = id => dispatch => {
+  debugger;
+  return APIUtil.deleteNotebook(id).then(notebook =>
+    dispatch(removeNotebook(id))
   );
+};

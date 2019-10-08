@@ -40,3 +40,7 @@ A daughter of Hyrule's royal family yet unable to use sealing magic... He must d
 
 note3 = Note.create!( {title: "navi", content: "hey listen" , author_id: demo.id, notebook_id: ot_notebook.id})
 
+note4 = Note.create!( {title: "skull kid", content: "...", author_id: demo.id, notebook_id: mm_notebook.id})
+
+note5 = Note.create!( {title: "King of Red Lions", content: "Did I startle you? I suppose that is only natural. As wide as the world is, I am the only boat upon it who can speak the words of men. I am the King of Red Lions. Do not fear... I am not your enemy.", 
+author_id: demo.id, notebook_id: ww_notebook.id})

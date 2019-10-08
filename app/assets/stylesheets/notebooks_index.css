@@ -98,6 +98,10 @@ button.new-notebook {
   cursor: pointer;
 }
 
+/* .img-ellipsis:hover{ 
+  color
+} */
+
 .notebooks-index-item > li {
   font-size: 14px;
 }

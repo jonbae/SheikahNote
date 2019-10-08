@@ -24,8 +24,10 @@ export const updateNotebook = notebook =>
     notebook
   });
 
-export const deleteNotebook = id =>
-  $.ajax({
+export const deleteNotebook = id => {
+  debugger;
+  return $.ajax({
     method: "delete",
     url: `api/notebooks/${id}`
   });
+};

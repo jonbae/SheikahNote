@@ -3,6 +3,7 @@ import {
   RECIEVE_NOTEBOOK,
   REMOVE_NOTEBOOK
 } from "../actions/notebook_actions";
+import merge from "lodash/merge";
 
 const notebooksReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -17,7 +18,8 @@ const notebooksReducer = (state = {}, action) => {
       newState = { [action.notebook.id]: action.notebook };
       return Object.assign({}, state, newState);
     case REMOVE_NOTEBOOK:
-      newState = merge({}, state);
+      debugger;
+      newState = Object.assign({}, state);
       delete newState[action.notebookId];
       return newState;
 

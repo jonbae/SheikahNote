@@ -7,7 +7,7 @@ import {
   requestNotebook,
   createNotebook,
   updateNotebook,
-  removeNotebook
+  deleteNotebook
 } from "../../../actions/notebook_actions";
 import NotebookIndex from "./notebook_index";
 
@@ -24,7 +24,10 @@ const mdp = dispatch => ({
   requestNotebook: id => dispatch(requestNotebook(id)),
   createNotebook: notebook => dispatch(createNotebook(notebook)),
   updateNotebook: notebook => dispatch(updateNotebook(notebook)),
-  deleteNotebook: id => dispatch(deleteNotebook(id))
+  deleteNotebook: id => {
+    debugger;
+    return dispatch(deleteNotebook(id));
+  }
 });
 
 export default connect(

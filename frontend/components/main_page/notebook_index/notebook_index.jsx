@@ -25,6 +25,7 @@ class NotebookIndex extends React.Component {
           key={notebook.id}
           notebook={notebook}
           klass="notebooks-list-rows"
+          deleteNotebook={this.props.deleteNotebook}
         />
       ));
     }

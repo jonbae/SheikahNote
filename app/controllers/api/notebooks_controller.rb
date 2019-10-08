@@ -18,6 +18,8 @@ class Api::NotebooksController < ApplicationController
 
   def show
     @notebook = current_user.notebooks.find(params[:id])
+    @notes = @notebook.notes 
+    render :show
   end
 
   def update
@@ -31,12 +33,13 @@ class Api::NotebooksController < ApplicationController
   end
 
   def destroy
-    @notebook = Notebook.find(params[:id])
+    @notebook = current_user.notebooks.find(params[:id])
     if current_user.notebooks.length == 1 
       render json: ["You must have at least one notebook"], status: 422 
     else 
       @notebook.destroy
-      render :show 
+      @notes = @notebook.notes
+      render json: @notebook
     end
     
   end

@@ -24,6 +24,7 @@ class NotebookIndexItem extends React.Component {
   render() {
     const hiddenClass = this.state.isHidden ? "hidden-dropdown" : "";
     // let { notebook } = this.props.notebook;
+
     return (
       <>
         <ul className="notebooks-index-item">
@@ -57,7 +58,6 @@ class NotebookIndexItem extends React.Component {
           {/* actions: rename and delete */}
           <li>
             <img
-              onBlur={this.hidden}
               tabIndex="0"
               src={window.ellipsisURL}
               alt="ellipsis"
@@ -71,7 +71,9 @@ class NotebookIndexItem extends React.Component {
           className={`dropdown-menu notebooks-action-position ${hiddenClass}`}
         >
           <p>Rename Notebook</p>
-          <p onClick={this.props.deleteNotebook}>Delete Notebook</p>
+          <p onClick={() => this.props.deleteNotebook(this.props.notebook.id)}>
+            Delete Notebook
+          </p>
         </section>
 
         {/* <ul className="notebook-notes-index">
