@@ -1,8 +1,10 @@
 class Api::NotebooksController < ApplicationController 
   before_action :ensure_logged_in
   def create
+    debugger
     @notebook = Notebook.new(notebook_params)
-    @notebook.user = current_user
+
+    @notebook.author_id = current_user.id
     if @notebook.save 
       @notes = @notebook.notes
       render :show
@@ -18,8 +20,13 @@ class Api::NotebooksController < ApplicationController
 
   def show
     @notebook = current_user.notebooks.find(params[:id])
+    @notebook.author_id = current_user.id 
     @notes = @notebook.notes 
-    render :show
+    if @notebook.save!
+      render :show
+    # else
+    #   render json:@notebook.errors.full_messages, status: 422
+    end
   end
 
   def update
@@ -46,6 +53,7 @@ class Api::NotebooksController < ApplicationController
 
   private
   def notebook_params
+    debugger
     params.require(:notebook).permit(:title, :author_id, :updated_at)
   end
 

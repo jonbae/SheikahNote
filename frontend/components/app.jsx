@@ -4,8 +4,9 @@ import { Provider } from "react-redux";
 import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
 import SplashContainer from "./splash/splash_container";
 import MainPageContainer from "./main_page/main_page_container";
-import GreetingContainer from "./greeting/greeting_container";
-import EditorContainer from "./editor/editor_container";
+
+import Modal from "./modal/modal";
+
 import SignUpFormContainer from "./session_form/signup_form_container";
 import LogInFormContainer from "./session_form/login_form_container";
 import NotebookIndexContainer from "./main_page/notebook_index/notebook_index_container";
@@ -22,7 +23,7 @@ const App = () => (
     </header> */}
 
     {/* <ProtectedRoute path="/notebooks" component={SidebarContainer} /> */}
-
+    <Modal />
     <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />

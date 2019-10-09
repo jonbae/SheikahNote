@@ -34,10 +34,12 @@ export const requestNotebook = id => dispatch =>
     dispatch(receieveNotebook(notebook))
   );
 
-export const createNotebook = notebook => dispatch =>
-  APIUtil.createNotebook(notebook).then(notebook =>
+export const createNotebook = notebook => dispatch => {
+  debugger;
+  return APIUtil.createNotebook(notebook).then(notebook =>
     dispatch(receieveNotebook(notebook))
   );
+};
 
 export const updateNotebook = notebook => dispatch =>
   APIUtil.updateNotebook(notebook).then(notebook =>

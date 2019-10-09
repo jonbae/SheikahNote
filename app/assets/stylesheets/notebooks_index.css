@@ -113,6 +113,7 @@ button.new-notebook {
 section.dropdown-menu.notebooks-action-position {
   right: 30px;
   width: 211px;
+  text-align: left;
 }
 
 section.dropdown-menu.notebooks-action-position > p {

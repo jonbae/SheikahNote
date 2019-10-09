@@ -15,6 +15,7 @@ const notebooksReducer = (state = {}, action) => {
     // alternatively
     // return action.notebooks
     case RECIEVE_NOTEBOOK:
+      debugger;
       newState = { [action.notebook.id]: action.notebook };
       return Object.assign({}, state, newState);
     case REMOVE_NOTEBOOK:

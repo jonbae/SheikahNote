@@ -10,18 +10,20 @@ export const fetchNotebook = id =>
     url: `api/notebooks/${id}`
   });
 
-export const createNotebook = notebook =>
-  $.ajax({
+export const createNotebook = notebook => {
+  debugger;
+  return $.ajax({
     method: "post",
     url: `api/notebooks`,
-    notebook
+    data: { notebook }
   });
+};
 
 export const updateNotebook = notebook =>
   $.ajax({
     method: "put",
     url: `api/notebooks/${notebook.id}`,
-    notebook
+    data: { notebook }
   });
 
 export const deleteNotebook = id => {

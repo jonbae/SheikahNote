@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import NotebookIndexItem from "./notebook_index_detail";
+// import { openModal } from "../../../actions/modal_actions";
 // import NotebookIndexContainer from "./notebook_index_container";
 // import { ProtectedRoute } from '../../util/route_util' ;
 
@@ -31,39 +32,65 @@ class NotebookIndex extends React.Component {
     }
 
     return (
-      <div className="notebooks-index-frame">
-        <div className="notebooks-index-header">
-          <span>Notebooks</span>
-        </div>
+      <>
+        <div className="notebooks-index-frame">
+          <div className="notebooks-index-header">
+            <span>Notebooks</span>
+          </div>
 
-        <div className="notebooks-index-list-header">
-          <p>My notebook list</p>
+          <div className="notebooks-index-list-header">
+            <p>My notebook list</p>
 
-          <button className="new-notebook">
-            <img src={window.newNotebookURL} alt="new notebook" />
-            <p>New Notebook</p>
-          </button>
-        </div>
+            <button className="new-notebook">
+              <img src={window.newNotebookURL} alt="new notebook" />
+              <p onClick={() => this.props.openModal("create_notebook")}>
+                New Notebook
+              </p>
+            </button>
+          </div>
 
-        <section className="notebooks-frame">
-          <ul className="notebooks-list">
-            <ul className="notebooks-list-header">
-              <li>TITLE</li>
-              <li>UPDATED</li>
-              <li>ACTIONS</li>
+          <section className="notebooks-frame">
+            <ul className="notebooks-list">
+              <ul className="notebooks-list-header">
+                <li>TITLE</li>
+                <li>UPDATED</li>
+                <li>ACTIONS</li>
+              </ul>
+              {notebooks}
             </ul>
-            {/* {notebooks.map(notebook, idx => (
-              <NotebookIndexItem
-                key={idx}
-                notebook={notebook}
-                className="notebooks-list-rows"
-              />
-            ))} */}
-            {notebooks}
-          </ul>
-        </section>
-      </div>
+          </section>
+        </div>
+      </>
     );
+    // <div className="login-form-container">
+    // <form onSubmit={this.handleSubmit} className="login-form-box">
+    //   Welcome to BenchBnB!
+    //   <br/>
+    //   Please {this.props.formType} or {this.props.otherForm}
+    //   <div onClick={this.props.closeModal} className="close-x">X</div>
+    //   {this.renderErrors()}
+    //   <div className="login-form">
+    //     <br/>
+    //     <label>Username:
+    //       <input type="text"
+    //         value={this.state.username}
+    //         onChange={this.update('username')}
+    //         className="login-input"
+    //       />
+    //     </label>
+    //     <br/>
+    //     <label>Password:
+    //       <input type="password"
+    //         value={this.state.password}
+    //         onChange={this.update('password')}
+    //         className="login-input"
+    //       />
+    //     </label>
+    //     <br/>
+    //     <input className="session-submit" type="submit" value={this.props.formType} />
+    //   </div>
+    // </form>
+    // </div>
   }
 }
 
