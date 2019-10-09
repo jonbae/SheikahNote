@@ -2,7 +2,7 @@ import React from "react";
 import { closeModal } from "../../actions/modal_actions";
 import { connect } from "react-redux";
 import CreateNotebookFormContainer from "../main_page/notebook_index/create_notebook_form_container";
-import SignupFormContainer from "../session_form/signup_form_container";
+import UpdateNotebookFormContainer from "../main_page/notebook_index/update_notebook_form_container";
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
@@ -13,8 +13,8 @@ function Modal({ modal, closeModal }) {
     case "create_notebook":
       component = <CreateNotebookFormContainer />;
       break;
-    case "signup":
-      component = <SignupFormContainer />;
+    case "update_notebook":
+      component = <UpdateNotebookFormContainer />;
       break;
     default:
       return null;

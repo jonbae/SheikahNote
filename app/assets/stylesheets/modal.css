@@ -1,0 +1,93 @@
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+}
+
+.close-x {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+
+form.notebook-form-box {
+  width: 550px;
+  height: 318px;
+}
+
+form.notebook-form-box > * {
+  padding: 0px 25px;
+}
+
+form.notebook-form-box > .notebook-form-header {
+  padding: 20px 25px 18px;
+}
+
+form.notebook-form-box > .notebook-form-buttons {
+  padding: 20px 25px;
+}
+
+p.form-tagline {
+  padding-top: 15px;
+}
+
+input.form-notebook-name {
+  width: 100%;
+  padding: 10px;
+}
+
+div.notebook-form-filler {
+  padding-top: 8px;
+  height: 58px;
+}
+
+div.notebook-form-input > label {
+  margin-bottom: 5px;
+}
+
+/* render() {
+    return (
+      <div className="login-form-container">
+        <form onSubmit={this.handleSubmit} className="login-form-box">
+          Welcome to BenchBnB!
+          <br/>
+          Please {this.props.formType} or {this.props.otherForm}
+          <div onClick={this.props.closeModal} className="close-x">X</div>
+          {this.renderErrors()}
+          <div className="login-form">
+            <br/>
+            <label>Username:
+              <input type="text"
+                value={this.state.username}
+                onChange={this.update('username')}
+                className="login-input"
+              />
+            </label>
+            <br/>
+            <label>Password:
+              <input type="password"
+                value={this.state.password}
+                onChange={this.update('password')}
+                className="login-input"
+              />
+            </label>
+            <br/>
+            <input className="session-submit" type="submit" value={this.props.formType} />
+          </div>
+        </form>
+      </div>
+    );
+  } */

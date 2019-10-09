@@ -19,12 +19,14 @@ export const createNotebook = notebook => {
   });
 };
 
-export const updateNotebook = notebook =>
-  $.ajax({
+export const updateNotebook = notebook => {
+  debugger;
+  return $.ajax({
     method: "put",
     url: `api/notebooks/${notebook.id}`,
     data: { notebook }
   });
+};
 
 export const deleteNotebook = id => {
   debugger;

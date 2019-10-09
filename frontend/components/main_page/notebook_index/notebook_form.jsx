@@ -4,7 +4,8 @@ class NotebookForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: ""
+      id: this.props.notebook.id,
+      title: this.props.notebook.title
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,38 +21,50 @@ class NotebookForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const notebook = Object.assign({}, this.state);
-    this.props.processCreateForm(notebook).then(this.props.closeModal);
+    this.props.processForm(notebook).then(this.props.closeModal);
   }
 
   render() {
     return (
-      <div>
-        <section>
-          <p>Create new notebook</p>
-          <div onClick={this.props.closeModal} className="close-x">
-            X
+      <>
+        {/* <section className="notebook-form-frame"> */}
+        <form onSubmit={this.handleSubmit} className="notebook-form-box">
+          <div className="notebook-form-header">
+            <div>
+              <p>{this.props.formType}</p>
+              <div onClick={this.props.closeModal} className="close-x">
+                X
+              </div>
+            </div>
+            <p className="form-tagline">{this.props.tagline}</p>
           </div>
-          <p className="form-tagline"></p>
-          <form onSubmit={this.handleSubmit} className="notebook-form-box">
-            <label>
-              Name
-              <input
-                type="text"
-                placeholder="Notebook name"
-                className="form-notebook-name"
-                onChange={this.update("title")}
-                value={this.state.title}
-              />
-            </label>
 
+          <div className="notebook-form-input">
+            <label>Name</label>
             <input
-              type="submit"
-              className="notebook-submit"
-              value={this.props.formType}
+              type="text"
+              placeholder="Notebook name"
+              className="form-notebook-name"
+              onChange={this.update("title")}
+              value={this.state.title}
             />
-          </form>
-        </section>
-      </div>
+            <div className="notebook-form-filler"></div>
+          </div>
+
+          <div className="notebook-form-buttons">
+            <button className="notebook-cancel" onClick={this.props.closeModal}>
+              Cancel
+            </button>
+            <button className="notebook-submit">Continue</button>
+
+            {/*  <div onClick={this.props.closeModal} className="notebook-cancel">
+              {" "}
+              Cancel{" "}
+            </div>
+            <input type="submit" className="notebook-submit" value="Continue" /> */}
+          </div>
+        </form>
+      </>
     );
   }
 }

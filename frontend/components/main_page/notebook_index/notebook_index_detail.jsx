@@ -73,7 +73,12 @@ class NotebookIndexItem extends React.Component {
               tabIndex="1"
               className={`dropdown-menu notebooks-action-position ${hiddenClass}`}
             >
-              <p tabIndex="2">Rename Notebook</p>
+              <p
+                tabIndex="2"
+                onClick={() => this.props.openModal("update_notebook")}
+              >
+                Rename Notebook
+              </p>
               <p
                 tabIndex="3"
                 onClick={() =>

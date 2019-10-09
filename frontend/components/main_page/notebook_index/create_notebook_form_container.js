@@ -9,13 +9,15 @@ import NotebookForm from "./notebook_form";
 const mapStateToProps = ({ errors }) => {
   return {
     // errors: errors.session,
+    tagline:
+      "Notebooks are useful for grouping notes around a common topic. They can be private or shared.",
     formType: "Create new notebook"
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    processCreateForm: notebook => dispatch(createNotebook(notebook)),
+    processForm: notebook => dispatch(createNotebook(notebook)),
     // processForm: (user) => dispatch(signup(user)),
     // otherForm: (
     //   <button onClick={() => dispatch(openModal('create_notebook'))}>
