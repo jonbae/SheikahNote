@@ -1,7 +1,6 @@
 class Api::NotebooksController < ApplicationController 
   before_action :ensure_logged_in
   def create
-    debugger
     @notebook = Notebook.new(notebook_params)
 
     @notebook.author_id = current_user.id
@@ -15,10 +14,12 @@ class Api::NotebooksController < ApplicationController
   end
 
   def index
+    debugger
     @notebooks = Notebook.order('updated_at DESC').where(author_id: @current_user.id).includes(:notes)
   end
 
   def show
+    debugger
     @notebook = current_user.notebooks.find(params[:id])
     @notebook.author_id = current_user.id 
     @notes = @notebook.notes 
@@ -53,7 +54,6 @@ class Api::NotebooksController < ApplicationController
 
   private
   def notebook_params
-    debugger
     params.require(:notebook).permit(:id,:title, :author_id, :updated_at)
   end
 

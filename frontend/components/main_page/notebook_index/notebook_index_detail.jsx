@@ -25,7 +25,7 @@ class NotebookIndexItem extends React.Component {
   render() {
     const hiddenClass = this.state.isHidden ? "hidden-dropdown" : "";
     // let { notebook } = this.props.notebook;
-
+    const noteCount = this.state.notes ? this.state.notes.length : 0;
     return (
       <>
         <ul className="notebooks-index-item">
@@ -46,7 +46,7 @@ class NotebookIndexItem extends React.Component {
             <span>{this.props.notebook.title}</span>
 
             {/* number of notes  */}
-            <span>(1)</span>
+            <span>{noteCount}</span>
           </li>
 
           {/* bonus: notebook author */}

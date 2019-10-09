@@ -42,6 +42,8 @@ form.notebook-form-box > .notebook-form-buttons {
 
 p.form-tagline {
   padding-top: 15px;
+  height: 55px;
+  font-size: 14px;
 }
 
 input.form-notebook-name {
@@ -51,11 +53,26 @@ input.form-notebook-name {
 
 div.notebook-form-filler {
   padding-top: 8px;
-  height: 58px;
+  height: 50px;
 }
 
-div.notebook-form-input > label {
+div.notebook-form-input label {
+  font-size: 12px;
+}
+
+div.notebook-form-input > div.notebook-form-label {
   margin-bottom: 5px;
+}
+
+p.notebook-form-type {
+  font-size: 18px;
+  height: 27px;
+  line-height: 27px;
+}
+
+.notebook-form-buttons {
+  display: flex;
+  justify-content: flex-end;
 }
 
 /* render() {

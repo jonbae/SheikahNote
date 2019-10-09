@@ -25,7 +25,8 @@ const notebooksReducer = (state = {}, action) => {
       return newState;
 
     // remember to put receiveNotes
-
+    // case RECEIVE_NOTES:
+    //   return Object.assign({}, state, action.notes)
     default:
       return state;
   }

@@ -12,11 +12,14 @@ export const receiveAllNotebooks = notebooks => {
   };
 };
 
-export const receieveNotebook = payload => ({
-  type: RECEIVE_NOTEBOOK,
-  notebook: payload.notebook,
-  notes: payload.notes
-});
+export const receieveNotebook = payload => {
+  debugger;
+  return {
+    type: RECEIVE_NOTEBOOK,
+    notebook: payload.notebook,
+    notes: payload.notes
+  };
+};
 
 export const removeNotebook = id => {
   debugger;

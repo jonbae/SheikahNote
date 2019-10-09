@@ -1,7 +1,8 @@
 import { connect } from "react-redux";
 
 import { logout } from "../../../actions/session_actions";
-import { selectAllNotebooks } from "../../../reducers/selectors";
+import { selectAllNotebooks, selectNotes } from "../../../reducers/selectors";
+
 import {
   requestAllNotebooks,
   requestNotebook,
@@ -18,6 +19,8 @@ const msp = (state, ownProps) => ({
   // return (
   //     notebookId
   // );
+
+  // notes: selectNotes(state),
   notebooks: selectAllNotebooks(state),
   formType: "Create new notebook"
 });

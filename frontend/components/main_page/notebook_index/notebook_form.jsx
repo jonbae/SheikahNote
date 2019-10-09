@@ -4,8 +4,8 @@ class NotebookForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: this.props.notebook.id,
-      title: this.props.notebook.title
+      id: this.props.notebook === undefined ? "" : this.props.notebook.id,
+      title: this.props.notebook === undefined ? "" : this.props.notebook.title
     };
     debugger;
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -31,7 +31,7 @@ class NotebookForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="notebook-form-box">
           <div className="notebook-form-header">
             <div>
-              <p>{this.props.formType}</p>
+              <p className="notebook-form-type">{this.props.formType}</p>
               <div onClick={this.props.closeModal} className="close-x">
                 X
               </div>
@@ -40,7 +40,10 @@ class NotebookForm extends React.Component {
           </div>
 
           <div className="notebook-form-input">
-            <label>Name</label>
+            <div className="notebook-form-label">
+              <label>Name</label>
+            </div>
+
             <input
               type="text"
               placeholder="Notebook name"
@@ -48,6 +51,7 @@ class NotebookForm extends React.Component {
               onChange={this.update("title")}
               value={this.state.title}
             />
+
             <div className="notebook-form-filler"></div>
           </div>
 
