@@ -75,7 +75,12 @@ class NotebookIndexItem extends React.Component {
             >
               <p
                 tabIndex="2"
-                onClick={() => this.props.openModal("update_notebook")}
+                onClick={() =>
+                  this.props.openModal(
+                    "update_notebook",
+                    this.props.notebook.id
+                  )
+                }
               >
                 Rename Notebook
               </p>

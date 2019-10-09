@@ -9,12 +9,13 @@ function Modal({ modal, closeModal }) {
     return null;
   }
   let component;
-  switch (modal) {
+  debugger;
+  switch (modal.type) {
     case "create_notebook":
       component = <CreateNotebookFormContainer />;
       break;
     case "update_notebook":
-      component = <UpdateNotebookFormContainer />;
+      component = <UpdateNotebookFormContainer notebookId={modal.id} />;
       break;
     default:
       return null;

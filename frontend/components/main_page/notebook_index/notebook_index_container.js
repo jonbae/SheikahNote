@@ -34,7 +34,7 @@ const mdp = dispatch => ({
 
   processUpdateForm: notebook => dispatch(updateNotebook(notebook)),
 
-  openModal: modal => dispatch(openModal(modal)),
+  openModal: (modal, id) => dispatch(openModal(modal, id)),
   closeModal: () => dispatch(closeModal())
 });
 
