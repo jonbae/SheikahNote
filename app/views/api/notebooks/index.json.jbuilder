@@ -1,4 +1,4 @@
-debugger
+ 
 
 @notebooks.each do |notebook| 
     json.set! notebook.id do 

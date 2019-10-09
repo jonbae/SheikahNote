@@ -24,8 +24,15 @@
 }
 
 form.notebook-form-box {
+  height: auto;
+}
+
+.create {
   width: 550px;
-  height: 318px;
+}
+
+.update {
+  width: 500px;
 }
 
 form.notebook-form-box > * {
@@ -42,13 +49,15 @@ form.notebook-form-box > .notebook-form-buttons {
 
 p.form-tagline {
   padding-top: 15px;
-  height: 55px;
+  height: 40px;
   font-size: 14px;
 }
 
 input.form-notebook-name {
-  width: 100%;
+  width: 95%;
   padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 div.notebook-form-filler {
@@ -75,6 +84,29 @@ p.notebook-form-type {
   justify-content: flex-end;
 }
 
+.notbeook-form-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.notebook-form-buttons > button {
+  font-size: 14px;
+  padding: 10px 15px;
+  border-radius: 4px;
+}
+
+button.notebook-cancel {
+  border: none;
+  color: grey;
+  margin-right: 10px;
+}
+
+button.notebook-submit {
+  border: none;
+  background-color: #68f8f9;
+  color: white;
+}
 /* render() {
     return (
       <div className="login-form-container">

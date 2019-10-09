@@ -46,7 +46,7 @@ class NotebookIndexItem extends React.Component {
             <span>{this.props.notebook.title}</span>
 
             {/* number of notes  */}
-            <span>{noteCount}</span>
+            <span>{`(${noteCount})`}</span>
           </li>
 
           {/* bonus: notebook author */}

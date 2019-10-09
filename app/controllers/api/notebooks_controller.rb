@@ -14,12 +14,12 @@ class Api::NotebooksController < ApplicationController
   end
 
   def index
-    debugger
+     
     @notebooks = Notebook.order('updated_at DESC').where(author_id: @current_user.id).includes(:notes)
   end
 
   def show
-    debugger
+     
     @notebook = current_user.notebooks.find(params[:id])
     @notebook.author_id = current_user.id 
     @notes = @notebook.notes 

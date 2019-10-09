@@ -11,8 +11,10 @@ const mapStateToProps = (state, ownProps) => {
   return {
     notebook: state.entities.notebooks[ownProps.notebookId],
     // errors: errors.session,
-    tagline: "",
-    formType: "Rename notebook"
+
+    hiddenClass: "hidden",
+    formType: "update",
+    title: "Rename notebook"
   };
 };
 

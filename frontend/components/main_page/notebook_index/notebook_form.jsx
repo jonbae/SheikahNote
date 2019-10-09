@@ -25,18 +25,24 @@ class NotebookForm extends React.Component {
   }
 
   render() {
+    const initialTitle = this.state.title;
+    console.log(initialTitle);
     return (
       <>
         {/* <section className="notebook-form-frame"> */}
-        <form onSubmit={this.handleSubmit} className="notebook-form-box">
+        <form
+          onSubmit={this.handleSubmit}
+          className={`notebook-form-box ${this.props.formType}`}
+        >
           <div className="notebook-form-header">
-            <div>
-              <p className="notebook-form-type">{this.props.formType}</p>
-              <div onClick={this.props.closeModal} className="close-x">
-                X
-              </div>
+            <div className="notbeook-form-title">
+              <p className="notebook-form-type">{this.props.title}</p>
+              <div onClick={this.props.closeModal}>X</div>
             </div>
-            <p className="form-tagline">{this.props.tagline}</p>
+            <p className={`form-tagline ${this.props.hiddenClass}`}>
+              Notebooks are useful for grouping notes around a common topic.
+              They can be private or shared.
+            </p>
           </div>
 
           <div className="notebook-form-input">

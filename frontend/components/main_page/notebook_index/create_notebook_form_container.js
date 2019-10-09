@@ -9,9 +9,9 @@ import NotebookForm from "./notebook_form";
 const mapStateToProps = ({ errors }) => {
   return {
     // errors: errors.session,
-    tagline:
-      "Notebooks are useful for grouping notes around a common topic. They can be private or shared.",
-    formType: "Create new notebook"
+    hiddenClass: "",
+    formType: "create",
+    title: "Create new notebook"
   };
 };
 
