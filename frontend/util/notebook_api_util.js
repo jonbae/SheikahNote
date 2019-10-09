@@ -24,7 +24,7 @@ export const updateNotebook = notebook => {
   return $.ajax({
     method: "put",
     url: `api/notebooks/${notebook.id}`,
-    data: { notebook }
+    data: { notebook: { title: notebook.title } }
   });
 };
 

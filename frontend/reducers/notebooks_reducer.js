@@ -1,6 +1,6 @@
 import {
   RECEIVE_NOTEBOOKS,
-  RECIEVE_NOTEBOOK,
+  RECEIVE_NOTEBOOK,
   REMOVE_NOTEBOOK
 } from "../actions/notebook_actions";
 import merge from "lodash/merge";
@@ -14,7 +14,7 @@ const notebooksReducer = (state = {}, action) => {
       return Object.assign({}, state, action.notebooks);
     // alternatively
     // return action.notebooks
-    case RECIEVE_NOTEBOOK:
+    case RECEIVE_NOTEBOOK:
       debugger;
       newState = { [action.notebook.id]: action.notebook };
       return Object.assign({}, state, newState);

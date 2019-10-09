@@ -1,9 +1,10 @@
 import * as APIUtil from "../util/notebook_api_util";
 
 export const RECEIVE_NOTEBOOKS = "RECEIVE_NOTEBOOKS";
-export const RECIEVE_NOTEBOOK = "RECEIVE_NOTEBOOK";
+export const RECEIVE_NOTEBOOK = "RECEIVE_NOTEBOOK";
 export const REMOVE_NOTEBOOK = "REMOVE_NOTEBOOK";
 
+//payload like receiveNOtbeook
 export const receiveAllNotebooks = notebooks => {
   return {
     type: RECEIVE_NOTEBOOKS,
@@ -11,9 +12,10 @@ export const receiveAllNotebooks = notebooks => {
   };
 };
 
-export const receieveNotebook = notebook => ({
+export const receieveNotebook = payload => ({
   type: RECEIVE_NOTEBOOK,
-  notebook
+  notebook: payload.notebook,
+  notes: payload.notes
 });
 
 export const removeNotebook = id => {
@@ -41,11 +43,13 @@ export const createNotebook = notebook => dispatch => {
   );
 };
 
-export const updateNotebook = notebook => dispatch =>
-  APIUtil.updateNotebook(notebook).then(notebook =>
-    dispatch(receieveNotebook(notebook))
-  );
-
+export const updateNotebook = notebook => dispatch => {
+  debugger;
+  return APIUtil.updateNotebook(notebook).then(notebook => {
+    debugger;
+    dispatch(receieveNotebook(notebook));
+  });
+};
 export const deleteNotebook = id => dispatch => {
   debugger;
   return APIUtil.deleteNotebook(id).then(notebook =>

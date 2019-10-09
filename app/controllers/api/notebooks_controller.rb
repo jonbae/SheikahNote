@@ -54,7 +54,7 @@ class Api::NotebooksController < ApplicationController
   private
   def notebook_params
     debugger
-    params.require(:notebook).permit(:title, :author_id, :updated_at)
+    params.require(:notebook).permit(:id,:title, :author_id, :updated_at)
   end
 
 end
