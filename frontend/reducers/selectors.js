@@ -2,13 +2,28 @@ export const selectAllNotebooks = function(state) {
   let allNotebooks = Object.values(state.entities.notebooks);
   return allNotebooks.filter(
     // alternatively
-    notebook => notebook.author_id === state.session.id
+    notebook => notebook.authorId === state.session.id
     // notebook =>
     //   state.entities.users[state.session.id].authoredNotebookIds.includes(
     //     notebook.id
     //   )
   );
 };
+export const selectAllNotes = function(state) {
+  debugger;
+  let allNotes = Object.values(state.entities.notes);
+  debugger;
+  return allNotes.filter(note =>
+    state.entities.users[state.session.id].authoredNoteIds.includes(note.id)
+  );
+};
+
+// export const selectNotebookNotes = function(state) {
+
+//   let notebookNotes = selectAllNotes(state);
+//   notebookNotes
+
+// }
 
 // export const selectNotes = function(state) {
 //   return Object.values(state.entities.users.noteIds);
@@ -16,7 +31,6 @@ export const selectAllNotebooks = function(state) {
 
 // wrong
 // export const selectAllNotebooks = function(state) {
-//    ;
 //   return Object.values(
 //     state.entities.users[state.session.id].authoredNotebookIds
 //   );

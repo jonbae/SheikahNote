@@ -17,10 +17,8 @@
 }
 
 .close-x {
-  position: absolute;
-  top: 5px;
-  right: 5px;
   cursor: pointer;
+  font-size: 24px;
 }
 
 form.notebook-form-box {

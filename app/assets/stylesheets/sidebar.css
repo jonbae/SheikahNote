@@ -152,7 +152,7 @@ section.dropdown-menu > div.header-button {
   cursor: pointer;
 }
 
-section.dropdown-menu > button.header-button:hover {
+section.dropdown-menu > div.header-button:hover {
   background-color: #cccccc;
 }
 

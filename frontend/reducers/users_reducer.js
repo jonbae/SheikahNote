@@ -15,7 +15,7 @@ const usersReducer = (state = {}, action) => {
       //adds the notebookId to authoredNotebookIds
 
       // let nbId = action.notebook.id;
-      newState[action.notebook.author_id].authoredNotebookIds.push(
+      newState[action.notebook.authorId].authoredNotebookIds.push(
         action.notebook.id
       );
       // debugger;

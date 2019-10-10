@@ -1,9 +1,7 @@
-class Api::Notescontroller < ApplicationController 
-
+class Api::NotesController < ApplicationController 
+  before_action :ensure_logged_in
   #add tags to all of these 
-  def index 
-    @notes = Note.where(author_id: @current_user.id)
-  end
+ 
 
   def create
     @note = Note.new(note_params)
@@ -14,6 +12,10 @@ class Api::Notescontroller < ApplicationController
       render json:@note.errors.full_messages, status: 422 
     end
 
+  end
+
+  def index 
+    @notes = Note.where(author_id: @current_user.id)
   end
 
   def show
@@ -44,7 +46,7 @@ class Api::Notescontroller < ApplicationController
 
   private 
   def note_params
-    params.require(:notes).permit(:title, :content, :author_id, :updated_at)
+    params.require(:notes).permit(:title, :content, :author_id, :notebook_id, :updated_at)
   end
 
 

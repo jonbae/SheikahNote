@@ -36,7 +36,9 @@ class NotebookForm extends React.Component {
           <div className="notebook-form-header">
             <div className="notbeook-form-title">
               <p className="notebook-form-type">{this.props.title}</p>
-              <div onClick={this.props.closeModal}>X</div>
+              <div className="close-x" onClick={this.props.closeModal}>
+                ✕
+              </div>
             </div>
             <p className={`form-tagline ${this.props.hiddenClass}`}>
               Notebooks are useful for grouping notes around a common topic.
