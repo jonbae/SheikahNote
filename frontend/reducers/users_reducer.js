@@ -1,6 +1,5 @@
 import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
 import { RECEIVE_NOTEBOOK, REMOVE_NOTEBOOK } from "../actions/notebook_actions";
-import { bindActionCreators } from "redux";
 
 const usersReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -19,7 +18,7 @@ const usersReducer = (state = {}, action) => {
       newState[action.notebook.author_id].authoredNotebookIds.push(
         action.notebook.id
       );
-      debugger;
+      // debugger;
       return newState;
     // case RECEIVE_NOTEBOOK:
     //   newState = {  :action.notebook.id}
