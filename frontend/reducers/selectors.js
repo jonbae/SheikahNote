@@ -9,6 +9,12 @@ export const selectAllNotebooks = function(state) {
     //   )
   );
 };
+export const selectAllNotes = function(state) {
+  let allNotes = Object.values(state.entities.notes);
+  return allNotes.filter(note =>
+    state.entities.users[state.session.id].authoredNoteIds.includes(note.id)
+  );
+};
 
 // export const selectNotes = function(state) {
 //   return Object.values(state.entities.users.noteIds);
@@ -16,7 +22,6 @@ export const selectAllNotebooks = function(state) {
 
 // wrong
 // export const selectAllNotebooks = function(state) {
-//    ;
 //   return Object.values(
 //     state.entities.users[state.session.id].authoredNotebookIds
 //   );

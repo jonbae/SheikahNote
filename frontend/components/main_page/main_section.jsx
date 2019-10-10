@@ -1,7 +1,8 @@
 import React from "react";
 import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
 
-import NotebookIndexContainer from "./notebook_index/notebook_index_container";
+import NotebookIndexContainer from "./notebook/notebook_index_container";
+import NoteIndexContainer from "./notes/note_index_container";
 
 const MainSection = () => {
   // const notesSidebar =  <Route path="/app/notebooks/:notebookId" /> : null
@@ -14,6 +15,12 @@ const MainSection = () => {
           path="/app/notebooks/:notebookId/notes/:noteId"
           component={NoteShowContainer}
         /> */}
+        {/* <Route
+          path="/app/notebooks/:notebookId"
+          component={NotebookShowContainer}
+        /> */}
+
+        <Route exact path="/app/notes" component={NoteIndexContainer} />
       </Switch>
     </div>
   );

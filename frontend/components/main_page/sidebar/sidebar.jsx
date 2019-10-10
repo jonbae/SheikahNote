@@ -103,7 +103,7 @@ class Sidebar extends React.Component {
           {/* to="/app/notes" */}
           <li>
             <img src={window.allNotesURL} alt="all notes" />
-            <Link to="/app/notebooks"> All Notes </Link>
+            <Link to="/app/notes"> All Notes </Link>
           </li>
           {/* notebooks dropdown */}
           <li onClick={this.toggleNotebooksHidden}>

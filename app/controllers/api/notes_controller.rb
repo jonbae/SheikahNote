@@ -1,4 +1,4 @@
-class Api::Notescontroller < ApplicationController 
+class Api::NotesController < ApplicationController 
 
   #add tags to all of these 
   def index 
