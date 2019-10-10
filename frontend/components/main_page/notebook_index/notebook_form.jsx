@@ -7,7 +7,6 @@ class NotebookForm extends React.Component {
       id: this.props.notebook === undefined ? "" : this.props.notebook.id,
       title: this.props.notebook === undefined ? "" : this.props.notebook.title
     };
-    debugger;
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -26,7 +25,7 @@ class NotebookForm extends React.Component {
 
   render() {
     const initialTitle = this.state.title;
-    console.log(initialTitle);
+
     return (
       <>
         {/* <section className="notebook-form-frame"> */}
@@ -62,10 +61,19 @@ class NotebookForm extends React.Component {
           </div>
 
           <div className="notebook-form-buttons">
+            <input
+              type="button"
+              className="notebook-cancel"
+              onClick={this.props.closeModal}
+              value="Cancel"
+            />
+            <input type="submit" className="notebook-sumbit" value="Continue" />
+
+            {/*             
             <button className="notebook-cancel" onClick={this.props.closeModal}>
               Cancel
             </button>
-            <button className="notebook-submit">Continue</button>
+            <button className="notebook-submit">Continue</button> */}
 
             {/*  <div onClick={this.props.closeModal} className="notebook-cancel">
               {" "}

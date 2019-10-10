@@ -9,7 +9,6 @@ function Modal({ modal, closeModal }) {
     return null;
   }
   let component;
-  debugger;
   switch (modal.type) {
     case "create_notebook":
       component = <CreateNotebookFormContainer />;

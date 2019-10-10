@@ -7,7 +7,6 @@ import { openModal, closeModal } from "../../../actions/modal_actions";
 import NotebookForm from "./notebook_form";
 
 const mapStateToProps = (state, ownProps) => {
-  debugger;
   return {
     notebook: state.entities.notebooks[ownProps.notebookId],
     // errors: errors.session,

@@ -13,7 +13,6 @@ export const receiveAllNotebooks = notebooks => {
 };
 
 export const receieveNotebook = payload => {
-  debugger;
   return {
     type: RECEIVE_NOTEBOOK,
     notebook: payload.notebook,
@@ -22,7 +21,6 @@ export const receieveNotebook = payload => {
 };
 
 export const removeNotebook = id => {
-  debugger;
   return {
     type: REMOVE_NOTEBOOK,
     notebookId: id
@@ -40,21 +38,17 @@ export const requestNotebook = id => dispatch =>
   );
 
 export const createNotebook = notebook => dispatch => {
-  debugger;
   return APIUtil.createNotebook(notebook).then(notebook =>
     dispatch(receieveNotebook(notebook))
   );
 };
 
 export const updateNotebook = notebook => dispatch => {
-  debugger;
   return APIUtil.updateNotebook(notebook).then(notebook => {
-    debugger;
     dispatch(receieveNotebook(notebook));
   });
 };
 export const deleteNotebook = id => dispatch => {
-  debugger;
   return APIUtil.deleteNotebook(id).then(notebook =>
     dispatch(removeNotebook(id))
   );

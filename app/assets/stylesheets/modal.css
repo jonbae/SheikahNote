@@ -90,19 +90,19 @@ p.notebook-form-type {
   justify-content: space-between;
 }
 
-.notebook-form-buttons > button {
+.notebook-form-buttons > input {
   font-size: 14px;
   padding: 10px 15px;
   border-radius: 4px;
 }
 
-button.notebook-cancel {
+input.notebook-cancel {
   border: none;
   color: grey;
   margin-right: 10px;
 }
 
-button.notebook-submit {
+input.notebook-sumbit {
   border: none;
   background-color: #68f8f9;
   color: white;

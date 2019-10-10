@@ -15,11 +15,9 @@ const notebooksReducer = (state = {}, action) => {
     // alternatively
     // return action.notebooks
     case RECEIVE_NOTEBOOK:
-      debugger;
       newState = { [action.notebook.id]: action.notebook };
       return Object.assign({}, state, newState);
     case REMOVE_NOTEBOOK:
-      debugger;
       newState = Object.assign({}, state);
       delete newState[action.notebookId];
       return newState;
