@@ -9,8 +9,7 @@ import Modal from "./modal/modal";
 
 import SignUpFormContainer from "./session_form/signup_form_container";
 import LogInFormContainer from "./session_form/login_form_container";
-import NotebookIndexContainer from "./main_page/notebook_index/notebook_index_container";
-import SidebarContainer from "./main_page/sidebar/sidebar_container";
+
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
 const App = () => (

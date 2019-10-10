@@ -10,7 +10,9 @@ export const selectAllNotebooks = function(state) {
   );
 };
 export const selectAllNotes = function(state) {
+  debugger;
   let allNotes = Object.values(state.entities.notes);
+  debugger;
   return allNotes.filter(note =>
     state.entities.users[state.session.id].authoredNoteIds.includes(note.id)
   );

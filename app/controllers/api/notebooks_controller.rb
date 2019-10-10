@@ -10,16 +10,13 @@ class Api::NotebooksController < ApplicationController
     else
       render json:@notebook.errors.full_messages, status:422
     end
-    
   end
 
   def index
-     
     @notebooks = Notebook.order('updated_at DESC').where(author_id: @current_user.id).includes(:notes)
   end
 
   def show
-     
     @notebook = current_user.notebooks.find(params[:id])
     @notebook.author_id = current_user.id 
     @notes = @notebook.notes 
@@ -49,12 +46,10 @@ class Api::NotebooksController < ApplicationController
       @notes = @notebook.notes
       render json: @notebook
     end
-    
   end
 
   private
   def notebook_params
     params.require(:notebook).permit(:id,:title, :author_id, :updated_at)
   end
-
 end

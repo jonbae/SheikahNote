@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import NotebookIndexItem from "./notebook_index_detail";
+import NotebookIndexItem from "./notebook_index_item";
 // import { openModal } from "../../../actions/modal_actions";
 // import NotebookIndexContainer from "./notebook_index_container";
 // import { ProtectedRoute } from '../../util/route_util' ;
