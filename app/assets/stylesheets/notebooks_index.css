@@ -118,4 +118,9 @@ section.dropdown-menu.notebooks-action-position {
 
 section.dropdown-menu.notebooks-action-position > p {
   color: black;
+  cursor: pointer;
+}
+
+ul.notebooks-index-item:hover {
+  background-color: #cccccc;
 }

@@ -18,6 +18,13 @@ export const selectAllNotes = function(state) {
   );
 };
 
+// export const selectNotebookNotes = function(state) {
+
+//   let notebookNotes = selectAllNotes(state);
+//   notebookNotes
+
+// }
+
 // export const selectNotes = function(state) {
 //   return Object.values(state.entities.users.noteIds);
 // };
