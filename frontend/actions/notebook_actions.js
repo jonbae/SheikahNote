@@ -20,10 +20,10 @@ export const receieveNotebook = payload => {
   };
 };
 
-export const removeNotebook = id => {
+export const removeNotebook = notebook => {
   return {
     type: REMOVE_NOTEBOOK,
-    notebookId: id
+    notebookId: notebook.id
   };
 };
 

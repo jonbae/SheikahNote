@@ -19,6 +19,7 @@ const notebooksReducer = (state = {}, action) => {
       return Object.assign({}, state, newState);
     case REMOVE_NOTEBOOK:
       newState = Object.assign({}, state);
+      debugger;
       delete newState[action.notebookId];
       return newState;
 
