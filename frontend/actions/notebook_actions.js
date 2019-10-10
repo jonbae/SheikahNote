@@ -48,6 +48,7 @@ export const updateNotebook = notebook => dispatch => {
     dispatch(receieveNotebook(notebook));
   });
 };
+
 export const deleteNotebook = id => dispatch => {
   return APIUtil.deleteNotebook(id).then(notebook =>
     dispatch(removeNotebook(id))
