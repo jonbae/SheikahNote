@@ -9,11 +9,11 @@ const MainSection = () => {
     <div className="main-section-frame">
       <Switch>
         <Route exact path="/app/notebooks" component={NotebookIndexContainer} />
-        <Route
+        {/* <Route
           exact
           path="/app/notebooks/:notebookId/notes/:noteId"
           component={NoteShowContainer}
-        />
+        /> */}
       </Switch>
     </div>
   );
