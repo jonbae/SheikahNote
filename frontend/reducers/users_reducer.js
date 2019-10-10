@@ -9,7 +9,11 @@ const usersReducer = (state = {}, action) => {
       return Object.assign({}, state, {
         [action.currentUser.id]: action.currentUser
       });
-
+    case RECEIVE_NOTEBOOK:
+      newState = Object.assign({}, state);
+      let nbId = action.notebook.id;
+      debugger;
+      return newState;
     // case RECEIVE_NOTEBOOK:
     //   newState = {  :action.notebook.id}
     // case REMOVE_NOTEBOOK:

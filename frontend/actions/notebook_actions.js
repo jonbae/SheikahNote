@@ -4,7 +4,7 @@ export const RECEIVE_NOTEBOOKS = "RECEIVE_NOTEBOOKS";
 export const RECEIVE_NOTEBOOK = "RECEIVE_NOTEBOOK";
 export const REMOVE_NOTEBOOK = "REMOVE_NOTEBOOK";
 
-//payload like receiveNOtbeook
+//payload like receiveNotbeook
 export const receiveAllNotebooks = notebooks => {
   return {
     type: RECEIVE_NOTEBOOKS,
