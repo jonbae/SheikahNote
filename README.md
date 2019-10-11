@@ -1,24 +1,29 @@
-# README
+# SheikahNote
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+SheikahNote is an Evernote clone created with React, Redux, Rails, and PostgreSQL. Users can create notes, save them to notebooks, and organize them with tags.
 
-Things you may want to cover:
 
-* Ruby version
+# Features
 
-* System dependencies
+* Secure user authentication 
+* Save and organize notes to notebooks 
 
-* Configuration
 
-* Database creation
 
-* Database initialization
+# Technologies 
 
-* How to run the test suite
+*Frontend*
+* React (front-end library) 
+  * Redux (state manager) 
+  * Quill (rich-text editor) 
+  * React Router (managing URLs and history) 
+* AJAX
 
-* Services (job queues, cache servers, search engines, etc.)
+*Backend*
 
-* Deployment instructions
+* Ruby on Rails 
+* PostgreSQL (database) 
 
-* ...
+
+
+
