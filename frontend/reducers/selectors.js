@@ -10,7 +10,6 @@ export const selectAllNotebooks = function(state) {
   );
 };
 export const selectAllNotes = function(state) {
-  debugger;
   let allNotes = Object.values(state.entities.notes);
   debugger;
   return allNotes.filter(note =>
@@ -18,12 +17,19 @@ export const selectAllNotes = function(state) {
   );
 };
 
-// export const selectNotebookNotes = function(state) {
+export const selectNotebookNotes = function(state, notebookId) {
+  // let notebookNotes = selectAllNotes(state);
+  debugger;
+  //in ownProps.match.params.notebookId
+  // return Object.values(state.entities.notebooks[notebookId].notes);
+  let notes = Object.values(state.entities.notes);
+  debugger;
+  return notes.filter(note => note.notebookId === notebookId);
+};
 
-//   let notebookNotes = selectAllNotes(state);
-//   notebookNotes
-
-// }
+export const selectNote = function(state, noteId) {
+  return state.entities.notes[noteId];
+};
 
 // export const selectNotes = function(state) {
 //   return Object.values(state.entities.users.noteIds);
