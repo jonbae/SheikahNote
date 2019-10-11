@@ -18,7 +18,6 @@ const usersReducer = (state = {}, action) => {
       newState[action.notebook.authorId].authoredNotebookIds.push(
         action.notebook.id
       );
-      // debugger;
       return newState;
 
     // case REMOVE_NOTEBOOK:

@@ -1,6 +1,6 @@
 div.notebooks-index-frame {
-  /* display: flex;  */
   padding: 0 30px;
+  width: 100%;
 }
 
 div.notebooks-index-header {

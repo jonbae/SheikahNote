@@ -103,12 +103,13 @@ class Sidebar extends React.Component {
           {/* to="/app/notes" */}
           <li>
             <img src={window.allNotesURL} alt="all notes" />
-            <Link to="/app/notes"> All Notes </Link>
+            <Link to="/app/notes/"> All Notes </Link>
           </li>
           {/* notebooks dropdown */}
-          <li onClick={this.toggleNotebooksHidden}>
+          <li>
             {/* svg icon */}
             <img
+              onClick={this.toggleNotebooksHidden}
               className={`filled-side-carat ${downCarat}`}
               src={window.filledSideCaratURL}
               alt="filled side carat"

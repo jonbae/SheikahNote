@@ -1,16 +1,17 @@
 export const fetchAllNotes = () => {
-  debugger;
   return $.ajax({
     method: "get",
     url: "api/notes"
   });
 };
 
-export const fetchNote = id =>
-  $.ajax({
+export const fetchNote = id => {
+  debugger;
+  return $.ajax({
     method: "get",
     url: `api/notes/${id}`
   });
+};
 
 export const createNote = note => {
   //   debugger;

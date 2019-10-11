@@ -13,6 +13,7 @@ export const receiveAllNotebooks = notebooks => {
 };
 
 export const receieveNotebook = payload => {
+  debugger;
   return {
     type: RECEIVE_NOTEBOOK,
     notebook: payload.notebook,

@@ -1,0 +1,58 @@
+.note-index-frame {
+  background-color: #f8f8f8;
+  /* box-sizing: border-box; */
+  min-width: 345px;
+  /* max-width: 345px; */
+  width: 345px;
+}
+
+.note-index-item {
+  padding: 15px 25px;
+  /* border-top: 1px solid #ccc; */
+  border-bottom: 1px solid #ccc;
+}
+
+.note-index-item > li {
+  list-style: none;
+}
+
+header.note-index-header {
+  padding: 0 18px 0 25px;
+  padding-bottom: 10px;
+  margin-top: 30px;
+  /* margin-bottom: 10px; */
+  border-bottom: 1px solid #ccc;
+}
+
+div.note-index-title {
+  font-size: 20px;
+  height: 30px;
+  line-height: 30px;
+}
+
+.note-index-options {
+  margin-top: 45px;
+  height: 19px;
+}
+
+.note-index-list {
+  overflow-y: auto;
+  height: calc(100% - 135px);
+}
+
+.note-index-item > li:first-child {
+  font-weight: bold;
+  height: 24px;
+  line-height: 24px;
+  margin-bottom: 2px;
+  font-size: 14px;
+}
+
+.note-index-item > li:last-child {
+  margin-top: 5px;
+}
+
+.note-index-item-chopped-content {
+  height: 40px;
+  font-size: 13px;
+}
