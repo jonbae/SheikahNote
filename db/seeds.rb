@@ -13,10 +13,12 @@ Note.destroy_all
 demo = User.create!( {username: 'demo123', email: 'demo@mail.com', password: 'password'} )
 zelda = User.create!(  {username: 'zelda', email: 'zelda@mail.com', password: 'password'} )
 
+my_notebook = Notebook.create!( {title: "My Notebook", author_id: demo.id })
 ot_notebook = Notebook.create!(  {title: 'Ocarina of Time', author_id: demo.id} )
 mm_notebook = Notebook.create!(  {title: "Majora's Mask", author_id: demo.id} ) 
 botw_notebook = Notebook.create!(  {title: 'Breath of the Wild', author_id: zelda.id} ) 
 ww_notebook = Notebook.create!(    {title: 'Wind Waker', author_id: demo.id} )
+tp_notebook = Notebook.create!( {title: 'Twilight Princess', author_id: demo.id})
 
 
 diary1 = Note.create!( {title: "Zelda's diary entry 1", content:"After meeting with the Champions, 
@@ -52,9 +54,33 @@ diary6 = Note.create!( {title: "Zelda's diary entry 6", content: "Father scolded
 author_id: zelda.id, notebook_id: botw_notebook.id })
 
 
-note1 = Note.create!( {title: "navi", content: "hey listen" , author_id: demo.id, notebook_id: ot_notebook.id})
+note1 = Note.create!( {title: "Navi", content: "hey listen" , author_id: demo.id, notebook_id: ot_notebook.id})
 
-note2 = Note.create!( {title: "skull kid", content: "...", author_id: demo.id, notebook_id: mm_notebook.id})
+note2 = Note.create!( {title: "Skull Kid", content: "I shall consume everything", author_id: demo.id, notebook_id: mm_notebook.id})
 
 note3 = Note.create!( {title: "King of Red Lions", content: "Did I startle you? I suppose that is only natural. As wide as the world is, I am the only boat upon it who can speak the words of men. I am the King of Red Lions. Do not fear... I am not your enemy.", 
 author_id: demo.id, notebook_id: ww_notebook.id})
+
+note4 = Note.create!( {title: "Shigeru Miyamoto", content:"A bad game that gets delayed is eventually good. But a bad game that isn't is bad forever.",
+author_id: demo.id, notebook_id: my_notebook.id})
+
+note5 = Note.create!( {title: "sad user" , content: "I'm pretty sure the Water in the Water Temple isn't lake-water. I'm pretty sure it's the tears of everyone who let this temple's difficulty get to them.",
+author_id: demo.id, notebook_id: my_notebook.id})
+
+note6 = Note.create!( {title: "Ganondorf", content: "Yes, I owe it all to you, kid!", 
+author_id: demo.id, notebook_id: ot_notebook.id})
+
+note7 = Note.create!( {title: "Moon Child", content:  "The right thing... what is it? I wonder, if you do the right thing, does it really make everyone happy?",
+author_id: demo.id, notebook_id: mm_notebook.id})
+
+note10 = Note.create!( {title: "Moon Child", content: "Your true face... What kind of... face is it? I wonder... The face under the mask... Is that... your true face?", 
+author_id: demo.id, notebook_id: mm_notebook.id })
+
+note11 = Note.create!( {title: "Moon Child", content: "Can I ask... a question? Your friends... What kind of... people are they? I wonder... Do these people... think of you... as a friend?", 
+author_id: demo.id, notebook_id: mm_notebook.id })
+
+note8 = Note.create!( {title: "Happy Mask Salesman", content: "Whenever there is a meeting, a parting is sure to follow. However, that parting needs not last forever. Whether a parting be forever or merely for a short time... that is up to you.",
+author_id: demo.id, notebook_id: mm_notebook.id})
+
+note9 = Note.create!( {title: "Lanayru", content: "Those who do not know the danger of wielding power will, before long, be ruled by it...Never forget that." , 
+author_id: demo.id, notebook_id: tp_notebook.id})
