@@ -29,25 +29,27 @@ class NotebookIndexItem extends React.Component {
     return (
       <>
         <ul className="notebooks-index-item">
-          <li>
+          <Link to={`/app/notebooks/${this.props.notebook.id}`}>
             {/* drop down arrow */}
             <img
               className="black-filled-carat"
               src={window.blackFilledSideCaratURL}
               alt="black filled side carat"
             />
+
             {/* notebook icon */}
             <img
               className="black-notebook"
               src={window.blackNotebookURL}
               alt="black notebook"
             />
+
             {/* notebook title  */}
             <span>{this.props.notebook.title}</span>
 
             {/* number of notes  */}
             <span>{`(${noteCount})`}</span>
-          </li>
+          </Link>
 
           {/* bonus: notebook author */}
 

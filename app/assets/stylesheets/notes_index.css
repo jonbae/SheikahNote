@@ -4,6 +4,7 @@
   min-width: 345px;
   /* max-width: 345px; */
   width: 345px;
+  border-right: 1px solid #ccc;
 }
 
 .note-index-item {

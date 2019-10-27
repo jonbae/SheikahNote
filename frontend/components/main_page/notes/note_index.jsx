@@ -9,7 +9,6 @@ class NoteIndex extends React.Component {
 
   componentDidMount() {
     this.props.requestAllNotebooks();
-
     this.props.requestAllNotes();
   }
 
@@ -17,10 +16,18 @@ class NoteIndex extends React.Component {
     let notes;
     if (this.props.notes !== undefined && this.props.notes !== 0) {
       notes = this.props.notes.map(note => (
-        <NoteIndexItem key={note.id} note={note} klass="note-list-rows" />
+        <NoteIndexItem
+          key={note.id}
+          note={note}
+          klass="note-list-rows"
+          history={this.props.history}
+          path={this.props.path}
+        />
       ));
     }
-    // debugger;
+
+    debugger;
+    //
     // console.log(this.props.title);
     // if (!this.props.title) {
     //   return null;

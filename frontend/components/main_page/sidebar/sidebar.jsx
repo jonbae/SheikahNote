@@ -28,6 +28,10 @@ class Sidebar extends React.Component {
     this.setState({ isNotebooksHidden: !this.state.isNotebooksHidden });
   }
 
+  // pushHistory() {
+  //   this.props.history.push("")
+  // }
+
   render() {
     const hiddenAccountClass = this.state.isAccountHidden
       ? "hidden-dropdown"
@@ -53,8 +57,6 @@ class Sidebar extends React.Component {
           tabIndex="0"
           className="sidebar-header"
         >
-          {" "}
-          {/* add an onClick  */}
           {/* profile pic  */}
           <img
             src={window.defaultUserURL}
@@ -101,12 +103,15 @@ class Sidebar extends React.Component {
         {/* all notes  */}
         <ul className="sidebar-links">
           {/* to="/app/notes" */}
-          <li>
+          {/* <li> */}
+
+          <Link to="/app/notes/">
             <img src={window.allNotesURL} alt="all notes" />
-            <Link to="/app/notes/"> All Notes </Link>
-          </li>
+            <p> All Notes </p>
+          </Link>
+          {/* </li> */}
           {/* notebooks dropdown */}
-          <li>
+          <Link to="/app/notebooks">
             {/* svg icon */}
             <img
               onClick={this.toggleNotebooksHidden}
@@ -116,7 +121,7 @@ class Sidebar extends React.Component {
             />
             <img src={window.notebookURL} alt="notebook icon" />
             <p>Notebooks</p>
-          </li>
+          </Link>
 
           <ul className={`notebook-dropdown ${hiddenNotebooksClass}`}>
             {/* {this.props.notebooks.map(notebook => (
@@ -129,10 +134,12 @@ class Sidebar extends React.Component {
 
           {/* tags */}
           {/* to="/app/tags" */}
-          <li>
+
+          <Link to="/app/notebooks">
             <img src={window.tagsURL} alt="tags" />
-            <Link to="/app/notebooks">Tags</Link>
-          </li>
+            Tags
+          </Link>
+
           {/* trash */}
 
           {/* upgrade  */}

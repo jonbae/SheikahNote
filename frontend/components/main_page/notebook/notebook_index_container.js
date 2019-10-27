@@ -30,10 +30,7 @@ const mdp = dispatch => ({
   requestNotebook: id => dispatch(requestNotebook(id)),
   // createNotebook: notebook => dispatch(createNotebook(notebook)),
   // updateNotebook: notebook => dispatch(updateNotebook(notebook)),
-  deleteNotebook: id => {
-    debugger;
-    return dispatch(deleteNotebook(id));
-  },
+  deleteNotebook: id => dispatch(deleteNotebook(id)),
 
   processUpdateForm: notebook => dispatch(updateNotebook(notebook)),
 

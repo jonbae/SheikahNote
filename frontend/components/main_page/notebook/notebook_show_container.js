@@ -28,7 +28,8 @@ const msp = (state, ownProps) => {
     // notebookTitle:
     //   state.entities.notebooks[ownProps.match.params.notebookId].title,
     isNotebook: true,
-    notes: selectNotebookNotes(state, notebookId)
+    notes: selectNotebookNotes(state, notebookId),
+    path: `/app/notebooks/${notebookId}/notes`
   };
 };
 

@@ -2,11 +2,14 @@
   color: #cccccc;
 }
 
-.sidebar-frame ul > li {
+.sidebar-frame ul > li,
+.sidebar-frame ul > a {
   padding: 0 8px 0 18px;
   height: 32px;
   display: flex;
   align-items: center;
+  text-decoration: none;
+  color: white;
 }
 
 .sidebar-header {
@@ -71,7 +74,7 @@ ul.sidebar-links > li img {
   height: 32px;
 }
 
-ul.sidebar-links li *:last-child {
+ul.sidebar-links a *:last-child {
   margin: 3px;
   font-size: 15px;
 }
@@ -92,7 +95,7 @@ ul.sidebar-links li a {
   left: 9px; /* do not change this! */
 }
 
-ul.notebook-dropdown > li img {
+ul.notebook-dropdown > a img {
   margin-left: 26px;
 }
 

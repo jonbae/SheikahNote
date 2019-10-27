@@ -19,7 +19,7 @@ class Note < ApplicationRecord
     class_name: :User
     
   belongs_to :notebook 
-  has_many :taggings 
+  has_many :taggings, dependent: :destroy
 
 end
 

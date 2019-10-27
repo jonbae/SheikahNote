@@ -55,9 +55,15 @@ ul.notebooks-list ul li {
   width: 15%;
 }
 
-ul.notebooks-list ul li:first-child {
+ul.notebooks-list > ul > *:first-child {
   width: 68%;
+  text-decoration: none;
+  color: black;
 }
+
+/* ul.notebooks-list > ul li:first-child {
+  width: 68%;
+} */
 
 ul.notebooks-list ul li:last-child {
   text-align: end;
@@ -89,25 +95,21 @@ button.new-notebook {
   font-size: 14px;
 }
 
-.notebooks-index-item > li span {
+.notebooks-index-item > a span {
   font-size: 14px;
   margin: 2.5px;
+}
+
+.notebooks-index-item > a span:last-child {
+  color: #ccc;
 }
 
 .img-ellipsis {
   cursor: pointer;
 }
 
-/* .img-ellipsis:hover{ 
-  color
-} */
-
 .notebooks-index-item > li {
   font-size: 14px;
-}
-
-.notebooks-index-item > li span:last-child {
-  color: #ccc;
 }
 
 section.dropdown-menu.notebooks-action-position {

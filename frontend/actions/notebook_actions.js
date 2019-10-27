@@ -21,7 +21,6 @@ export const receieveNotebook = payload => {
 };
 
 export const removeNotebook = notebook => {
-  debugger;
   return {
     type: REMOVE_NOTEBOOK,
     notebookId: notebook.id
@@ -51,9 +50,9 @@ export const updateNotebook = notebook => dispatch => {
 };
 
 export const deleteNotebook = id => dispatch => {
-  debugger;
+    
   return APIUtil.deleteNotebook(id).then(notebook => {
-    debugger;
+      
     //can be `id` just make sure to change in thunk action parameter to id on line 23
     return dispatch(removeNotebook(notebook));
   });

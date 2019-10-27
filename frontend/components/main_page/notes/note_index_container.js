@@ -2,6 +2,11 @@ import { connect } from "react-redux";
 
 import { selectAllNotes } from "../../../reducers/selectors";
 import {
+  requestAllNotebooks,
+  requestNotebook
+} from "../../../actions/notebook_actions";
+
+import {
   requestAllNotes,
   requestNote,
   createNote,
@@ -10,16 +15,12 @@ import {
 } from "../../../actions/note_actions";
 
 import NoteIndex from "./note_index";
-import {
-  requestAllNotebooks,
-  requestNotebook
-} from "../../../actions/notebook_actions";
 
 const msp = state => {
-  debugger;
   return {
     isNotebook: false,
-    notes: selectAllNotes(state)
+    notes: selectAllNotes(state),
+    path: "/app/notes"
   };
 };
 
