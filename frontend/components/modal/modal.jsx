@@ -1,5 +1,5 @@
 import React from "react";
-import { closeModal } from "../../actions/modal_actions";
+import { closeModal } from "../../actions/ui_actions";
 import { connect } from "react-redux";
 import CreateNotebookFormContainer from "../main_page/notebook/create_notebook_form_container";
 import UpdateNotebookFormContainer from "../main_page/notebook/update_notebook_form_container";

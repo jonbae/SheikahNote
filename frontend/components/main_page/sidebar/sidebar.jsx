@@ -111,18 +111,20 @@ class Sidebar extends React.Component {
           </Link>
           {/* </li> */}
           {/* notebooks dropdown */}
-          <Link to="/app/notebooks">
-            {/* svg icon */}
+          <li>
             <img
               onClick={this.toggleNotebooksHidden}
               className={`filled-side-carat ${downCarat}`}
               src={window.filledSideCaratURL}
               alt="filled side carat"
             />
-            <img src={window.notebookURL} alt="notebook icon" />
-            <p>Notebooks</p>
-          </Link>
 
+            <Link to="/app/notebooks" className="notebook-link">
+              {/* svg icon */}
+              <img src={window.notebookURL} alt="notebook icon" />
+              <p>Notebooks</p>
+            </Link>
+          </li>
           <ul className={`notebook-dropdown ${hiddenNotebooksClass}`}>
             {/* {this.props.notebooks.map(notebook => (
               <NotebookDropdownItem key={notebook.id} notebook={notebook} />
@@ -137,7 +139,7 @@ class Sidebar extends React.Component {
 
           <Link to="/app/notebooks">
             <img src={window.tagsURL} alt="tags" />
-            Tags
+            <p>Tags</p>
           </Link>
 
           {/* trash */}

@@ -182,3 +182,12 @@ p.sidebar-header-email.dropdown-email {
 p.sidebar-account-title {
   margin: 0;
 }
+
+a.notebook-link {
+  display: flex;
+  align-items: center;
+}
+
+.notebook-link > p {
+  color: white;
+}

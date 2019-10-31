@@ -12,7 +12,7 @@ import {
 } from "../../../actions/notebook_actions";
 import NotebookIndex from "./notebook_index";
 
-import { openModal, closeModal } from "../../../actions/modal_actions";
+import { openModal, closeModal } from "../../../actions/ui_actions";
 
 const msp = (state, ownProps) => ({
   // const notebookId = parseInt(ownProps.match.params.notebookId);

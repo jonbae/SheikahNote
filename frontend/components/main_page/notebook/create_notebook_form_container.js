@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import React from "react";
 
 import { createNotebook } from "../../../actions/notebook_actions";
-import { openModal, closeModal } from "../../../actions/modal_actions";
+import { openModal, closeModal } from "../../../actions/ui_actions";
 
 import NotebookForm from "./notebook_form";
 
