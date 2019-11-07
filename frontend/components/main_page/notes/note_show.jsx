@@ -6,6 +6,23 @@ class NoteShow extends React.Component {
     super(props);
     this.state = {};
     this.handleFullscreen = this.handleFullscreen.bind(this);
+
+    // quill editor options
+    this.modules = {
+      toolbar: [
+        [{ font: [] }],
+        [{ size: ["small", false, "large", "huge"] }], // custom dropdown
+        ["bold", "italic", "underline", "strike"], // toggled buttons
+        [{ color: [] }, { background: [] }], // dropdown with defaults from theme
+        ["blockquote", "code-block"],
+        [{ align: [] }],
+        [{ list: "ordered" }, { list: "bullet" }],
+        [{ script: "sub" }, { script: "super" }], // superscript/subscript
+        ["clean"], // remove formatting button
+
+        ["link", "image", "video", "formula"] // misc
+      ]
+    };
   }
 
   componentDidMount() {
@@ -44,10 +61,13 @@ class NoteShow extends React.Component {
           </div>
         </header>
 
-        <p>{content}</p>
-
-        <ReactQuill>
-          <p>jon</p>
+        <ReactQuill
+          className="note-show-quill"
+          value={content}
+          placeholder="Start writing"
+          theme="snow"
+        >
+          <div className="note-show-editing-area"></div>
         </ReactQuill>
       </div>
     );
