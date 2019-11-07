@@ -1,6 +1,6 @@
 export const OPEN_MODAL = "OPEN_MODAL";
 export const CLOSE_MODAL = "CLOSE_MODAL";
-export const FULLSCREEN = "FULLSCREEN";
+export const TOGGLE_FULLSCREEN = "TOGGLE_FULLSCREEN";
 
 export const openModal = (modal, id) => {
   return {
@@ -16,8 +16,8 @@ export const closeModal = () => {
   };
 };
 
-export const fullscreen = () => {
+export const toggleFullScreen = () => {
   return {
-    type: FULLSCREEN
+    type: TOGGLE_FULLSCREEN
   };
 };

@@ -1,12 +1,15 @@
-import { connect } from 'react-redux' 
-import MainPage from './main_page'
+import { connect } from "react-redux";
+import MainPage from "./main_page";
 
-const msp = (state) => ({
-   
-}); 
+const msp = (state, ownProps) => {
+  return {
+    fullScreen: state.ui.fullScreen
+  };
+};
 
-const mdp = dispatch => ({
+const mdp = dispatch => ({});
 
-})
-
-export default connect(msp,mdp)(MainPage)
+export default connect(
+  msp,
+  mdp
+)(MainPage);

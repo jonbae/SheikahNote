@@ -1,11 +1,38 @@
 import React from "react";
+import Editor from "./note_editor";
 import ReactQuill from "react-quill";
 
 class NoteShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = this.props.note
+      ? {
+          content: this.props.note.content,
+          title: this.props.note.title
+        }
+      : {
+          content: "",
+          title: ""
+        };
     this.handleFullscreen = this.handleFullscreen.bind(this);
+    // this.toggleFullScreen = this.toggleFullScreen.bind(this);
+
+    // quill editor options
+    // this.modules = {
+    //   toolbar: [
+    //     [{ font: [] }],
+    //     [{ size: ["small", false, "large", "huge"] }], // custom dropdown
+    //     ["bold", "italic", "underline", "strike"], // toggled buttons
+    //     [{ color: [] }, { background: [] }], // dropdown with defaults from theme
+    //     ["blockquote", "code-block"],
+    //     [{ align: [] }],
+    //     [{ list: "ordered" }, { list: "bullet" }],
+    //     [{ script: "sub" }, { script: "super" }], // superscript/subscript
+    //     ["clean"], // remove formatting button
+
+    //     ["link", "image", "video", "formula"] // misc
+    //   ]
+    // };
   }
 
   componentDidMount() {
@@ -13,7 +40,9 @@ class NoteShow extends React.Component {
   }
 
   handleFullscreen() {
-    console.log("fullscreen");
+    // console.log("fullscreen");
+    // debugger;
+    // this.props.toggleFullScreen();
   }
 
   render() {
@@ -22,7 +51,7 @@ class NoteShow extends React.Component {
     }
     // console.log(this.props.note);
     // console.log(this.props.noteId);
-    let { authorId, notebookId, id, title, content } = this.props.note;
+    // let { authorId, notebookId, id, title, content } = this.props.note;
 
     return (
       <div className="note-show-frame">
@@ -43,11 +72,11 @@ class NoteShow extends React.Component {
             />
           </div>
         </header>
-
-        <p>{content}</p>
-
-        <ReactQuill>
-          <p>jon</p>
+        <ReactQuill
+          // modules={this.modules}
+          theme="snow"
+        >
+          <div>{content}</div>
         </ReactQuill>
       </div>
     );
