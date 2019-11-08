@@ -6,6 +6,8 @@ import {
   requestNotebook
 } from "../../../actions/notebook_actions";
 
+import { selectNote, selectNotebook } from "../../../actions/ui_actions";
+
 import {
   requestAllNotes,
   requestNote,
@@ -20,7 +22,9 @@ const msp = state => {
   return {
     isNotebook: false,
     notes: selectAllNotes(state),
-    path: "/app/notes"
+    path: "/app/notes",
+    selectedNotebookId: state.ui.notebookId,
+    selectedNoteId: state.ui.noteId
   };
 };
 
@@ -31,7 +35,9 @@ const mdp = dispatch => ({
   updateNote: note => dispatch(updateNote(note)),
   deleteNote: id => dispatch(deleteNote(id)),
   requestAllNotebooks: () => dispatch(requestAllNotebooks()),
-  requestNotebook: notebookId => dispatch(requestNotebook(notebookId))
+  requestNotebook: notebookId => dispatch(requestNotebook(notebookId)),
+  selectNotebook: notebookId => dispatch(selectNotebook(notebookId)),
+  selectNote: noteId => dispatch(selectNote(noteId))
 });
 
 export default connect(

@@ -19,6 +19,7 @@ class NoteIndex extends React.Component {
         <NoteIndexItem
           key={note.id}
           note={note}
+          selectNote={this.props.selectNote}
           klass="note-list-rows"
           history={this.props.history}
           path={this.props.path}

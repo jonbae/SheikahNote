@@ -7,9 +7,7 @@ import { selectNote, selectNotebook } from "../../../reducers/selectors";
 const msp = (state, ownProps) => {
   const noteId = parseInt(ownProps.match.params.noteId);
   const note = selectNote(state, noteId);
-
   const notebook = note ? selectNotebook(state, note.notebookId) : null;
-
   return {
     noteId,
     note,

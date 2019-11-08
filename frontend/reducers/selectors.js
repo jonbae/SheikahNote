@@ -27,11 +27,14 @@ export const selectNotebookNotes = function(state, notebookId) {
   return notes.filter(note => note.notebookId === notebookId);
 };
 
+//refactor after ui reducers
 export const selectNote = function(state, noteId) {
+  // debugger
   return state.entities.notes[noteId];
 };
 
 export const selectNotebook = function(state, notebookId) {
+  // debugger
   return state.entities.notebooks[notebookId];
 };
 
