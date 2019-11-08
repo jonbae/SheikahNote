@@ -2,11 +2,19 @@ import { connect } from "react-redux";
 
 import NoteShow from "./note_show";
 import { requestNote } from "../../../actions/note_actions";
-import { selectNote } from "../../../reducers/selectors";
+import { selectNote, selectNotebook } from "../../../reducers/selectors";
 
 const msp = (state, ownProps) => {
   const noteId = parseInt(ownProps.match.params.noteId);
-  return { noteId: noteId, note: selectNote(state, noteId) };
+  const note = selectNote(state, noteId);
+
+  const notebook = note ? selectNotebook(state, note.notebookId) : null;
+
+  return {
+    noteId,
+    note,
+    notebook
+  };
 };
 
 const mdp = dispatch => ({

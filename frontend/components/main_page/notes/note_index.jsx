@@ -26,7 +26,7 @@ class NoteIndex extends React.Component {
       ));
     }
 
-    debugger;
+    // debugger;
     //
     // console.log(this.props.title);
     // if (!this.props.title) {

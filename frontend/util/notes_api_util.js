@@ -6,7 +6,6 @@ export const fetchAllNotes = () => {
 };
 
 export const fetchNote = id => {
-  debugger;
   return $.ajax({
     method: "get",
     url: `api/notes/${id}`

@@ -4,7 +4,17 @@ import ReactQuill from "react-quill";
 class NoteShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    if (this.props.note) {
+      this.state = {
+        content: this.props.note.content,
+        title: this.props.note.title
+      };
+    } else {
+      this.state = {
+        content: "",
+        title: ""
+      };
+    }
     this.handleFullscreen = this.handleFullscreen.bind(this);
 
     // quill editor options
@@ -34,7 +44,7 @@ class NoteShow extends React.Component {
   }
 
   render() {
-    if (!this.props.note) {
+    if (!this.props.note || !this.props.notebook) {
       return null;
     }
     // console.log(this.props.note);
@@ -50,7 +60,7 @@ class NoteShow extends React.Component {
               fullscreen
             </button>
 
-            <p>{}</p>
+            <p>{this.props.notebook.title}</p>
           </div>
           <div className="note-nav-right">
             <img
@@ -64,6 +74,7 @@ class NoteShow extends React.Component {
         <ReactQuill
           className="note-show-quill"
           value={content}
+          modules={this.modules}
           placeholder="Start writing"
           theme="snow"
         >

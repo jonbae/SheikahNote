@@ -8,7 +8,7 @@ class NoteIndexItem extends React.Component {
   }
 
   handleClick(e) {
-    debugger;
+    // debugger;
     this.props.history.push(`${this.props.path}/${this.props.note.id}`);
   }
 
