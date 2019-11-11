@@ -11,6 +11,7 @@ export const fetchNotebook = id =>
   });
 
 export const createNotebook = notebook => {
+  debugger;
   return $.ajax({
     method: "post",
     url: `api/notebooks`,

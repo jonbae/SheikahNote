@@ -13,10 +13,10 @@ export const fetchNote = id => {
 };
 
 export const createNote = note => {
-  //   debugger;
+  debugger;
   return $.ajax({
     method: "post",
-    url: `api/notes/${note.id}`,
+    url: `api/notes`,
     data: { note }
   });
 };

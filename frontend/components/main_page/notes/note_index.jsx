@@ -12,6 +12,24 @@ class NoteIndex extends React.Component {
     this.props.requestAllNotes();
   }
 
+  // componentDidUpdate() {
+  //   this.updateSelected();
+  // }
+
+  // updateSelected() {
+  //   // this.scrollToSelectedNote();
+  //   this.checkNoteRoute();
+  // }
+
+  // checkNoteRoute() {
+  //   debugger;
+  //   let paramNotebookId = this.props.match.params.notebookId
+  //     ? this.props.match.params.notebookId
+  //     : -1;
+  //   debugger;
+  //   this.props.selectNotebook(paramNotebookId);
+  // }
+
   render() {
     let notes;
     if (this.props.notes !== undefined && this.props.notes !== 0) {
@@ -26,13 +44,6 @@ class NoteIndex extends React.Component {
         />
       ));
     }
-
-    // debugger;
-    //
-    // console.log(this.props.title);
-    // if (!this.props.title) {
-    //   return null;
-    // }
 
     const notebookTitle = this.props.isNotebook
       ? `${this.props.title}`

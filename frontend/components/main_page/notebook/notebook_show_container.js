@@ -21,7 +21,7 @@ const msp = (state, ownProps) => {
   const notebookId = parseInt(ownProps.match.params.notebookId);
   const selectedNotebook = state.entities.notebooks[notebookId];
   const title = selectedNotebook ? selectedNotebook.title : null;
-  debugger;
+  // debugger;
   return {
     notebookId,
     title,

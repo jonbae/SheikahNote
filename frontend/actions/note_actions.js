@@ -36,6 +36,7 @@ export const requestNote = id => dispatch => {
 };
 
 export const createNote = note => dispatch => {
+  debugger;
   return APIUtil.createNote(note).then(note => dispatch(receiveNote(note)));
 };
 

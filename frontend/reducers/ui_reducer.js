@@ -23,8 +23,9 @@ const defaultUIState = {
   selectedNoteId: null,
   selectedNotebookId: null,
   // loadingNote: true,
-  fullScreen: false
+  fullScreen: false,
   // signInDemoUser: false
+  modal: null
 };
 
 const ui = (state = defaultUIState, action) => {
@@ -38,12 +39,17 @@ const ui = (state = defaultUIState, action) => {
       });
     case OPEN_MODAL:
       if (action.modal === "update_notebook") {
-        return { type: "update_notebook", id: action.id };
+        return Object.assign({}, state, {
+          modal: {
+            type: "update_notebook",
+            id: action.id
+          }
+        });
       }
 
-      return { type: action.modal };
+      return Object.assign({}, state, { modal: { type: action.modal } });
     case CLOSE_MODAL:
-      return null;
+      return Object.assign({}, state, {}, { modal: null });
     default:
       return state;
   }

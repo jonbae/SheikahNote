@@ -36,6 +36,7 @@ class NoteShow extends React.Component {
   }
 
   componentDidMount() {
+    //why is this not the first note
     this.props.requestNote(this.props.noteId);
   }
 

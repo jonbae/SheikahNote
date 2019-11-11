@@ -12,6 +12,7 @@ const notesReducer = (state = {}, action) => {
     case RECEIVE_NOTES:
       return Object.assign({}, state, action.notes);
     case RECEIVE_NOTE:
+      debugger;
       newState = { [action.note.id]: action.note };
       return Object.assign({}, state, newState);
     case REMOVE_NOTE:

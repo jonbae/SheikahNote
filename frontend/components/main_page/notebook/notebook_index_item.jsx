@@ -2,12 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { setBlurListener } from "../../../util/blur_util";
 import NotebookNotesItem from "./notebook_notes_index";
+import { selectNotebookNotes } from "../../../reducers/selectors";
 
 class NotebookIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isHidden: true
+      // noteCount: selectNotebookNotes(state, notebook.id)
     };
     this.toggleHidden = this.toggleHidden.bind(this);
     this.hidden = this.hidden.bind(this);
@@ -25,7 +27,8 @@ class NotebookIndexItem extends React.Component {
   render() {
     const hiddenClass = this.state.isHidden ? "hidden-dropdown" : "";
     // let { notebook } = this.props.notebook;
-    const noteCount = this.state.notes ? this.state.notes.length : 0;
+    // debugger;
+    const noteCount = this.props.notebook.noteIds.length;
     return (
       <>
         <ul className="notebooks-index-item">
