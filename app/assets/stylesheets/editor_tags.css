@@ -1,0 +1,6 @@
+section.note-tags {
+  display: flex;
+  align-items: center;
+  height: 52px;
+  padding: 12px;
+}

@@ -32,6 +32,7 @@ class NoteIndex extends React.Component {
 
   render() {
     let notes;
+    debugger;
     if (this.props.notes !== undefined && this.props.notes !== 0) {
       notes = this.props.notes.map(note => (
         <NoteIndexItem

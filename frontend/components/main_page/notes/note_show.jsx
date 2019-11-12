@@ -113,6 +113,17 @@ class NoteShow extends React.Component {
         >
           <div className="note-show-editing-area"></div>
         </ReactQuill>
+
+        {/* taggings  */}
+        <section className="note-tags">
+          {/* add tag button  */}
+
+          {/* divs with tag names  */}
+
+          {/* input  */}
+
+          <div>this is the tags footer</div>
+        </section>
       </div>
     );
   }

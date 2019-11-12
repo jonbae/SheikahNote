@@ -37,17 +37,21 @@ class Sidebar extends React.Component {
     debugger;
     const blankNote = {
       title: "Untitled",
-      content: "these are test blanks",
+      content: "these are id test blanks",
       author_id: this.props.currentUser.id,
       notebook_id: 138
       // change the notebookId
     };
     const that = this;
     debugger;
-    this.props.createNote(blankNote);
+    this.props.createNote(blankNote).then(res => {
+      debugger;
+      that.props.history.push(`/app/notes/${res.note.id}`);
+    });
   }
 
   render() {
+    debugger;
     const hiddenAccountClass = this.state.isAccountHidden
       ? "hidden-dropdown"
       : "";
