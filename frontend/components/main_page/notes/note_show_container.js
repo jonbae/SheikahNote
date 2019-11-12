@@ -1,30 +1,27 @@
 import { connect } from "react-redux";
 
 import NoteShow from "./note_show";
-import { requestNote } from "../../../actions/note_actions";
-import { toggleFullScreen } from "../../../actions/ui_actions";
-import { selectNote } from "../../../reducers/selectors";
+import { requestNote, deleteNote } from "../../../actions/note_actions";
+import { selectNote, selectNotebook } from "../../../reducers/selectors";
 
 const msp = (state, ownProps) => {
   debugger;
   const noteId = parseInt(ownProps.match.params.noteId);
+  const note = selectNote(state, noteId);
+  const notebook = note ? selectNotebook(state, note.notebookId) : null;
   return {
-    noteId: noteId,
-    note: selectNote(state, noteId),
-    fullScreen: state.ui.fullScreen
+    noteId,
+    note,
+    notebook
   };
 };
 
-const mdp = dispatch => {
-  debugger;
-  return {
-    requestNote: id => dispatch(requestNote(id)),
-    createNote: note => dispatch(createNote(note)),
-    updateNote: note => dispatch(updateNote(note)),
-    deleteNote: id => dispatch(deleteNote(id)),
-    toggleFullScreen: () => dispatch(toggleFullScreen())
-  };
-};
+const mdp = dispatch => ({
+  requestNote: id => dispatch(requestNote(id)),
+  // createNote: note => dispatch(createNote(note)),
+  updateNote: note => dispatch(updateNote(note)),
+  deleteNote: id => dispatch(deleteNote(id))
+});
 
 export default connect(
   msp,

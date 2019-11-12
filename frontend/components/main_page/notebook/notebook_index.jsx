@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import NotebookIndexItem from "./notebook_index_item";
+import { selectNotebookNotes } from "../../../reducers/selectors";
 
 class NotebookIndex extends React.Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class NotebookIndex extends React.Component {
         <NotebookIndexItem
           key={notebook.id}
           notebook={notebook}
+          // notes={selectNotebookNotes}
           openModal={this.props.openModal}
           deleteNotebook={this.props.deleteNotebook}
         />

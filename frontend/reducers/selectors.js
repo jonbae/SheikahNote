@@ -11,7 +11,7 @@ export const selectAllNotebooks = function(state) {
 };
 export const selectAllNotes = function(state) {
   let allNotes = Object.values(state.entities.notes);
-  debugger;
+  // debugger;
   return allNotes.filter(note =>
     state.entities.users[state.session.id].authoredNoteIds.includes(note.id)
   );
@@ -19,16 +19,23 @@ export const selectAllNotes = function(state) {
 
 export const selectNotebookNotes = function(state, notebookId) {
   // let notebookNotes = selectAllNotes(state);
-  debugger;
+  // debugger;
   //in ownProps.match.params.notebookId
   // return Object.values(state.entities.notebooks[notebookId].notes);
   let notes = Object.values(state.entities.notes);
-  debugger;
+  // debugger;
   return notes.filter(note => note.notebookId === notebookId);
 };
 
+//refactor after ui reducers
 export const selectNote = function(state, noteId) {
+  // debugger
   return state.entities.notes[noteId];
+};
+
+export const selectNotebook = function(state, notebookId) {
+  // debugger
+  return state.entities.notebooks[notebookId];
 };
 
 // export const selectNotes = function(state) {

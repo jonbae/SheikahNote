@@ -14,6 +14,7 @@ class Sidebar extends React.Component {
     this.toggleAccountHidden = this.toggleAccountHidden.bind(this);
 
     this.toggleNotebooksHidden = this.toggleNotebooksHidden.bind(this);
+    this.createNewNote = this.createNewNote.bind(this);
   }
 
   toggleAccountHidden() {
@@ -32,7 +33,25 @@ class Sidebar extends React.Component {
   //   this.props.history.push("")
   // }
 
+  createNewNote(e) {
+    debugger;
+    const blankNote = {
+      title: "Untitled",
+      content: "these are id test blanks",
+      author_id: this.props.currentUser.id,
+      notebook_id: 138
+      // change the notebookId
+    };
+    const that = this;
+    debugger;
+    this.props.createNote(blankNote).then(res => {
+      debugger;
+      that.props.history.push(`/app/notes/${res.note.id}`);
+    });
+  }
+
   render() {
+    debugger;
     const hiddenAccountClass = this.state.isAccountHidden
       ? "hidden-dropdown"
       : "";
@@ -40,14 +59,22 @@ class Sidebar extends React.Component {
       ? "hidden-dropdown"
       : "";
     const downCarat = this.state.isNotebooksHidden ? "" : "filled-down-carat";
-
+    let notes;
     let notebooks;
+    // debugger;
     // notebook.id returns a warning get this checked out
-    if (this.props.notebooks !== undefined && this.props.notebooks !== 0) {
+    if (
+      this.props.notebooks !== undefined &&
+      this.props.notebooks !== 0 &&
+      this.props.notes !== undefined
+    ) {
+      // debugger;
       notebooks = this.props.notebooks.map(notebook => (
         <NotebookDropdownItem key={notebook.id} notebook={notebook} />
       ));
+      notes = this.props.notes;
     }
+    // debugger;
 
     return (
       <nav className="sidebar-frame">
@@ -96,7 +123,7 @@ class Sidebar extends React.Component {
         {/* bonus: search bar  */}
 
         {/* create note button  */}
-        <button className="create-new-note">
+        <button className="create-new-note" onClick={this.createNewNote}>
           <img src={window.blackPlusURL} alt="black plus" />
           <p className="create-new-note-text">Create new note</p>
         </button>
@@ -105,7 +132,7 @@ class Sidebar extends React.Component {
           {/* to="/app/notes" */}
           {/* <li> */}
 
-          <Link to="/app/notes/">
+          <Link to={`/app/notes`}>
             <img src={window.allNotesURL} alt="all notes" />
             <p> All Notes </p>
           </Link>
