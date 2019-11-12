@@ -6,13 +6,11 @@ import {
 
 const notesReducer = (state = {}, action) => {
   Object.freeze(state);
-  debugger;
   let newState;
   switch (action.type) {
     case RECEIVE_NOTES:
       return Object.assign({}, state, action.notes);
     case RECEIVE_NOTE:
-      debugger;
       newState = { [action.note.id]: action.note };
       return Object.assign({}, state, newState);
     case REMOVE_NOTE:

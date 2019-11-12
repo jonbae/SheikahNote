@@ -6,7 +6,7 @@ import {
   selectAllNotebooks,
   selectAllNotes
 } from "../../../reducers/selectors";
-import { createNote } from "../../../util/notes_api_util";
+import { createNote } from "../../../actions/note_actions";
 
 const msp = state => ({
   currentUser: state.entities.users[state.session.id],
