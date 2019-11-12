@@ -15,10 +15,13 @@ const msp = state => ({
   notes: selectAllNotes(state)
 });
 
-const mdp = dispatch => ({
-  logout: () => dispatch(logout()),
-  createNote: note => dispatch(createNote(note))
-});
+const mdp = dispatch => {
+  debugger;
+  return {
+    logout: () => dispatch(logout()),
+    createNote: note => dispatch(createNote(note))
+  };
+};
 
 export default connect(
   msp,

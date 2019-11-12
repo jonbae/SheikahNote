@@ -36,16 +36,15 @@ class Sidebar extends React.Component {
   createNewNote(e) {
     debugger;
     const blankNote = {
-      title: "Untitiled",
-      content: "",
-      authorId: this.props.currentUser.id,
-      notebookId: 138
+      title: "Untitled",
+      content: "these are test blanks",
+      author_id: this.props.currentUser.id,
+      notebook_id: 138
       // change the notebookId
     };
     const that = this;
-    this.props.createNote(blankNote).then(res => {
-      console.log(res);
-    });
+    debugger;
+    this.props.createNote(blankNote);
   }
 
   render() {
@@ -58,20 +57,20 @@ class Sidebar extends React.Component {
     const downCarat = this.state.isNotebooksHidden ? "" : "filled-down-carat";
     let notes;
     let notebooks;
-    debugger;
+    // debugger;
     // notebook.id returns a warning get this checked out
     if (
       this.props.notebooks !== undefined &&
       this.props.notebooks !== 0 &&
       this.props.notes !== undefined
     ) {
-      debugger;
+      // debugger;
       notebooks = this.props.notebooks.map(notebook => (
         <NotebookDropdownItem key={notebook.id} notebook={notebook} />
       ));
       notes = this.props.notes;
     }
-    debugger;
+    // debugger;
 
     return (
       <nav className="sidebar-frame">

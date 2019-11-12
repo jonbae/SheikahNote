@@ -6,6 +6,7 @@ class Api::NotesController < ApplicationController
   def create
     @note = Note.new(note_params)
     @note.author_id = current_user.id 
+    debugger
     if @note.save 
       render :show
     else
@@ -46,7 +47,7 @@ class Api::NotesController < ApplicationController
 
   private 
   def note_params
-    params.require(:notes).permit(:title, :content, :author_id, :notebook_id, :updated_at)
+    params.require(:note).permit(:title, :content, :author_id, :notebook_id, :updated_at)
   end
 
 
