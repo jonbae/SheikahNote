@@ -12,7 +12,7 @@ class NoteIndexItem extends React.Component {
     if (this.props.selectedNoteId != this.props.note.id) {
       this.props.history.push(`${this.props.path}/${this.props.note.id}`);
       // debugger;
-      this.props.selectNote(this.props.note.id);
+      // this.props.selectNote(this.props.note.id);
     }
   }
 

@@ -7,16 +7,21 @@ class NoteShow extends React.Component {
     if (this.props.note) {
       this.state = {
         content: this.props.note.content,
-        title: this.props.note.title
+        title: this.props.note.title,
+        isHidden: true
       };
     } else {
       this.state = {
         content: "",
-        title: ""
+        title: "",
+        isHidden: true
       };
     }
+    this.toggleHidden = this.toggleHidden.bind(this);
     this.handleFullscreen = this.handleFullscreen.bind(this);
-
+    this.deleteNoteThenHideDropdown = this.deleteNoteThenHideDropdown.bind(
+      this
+    );
     // quill editor options
     this.modules = {
       toolbar: [
@@ -44,6 +49,17 @@ class NoteShow extends React.Component {
     console.log("fullscreen");
   }
 
+  toggleHidden() {
+    this.setState({ isHidden: !this.state.isHidden });
+  }
+  hidden() {
+    this.setState({ isHidden: true });
+  }
+
+  deleteNoteThenHideDropdown(id) {
+    this.props.deleteNote(id).then(this.hidden());
+  }
+
   render() {
     if (!this.props.note || !this.props.notebook) {
       return null;
@@ -51,6 +67,8 @@ class NoteShow extends React.Component {
     // console.log(this.props.note);
     // console.log(this.props.noteId);
     let { authorId, notebookId, id, title, content } = this.props.note;
+    // debugger;
+    const hiddenClass = this.state.isHidden ? "hidden-dropdown" : "";
 
     return (
       <div className="note-show-frame">
@@ -68,7 +86,21 @@ class NoteShow extends React.Component {
               src={window.ellipsisURL}
               alt="ellipsis"
               className="note-nav-ellipsis"
+              onClick={this.toggleHidden}
+              onBlur={this.hidden}
             />
+
+            <section
+              className={`dropdown-menu notes-action-position ${hiddenClass}`}
+            >
+              <p
+                onClick={() =>
+                  this.deleteNoteThenHideDropdown(this.props.note.id)
+                }
+              >
+                Delete Note
+              </p>
+            </section>
           </div>
         </header>
 
