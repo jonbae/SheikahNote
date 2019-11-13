@@ -1,4 +1,5 @@
 import React from "react";
+import { sortNotesByLastUpdate } from "../../../util/notes_util";
 
 import NoteIndexItem from "./note_index_item";
 class NoteIndex extends React.Component {
@@ -29,6 +30,21 @@ class NoteIndex extends React.Component {
   //   debugger;
   //   this.props.selectNotebook(paramNotebookId);
   // }
+
+  renderSortedNotes() {
+    let sortedNotes = sortNotesByLastUpdate(this.props.notes).map(note => (
+      <NoteIndexItem
+        key={note.id}
+        note={note}
+        selectNote={this.props.selectNote}
+        klass="note-list-rows"
+        history={this.props.history}
+        path={this.props.path}
+      />
+    ));
+
+    return <div className="note-index-list">{sortedNotes}</div>;
+  }
 
   render() {
     let notes;
@@ -69,7 +85,8 @@ class NoteIndex extends React.Component {
           </div>
         </header>
         {/* list of notes with scroll bar  */}
-        <div className="note-index-list">{notes}</div>
+        {this.renderSortedNotes()}
+        {/* <div className="note-index-list">{notes}</div> */}
       </div>
     );
   }
