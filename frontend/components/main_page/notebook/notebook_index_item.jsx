@@ -24,6 +24,64 @@ class NotebookIndexItem extends React.Component {
     this.setState({ isHidden: true });
   }
 
+  renderLinkOrLi() {
+    const noteCount = this.props.notes.length;
+    const notes = this.props.notes;
+    if (notes.length !== 0 && notes !== undefined) {
+      return (
+        <Link
+          to={`/app/notebooks/${this.props.notebook.id}/notes/${
+            notes[notes.length - 1].id
+          }`}
+        >
+          {/* drop down arrow */}
+          <img
+            className="black-filled-carat"
+            src={window.blackFilledSideCaratURL}
+            alt="black filled side carat"
+          />
+
+          {/* notebook icon */}
+          <img
+            className="black-notebook"
+            src={window.blackNotebookURL}
+            alt="black notebook"
+          />
+
+          {/* notebook title  */}
+          <span>{this.props.notebook.title}</span>
+
+          {/* number of notes  */}
+          <span>{`(${noteCount})`}</span>
+        </Link>
+      );
+    } else {
+      return (
+        <div>
+          {/* drop down arrow */}
+          <img
+            className="black-filled-carat"
+            src={window.blackFilledSideCaratURL}
+            alt="black filled side carat"
+          />
+
+          {/* notebook icon */}
+          <img
+            className="black-notebook"
+            src={window.blackNotebookURL}
+            alt="black notebook"
+          />
+
+          {/* notebook title  */}
+          <span>{this.props.notebook.title}</span>
+
+          {/* number of notes  */}
+          <span>{`(${noteCount})`}</span>
+        </div>
+      );
+    }
+  }
+
   render() {
     const hiddenClass = this.state.isHidden ? "hidden-dropdown" : "";
     // let { notebook } = this.props.notebook;
@@ -32,27 +90,7 @@ class NotebookIndexItem extends React.Component {
     return (
       <>
         <ul className="notebooks-index-item">
-          <Link to={`/app/notebooks/${this.props.notebook.id}`}>
-            {/* drop down arrow */}
-            <img
-              className="black-filled-carat"
-              src={window.blackFilledSideCaratURL}
-              alt="black filled side carat"
-            />
-
-            {/* notebook icon */}
-            <img
-              className="black-notebook"
-              src={window.blackNotebookURL}
-              alt="black notebook"
-            />
-
-            {/* notebook title  */}
-            <span>{this.props.notebook.title}</span>
-
-            {/* number of notes  */}
-            <span>{`(${noteCount})`}</span>
-          </Link>
+          {this.renderLinkOrLi()}
 
           {/* bonus: notebook author */}
 

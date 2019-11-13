@@ -17,6 +17,10 @@ class Sidebar extends React.Component {
     this.createNewNote = this.createNewNote.bind(this);
   }
 
+  // componentDidMount() {
+  //   this.props.requestAllNotes();
+  // }
+
   toggleAccountHidden() {
     this.setState({ isAccountHidden: !this.state.isAccountHidden });
   }
@@ -61,20 +65,25 @@ class Sidebar extends React.Component {
     const downCarat = this.state.isNotebooksHidden ? "" : "filled-down-carat";
     let notes;
     let notebooks;
+    let lastNoteId;
     // debugger;
     // notebook.id returns a warning get this checked out
     if (
       this.props.notebooks !== undefined &&
-      this.props.notebooks !== 0 &&
-      this.props.notes !== undefined
+      // this.props.notebooks.length !== 0 &&
+      this.props.notes !== undefined &&
+      this.props.notes.length !== 0
     ) {
       // debugger;
       notebooks = this.props.notebooks.map(notebook => (
         <NotebookDropdownItem key={notebook.id} notebook={notebook} />
       ));
+      debugger;
       notes = this.props.notes;
+      debugger;
+      lastNoteId = notes[notes.length - 1].id;
     }
-    // debugger;
+    debugger;
 
     return (
       <nav className="sidebar-frame">
@@ -132,7 +141,7 @@ class Sidebar extends React.Component {
           {/* to="/app/notes" */}
           {/* <li> */}
 
-          <Link to={`/app/notes`}>
+          <Link to={`/app/notes/${lastNoteId}`}>
             <img src={window.allNotesURL} alt="all notes" />
             <p> All Notes </p>
           </Link>

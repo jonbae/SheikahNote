@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import { Route, Redirect, withRouter } from "react-router-dom";
 import { logout } from "../../../actions/session_actions";
 import Sidebar from "./sidebar";
+import { requestAllNotes } from "../../../actions/note_actions";
 import {
   selectAllNotebooks,
   selectAllNotes
@@ -20,14 +21,10 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch => {
   return {
+    requestAllNotes: () => dispatch(requestAllNotes(id)),
     logout: () => dispatch(logout()),
     createNote: note => dispatch(createNote(note))
   };
 };
 
-export default withRouter(
-  connect(
-    msp,
-    mdp
-  )(Sidebar)
-);
+export default withRouter(connect(msp, mdp)(Sidebar));

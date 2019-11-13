@@ -1,5 +1,6 @@
 import React from "react";
 import { sortNotesByLastUpdate } from "../../../util/notes_util";
+import { Redirect } from "react-router-dom";
 
 import NoteIndexItem from "./note_index_item";
 class NoteIndex extends React.Component {
@@ -47,20 +48,27 @@ class NoteIndex extends React.Component {
   }
 
   render() {
-    let notes;
-    debugger;
-    if (this.props.notes !== undefined && this.props.notes !== 0) {
-      notes = this.props.notes.map(note => (
-        <NoteIndexItem
-          key={note.id}
-          note={note}
-          selectNote={this.props.selectNote}
-          klass="note-list-rows"
-          history={this.props.history}
-          path={this.props.path}
-        />
-      ));
-    }
+    // let notes;
+    // debugger;
+    // if (this.props.notes !== undefined && this.props.notes !== 0) {
+    //   notes = this.props.notes.map(note => (
+    //     <NoteIndexItem
+    //       key={note.id}
+    //       note={note}
+    //       selectNote={this.props.selectNote}
+    //       klass="note-list-rows"
+    //       history={this.props.history}
+    //       path={this.props.path}
+    //     />
+    //   ));
+    // }
+
+    // if (this.props.notes.length !== 0 && this.props.notes !== undefined) {
+    //   debugger;
+    //   const firstNote = this.props.notes[0];
+
+    //   return <Redirect to={`/app/notes/${firstNote.id}`} />;
+    // }
 
     const notebookTitle = this.props.isNotebook
       ? `${this.props.title}`
@@ -76,7 +84,7 @@ class NoteIndex extends React.Component {
           {/* notes header options  */}
           <div className="note-index-options">
             {/* number of notes  */}
-            <p>{`${notes.length} notes`}</p>
+            <p>{`${this.props.notes.length} notes`}</p>
             {/* icons  */}
             <ul className="note-index-icons">
               {/* tags icon  */}
