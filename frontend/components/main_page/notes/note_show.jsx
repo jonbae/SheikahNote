@@ -66,8 +66,10 @@ class NoteShow extends React.Component {
     }
     // console.log(this.props.note);
     // console.log(this.props.noteId);
-    let { authorId, notebookId, id, title, content } = this.props.note;
+    // let { authorId, notebookId, id, title, content } = this.props.note;
     // debugger;
+    const titleValue =
+      this.props.note.title === "Untitled" ? "" : this.props.note.title;
     const hiddenClass = this.state.isHidden ? "hidden-dropdown" : "";
 
     return (
@@ -104,9 +106,19 @@ class NoteShow extends React.Component {
           </div>
         </header>
 
+        {/* editor section  */}
+        <div className="note-show-title-row">
+          <input
+            type="text"
+            className="note-show-title"
+            value={titleValue}
+            placeholder="Title"
+          />
+        </div>
+
         <ReactQuill
           className="note-show-quill"
-          value={content}
+          value={this.state.content}
           modules={this.modules}
           placeholder="Start writing"
           theme="snow"
