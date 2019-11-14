@@ -90,9 +90,9 @@ class NoteShow extends React.Component {
   }
 
   handleTitleChange(e) {
-    debugger;
     e.preventDefault();
     this.startAutosaveTimer();
+    debugger;
     this.setState({ title: e.currentTarget.value });
   }
 
@@ -145,9 +145,23 @@ class NoteShow extends React.Component {
         {/* header nav  */}
         <header className="note-nav">
           <div className="note-nav-left">
-            <button className="note-fullscreen" onClick={this.handleFullscreen}>
+            <svg
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              class="aSj7GAjpRHxXJ-uUqPeBk"
+              onClick={this.handleFullscreen}
+              height={24}
+              width={24}
+            >
+              <path
+                fill-rule="evenodd"
+                d="M6.031 3a3 3 0 0 0-3 3v11a3 3 0 0 0 3 3h11a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3h-11zm4.47 4.289H8.184l2.915 2.914a.625.625 0 0 1-.884.884L7.3 8.172v2.319a.625.625 0 1 1-1.25 0V6.674c0-.351.285-.635.635-.635h3.818a.625.625 0 0 1 0 1.25zM12.6 15.76h2.318l-2.915-2.915a.625.625 0 1 1 .884-.884l2.915 2.915V12.56a.625.625 0 0 1 1.25 0v3.817c0 .35-.285.635-.635.635H12.6a.625.625 0 1 1 0-1.25z"
+              ></path>
+            </svg>
+
+            {/* <button className="note-fullscreen" onClick={this.handleFullscreen}>
               fullscreen
-            </button>
+            </button> */}
 
             <p>{this.props.notebook.title}</p>
           </div>
@@ -210,7 +224,7 @@ class NoteShow extends React.Component {
 
           {/* input  */}
 
-          <div>this is the tags footer</div>
+          {/* <div>this is the tags footer</div> */}
         </section>
       </div>
     );
