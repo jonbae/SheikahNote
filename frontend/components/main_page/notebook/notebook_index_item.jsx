@@ -25,13 +25,14 @@ class NotebookIndexItem extends React.Component {
   }
 
   renderLinkOrLi() {
-    const noteCount = this.props.notes.length;
-    const notes = this.props.notes;
-    if (notes.length !== 0 && notes !== undefined) {
+    const noteCount = this.props.noteIds.length;
+    const noteIds = this.props.noteIds;
+    if (noteIds.length !== 0 && noteIds !== undefined) {
+      debugger;
       return (
         <Link
           to={`/app/notebooks/${this.props.notebook.id}/notes/${
-            notes[notes.length - 1].id
+            noteIds[noteIds.length - 1]
           }`}
         >
           {/* drop down arrow */}

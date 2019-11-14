@@ -38,7 +38,7 @@ class Sidebar extends React.Component {
   // }
 
   createNewNote(e) {
-    debugger;
+    // debugger;
     const blankNote = {
       title: "Untitled",
       content: "these are id test blanks",
@@ -47,15 +47,15 @@ class Sidebar extends React.Component {
       // change the notebookId
     };
     const that = this;
-    debugger;
+    // debugger;
     this.props.createNote(blankNote).then(res => {
-      debugger;
+      // debugger;
       that.props.history.push(`/app/notes/${res.note.id}`);
     });
   }
 
   render() {
-    debugger;
+    // debugger;
     const hiddenAccountClass = this.state.isAccountHidden
       ? "hidden-dropdown"
       : "";
@@ -78,12 +78,12 @@ class Sidebar extends React.Component {
       notebooks = this.props.notebooks.map(notebook => (
         <NotebookDropdownItem key={notebook.id} notebook={notebook} />
       ));
-      debugger;
+      // debugger;
       notes = this.props.notes;
-      debugger;
+      // debugger;
       lastNoteId = notes[notes.length - 1].id;
     }
-    debugger;
+    // debugger;
 
     return (
       <nav className="sidebar-frame">

@@ -13,7 +13,6 @@ export const receiveAllNotes = notes => {
 
 //for future include tags
 export const receiveNote = payload => {
-  debugger;
   return {
     type: RECEIVE_NOTE,
     note: payload.note
@@ -37,7 +36,6 @@ export const requestNote = id => dispatch => {
 };
 
 export const createNote = note => dispatch => {
-  debugger;
   return APIUtil.createNote(note).then(note => dispatch(receiveNote(note)));
 };
 

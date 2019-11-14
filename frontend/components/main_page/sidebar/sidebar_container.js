@@ -10,7 +10,7 @@ import {
 import { createNote } from "../../../actions/note_actions";
 
 const msp = (state, ownProps) => {
-  debugger;
+  // debugger;
   return {
     currentUser: state.entities.users[state.session.id],
     notebooks: selectAllNotebooks(state),

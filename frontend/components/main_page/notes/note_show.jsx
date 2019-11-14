@@ -4,24 +4,22 @@ import ReactQuill from "react-quill";
 class NoteShow extends React.Component {
   constructor(props) {
     super(props);
-    if (this.props.note) {
-      this.state = {
-        content: this.props.note.content,
-        title: this.props.note.title,
-        isHidden: true
-      };
-    } else {
-      this.state = {
-        content: "",
-        title: "",
-        isHidden: true
-      };
-    }
+    this.state = {
+      content: this.props.note ? this.props.note.content : "",
+      title: this.props.note ? this.props.note.title : "",
+      isHidden: true
+    };
     this.toggleHidden = this.toggleHidden.bind(this);
     this.handleFullscreen = this.handleFullscreen.bind(this);
     this.deleteNoteThenHideDropdown = this.deleteNoteThenHideDropdown.bind(
       this
     );
+    this.saveNote = this.saveNote.bind(this);
+    this.autosaveTimer = null;
+
+    this.handleContentChange = this.handleContentChange.bind(this);
+    this.handleTitleChange = this.handleTitleChange.bind(this);
+
     // quill editor options
     this.modules = {
       toolbar: [
@@ -42,7 +40,75 @@ class NoteShow extends React.Component {
 
   componentDidMount() {
     //why is this not the first note
-    this.props.requestNote(this.props.noteId);
+    this.props.requestNote(this.props.noteId).then(res => {
+      debugger;
+
+      this.setState({
+        title: res.note.title,
+        content: res.note.content
+      });
+    });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (!this.props.note) {
+      return null;
+    }
+
+    // change to state?
+    if (
+      (!prevProps.note && this.props.note) ||
+      (prevProps.note &&
+        (prevProps.note.title !== this.props.note.title ||
+          prevProps.note.content !== this.props.note.content))
+    ) {
+      this.setState({
+        title: this.props.note.title,
+        content: this.props.note.content
+      });
+    }
+  }
+
+  saveNote(e) {
+    if (e) {
+      e.preventDefault();
+    }
+
+    let updatedNote = Object.assign({}, this.props.note, {
+      title: this.state.title,
+      content: this.state.content
+    });
+
+    this.props.updateNote(updatedNote);
+  }
+
+  update(field) {
+    return e =>
+      this.setState({
+        [field]: e.currentTarget.value
+      });
+  }
+
+  handleTitleChange(e) {
+    debugger;
+    e.preventDefault();
+    this.startAutosaveTimer();
+    this.setState({ title: e.currentTarget.value });
+  }
+
+  handleContentChange(value) {
+    // e.preventDefault();
+    this.startAutosaveTimer();
+    debugger;
+    this.setState({ content: value });
+  }
+
+  startAutosaveTimer() {
+    if (this.autosaveTimer) {
+      debugger;
+      clearTimeout(this.autosaveTimer);
+    }
+    this.autosaveTimer = setTimeout(this.saveNote.bind(this), 500);
   }
 
   handleFullscreen() {
@@ -52,12 +118,16 @@ class NoteShow extends React.Component {
   toggleHidden() {
     this.setState({ isHidden: !this.state.isHidden });
   }
+
   hidden() {
     this.setState({ isHidden: true });
   }
 
   deleteNoteThenHideDropdown(id) {
-    this.props.deleteNote(id).then(this.hidden());
+    this.props.deleteNote(id).then(
+      this.hidden()
+      //<Redirect to={}/>
+    );
   }
 
   render() {
@@ -66,10 +136,10 @@ class NoteShow extends React.Component {
     }
     // console.log(this.props.note);
     // console.log(this.props.noteId);
-    let { authorId, notebookId, id, title, content } = this.props.note;
+    // let { authorId, notebookId, id, title, content } = this.props.note;
     // debugger;
     const hiddenClass = this.state.isHidden ? "hidden-dropdown" : "";
-
+    const titleValue = this.state.title === "Untitled" ? "" : this.state.title;
     return (
       <div className="note-show-frame">
         {/* header nav  */}
@@ -104,10 +174,28 @@ class NoteShow extends React.Component {
           </div>
         </header>
 
+        {/* title  */}
+        <div className="note-editor-title-row">
+          <input
+            type="text"
+            className="note-editor-title"
+            value={titleValue}
+            onChange={this.handleTitleChange}
+            placeholder="Title"
+          />
+          {/* <button
+            onClick={this.saveNote}
+            className="modal-submit-button note-show-save-button"
+          >
+            Save
+          </button> */}
+        </div>
+
         <ReactQuill
           className="note-show-quill"
-          value={content}
+          value={this.state.content}
           modules={this.modules}
+          onChange={this.handleContentChange}
           placeholder="Start writing"
           theme="snow"
         >
