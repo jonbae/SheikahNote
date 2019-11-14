@@ -99,7 +99,8 @@ ul.notebook-dropdown > a img {
   margin-left: 26px;
 }
 
-ul.sidebar-links li:hover {
+ul.sidebar-links li:hover,
+ul.sidebar-links a:hover {
   background-color: #333333;
 }
 

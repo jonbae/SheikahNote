@@ -16,16 +16,33 @@ class NoteIndexItem extends React.Component {
     }
   }
 
+  noteSnippet() {
+    const noteText = "<div>" + this.props.note.content + "</div>";
+    let plaintext = $(noteText)
+      .text()
+      .substring(0, 79);
+
+    if (noteText.length > 80) {
+      plaintext += "...";
+    }
+    debugger;
+    return plaintext;
+  }
+
   render() {
-    const choppedContent =
-      this.props.note.content.length > 60
-        ? this.props.note.content.slice(0, 60) + "..."
-        : this.props.note.content;
+    // let plainText = this.props.note.content
+    //   ? $(this.props.note.content).text()
+    //   : "";
+
+    // const choppedContent =
+    //   plainText.length > 60 ? plainText.slice(0, 60) + "..." : plainText;
 
     return (
       <div className="note-index-item" onClick={this.handleClick}>
         <li>{this.props.note.title}</li>
-        <li className="note-index-item-chopped-content">{choppedContent}</li>
+        <li className="note-index-item-chopped-content">
+          {this.noteSnippet()}
+        </li>
         <li>{this.props.note.updated_at}</li>
       </div>
     );
