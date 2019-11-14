@@ -1,5 +1,6 @@
 import React from "react";
 import ReactQuill from "react-quill";
+import { timingSafeEqual } from "crypto";
 
 class NoteShow extends React.Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class NoteShow extends React.Component {
       isHidden: true
     };
     this.toggleHidden = this.toggleHidden.bind(this);
+    this.hidden = this.hidden.bind(this);
     this.handleFullscreen = this.handleFullscreen.bind(this);
     this.deleteNoteThenHideDropdown = this.deleteNoteThenHideDropdown.bind(
       this
@@ -38,17 +40,17 @@ class NoteShow extends React.Component {
     };
   }
 
-  componentDidMount() {
-    //why is this not the first note
-    this.props.requestNote(this.props.noteId).then(res => {
-      debugger;
-
-      this.setState({
-        title: res.note.title,
-        content: res.note.content
-      });
-    });
-  }
+  // componentDidMount() {
+  //why is this not the first note
+  // this.props.requestNote(this.props.noteId);
+  // .then(res => {
+  //   debugger;
+  //   this.setState({
+  //     title: res.note.title,
+  //     content: res.note.content
+  //   });
+  // });
+  // }
 
   componentDidUpdate(prevProps, prevState) {
     if (!this.props.note) {
@@ -91,25 +93,24 @@ class NoteShow extends React.Component {
 
   handleTitleChange(e) {
     e.preventDefault();
-    this.startAutosaveTimer();
-    debugger;
+    // this.startAutosaveTimer();
+    // debugger;
     this.setState({ title: e.currentTarget.value });
   }
 
   handleContentChange(value) {
     // e.preventDefault();
-    this.startAutosaveTimer();
-    debugger;
+    // this.startAutosaveTimer();
+
     this.setState({ content: value });
   }
 
-  startAutosaveTimer() {
-    if (this.autosaveTimer) {
-      debugger;
-      clearTimeout(this.autosaveTimer);
-    }
-    this.autosaveTimer = setTimeout(this.saveNote.bind(this), 500);
-  }
+  // startAutosaveTimer() {
+  //   if (this.autosaveTimer) {
+  //     clearTimeout(this.autosaveTimer);
+  //   }
+  //   this.autosaveTimer = setTimeout(this.saveNote.bind(this), 5000);
+  // }
 
   handleFullscreen() {
     console.log("fullscreen");
@@ -120,6 +121,7 @@ class NoteShow extends React.Component {
   }
 
   hidden() {
+    debugger;
     this.setState({ isHidden: true });
   }
 
@@ -177,6 +179,18 @@ class NoteShow extends React.Component {
             <section
               className={`dropdown-menu notes-action-position ${hiddenClass}`}
             >
+              <p
+                onClick={() =>
+                  this.props.updateNote(
+                    Object.assign({}, this.props.note, {
+                      title: this.state.title,
+                      content: this.state.content
+                    })
+                  )
+                }
+              >
+                Save Note
+              </p>
               <p
                 onClick={() =>
                   this.deleteNoteThenHideDropdown(this.props.note.id)
