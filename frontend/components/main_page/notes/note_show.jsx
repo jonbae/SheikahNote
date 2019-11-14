@@ -184,12 +184,14 @@ class NoteShow extends React.Component {
             >
               <p
                 onClick={() =>
-                  this.props.updateNote(
-                    Object.assign({}, this.props.note, {
-                      title: this.state.title,
-                      content: this.state.content
-                    })
-                  )
+                  this.props
+                    .updateNote(
+                      Object.assign({}, this.props.note, {
+                        title: this.state.title,
+                        content: this.state.content
+                      })
+                    )
+                    .then(this.hidden)
                 }
               >
                 Save Note
