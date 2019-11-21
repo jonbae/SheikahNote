@@ -9,14 +9,17 @@ import {
 import { selectNote, selectNotebook } from "../../../reducers/selectors";
 
 const msp = (state, ownProps) => {
-  debugger;
-  const noteId = parseInt(ownProps.match.params.noteId);
-  const note = selectNote(state, noteId);
+  // debugger;
+  // const noteId = parseInt(ownProps.match.params.noteId);
+  const note = selectNote(state, parseInt(ownProps.match.params.noteId)) || {
+    title: "",
+    content: ""
+  };
   debugger;
   const notebook = note ? selectNotebook(state, note.notebookId) : null;
 
   return {
-    noteId,
+    // noteId,
     note,
     notebook
   };

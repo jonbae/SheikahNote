@@ -36,3 +36,7 @@ section.dropdown-menu.notes-action-position {
 section.dropdown-menu.notes-action-position > p {
   color: black;
 }
+
+input.note-editor-title {
+  width: 100%;
+}
