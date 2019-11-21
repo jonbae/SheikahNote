@@ -87,7 +87,11 @@ class NoteShow extends React.Component {
   render() {
     return (
       <div className="note-show-frame">
-        {/* <NoteShowHeader /> */}
+        <NoteShowHeader
+          notebook={this.props.notebook}
+          note={this.props.note}
+          deleteNote={this.props.deleteNote}
+        />
 
         <div>
           <input
