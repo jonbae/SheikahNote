@@ -93,7 +93,7 @@ class NoteShow extends React.Component {
           deleteNote={this.props.deleteNote}
         />
 
-        <div>
+        <div className="note-show-editor">
           <input
             type="text"
             value={this.state.title}
