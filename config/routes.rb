@@ -15,13 +15,14 @@ Rails.application.routes.draw do
     resources :notes, except: [:new, :edit] 
     
     # do tags have show? or is this the jbuilder stuff? 
-    resources :tags, only: [:show] do 
-      resources :notes, only: [:index]
-    end
+    # resources :tags, only: [:show] do 
+    #   resources :notes, only: [:index]
+    # end
+    resources :tags, only: [:create, :destroy, :index, :show]
 
-    resources :notes, only: [:show] do 
-      resources :tags, only: [:create, :destroy] 
-    end
+    # resources :notes, only: [:show] do 
+    #   resources :tags, only: [:create, :destroy] 
+    # end
     
     resources :taggings, only: [:create, :destroy, :index]
   end

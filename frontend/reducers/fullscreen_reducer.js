@@ -33,14 +33,13 @@
 
 //   export default notebooksReducer;
 
-import { FULLSCREEN } from "../actions/ui_actions";
+import { TOGGLE_FULLSCREEN } from "../actions/ui_actions";
 
 export default function fullscreenReducer(state = false, action) {
   switch (action.type) {
-    case FULLSCREEN:
-      return Object.assign({}, state, {
-        fullScreen: !state.fullScreen
-      });
+    case TOGGLE_FULLSCREEN:
+      debugger;
+      return true;
     default:
       return state;
   }

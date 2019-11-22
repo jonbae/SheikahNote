@@ -1,15 +1,25 @@
 import { connect } from "react-redux";
 
 import NoteShow from "./note_show";
-import { requestNote, deleteNote } from "../../../actions/note_actions";
+import {
+  requestNote,
+  updateNote,
+  deleteNote
+} from "../../../actions/note_actions";
 import { selectNote, selectNotebook } from "../../../reducers/selectors";
 
 const msp = (state, ownProps) => {
-  const noteId = parseInt(ownProps.match.params.noteId);
-  const note = selectNote(state, noteId);
+  // debugger;
+  // const noteId = parseInt(ownProps.match.params.noteId);
+  const note = selectNote(state, parseInt(ownProps.match.params.noteId)) || {
+    title: "",
+    content: ""
+  };
+  debugger;
   const notebook = note ? selectNotebook(state, note.notebookId) : null;
+
   return {
-    noteId,
+    // noteId,
     note,
     notebook
   };
@@ -22,7 +32,4 @@ const mdp = dispatch => ({
   deleteNote: id => dispatch(deleteNote(id))
 });
 
-export default connect(
-  msp,
-  mdp
-)(NoteShow);
+export default connect(msp, mdp)(NoteShow);

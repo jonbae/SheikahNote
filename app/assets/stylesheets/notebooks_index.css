@@ -95,12 +95,14 @@ button.new-notebook {
   font-size: 14px;
 }
 
-.notebooks-index-item > a span {
+.notebooks-index-item > a span,
+.notebooks-index-item > div span {
   font-size: 14px;
   margin: 2.5px;
 }
 
-.notebooks-index-item > a span:last-child {
+.notebooks-index-item > a span:last-child,
+.notebooks-index-item > div span:last-child {
   color: #ccc;
 }
 

@@ -18,9 +18,9 @@ export const closeModal = () => {
   };
 };
 
-export const fullscreen = () => {
+export const toggleFullScreen = () => {
   return {
-    type: FULLSCREEN
+    type: TOGGLE_FULLSCREEN
   };
 };
 

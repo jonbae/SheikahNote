@@ -1,21 +1,27 @@
-import React from 'react';
+import React from "react";
 
+import NoteShowContainer from "./notes/note_show_container";
 import SidebarContainer from "./sidebar/sidebar_container";
-import MainSection from "./main_section"
-
+import MainSection from "./main_section";
 
 const MainPage = props => {
-    // fullscreen mode 
-
+  // fullscreen mode
+  if (props.fullScreen === true) {
+    debugger;
+    return (
+      <main className="main-page-frame">
+        <NoteShowContainer />
+      </main>
+    );
+  } else {
     // normal mode
     return (
-        <main className="main-page-frame"> 
-
-            <SidebarContainer /> 
-            <MainSection /> 
-        
-        </main>
+      <main className="main-page-frame">
+        <SidebarContainer />
+        <MainSection />
+      </main>
     );
+  }
 };
 
-export default MainPage; 
+export default MainPage;

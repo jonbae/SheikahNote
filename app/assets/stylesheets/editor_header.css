@@ -15,6 +15,10 @@ header.note-nav {
   align-items: center;
 }
 
+.note-nav-left > p {
+  font-size: 13px;
+}
+
 .note-nav-ellipsis {
   transform: rotate(90deg);
   width: 24px;
@@ -31,4 +35,8 @@ section.dropdown-menu.notes-action-position {
 
 section.dropdown-menu.notes-action-position > p {
   color: black;
+}
+
+input.note-editor-title {
+  width: 100%;
 }

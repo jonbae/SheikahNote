@@ -17,6 +17,10 @@ class Sidebar extends React.Component {
     this.createNewNote = this.createNewNote.bind(this);
   }
 
+  // componentDidMount() {
+  //   this.props.requestAllNotes();
+  // }
+
   toggleAccountHidden() {
     this.setState({ isAccountHidden: !this.state.isAccountHidden });
   }
@@ -34,20 +38,25 @@ class Sidebar extends React.Component {
   // }
 
   createNewNote(e) {
+    // debugger;
     debugger;
     const blankNote = {
       title: "Untitled",
-      content: "these are test blanks",
+      content: "these are id test blanks",
       author_id: this.props.currentUser.id,
-      notebook_id: 138
+      notebook_id: this.props.notebooks[0].id
       // change the notebookId
     };
     const that = this;
-    debugger;
-    this.props.createNote(blankNote);
+    // debugger;
+    this.props.createNote(blankNote).then(res => {
+      // debugger;
+      that.props.history.push(`/app/notes/${res.note.id}`);
+    });
   }
 
   render() {
+    // debugger;
     const hiddenAccountClass = this.state.isAccountHidden
       ? "hidden-dropdown"
       : "";
@@ -57,18 +66,23 @@ class Sidebar extends React.Component {
     const downCarat = this.state.isNotebooksHidden ? "" : "filled-down-carat";
     let notes;
     let notebooks;
+    let lastNoteId;
     // debugger;
     // notebook.id returns a warning get this checked out
     if (
       this.props.notebooks !== undefined &&
-      this.props.notebooks !== 0 &&
-      this.props.notes !== undefined
+      // this.props.notebooks.length !== 0 &&
+      this.props.notes !== undefined &&
+      this.props.notes.length !== 0
     ) {
       // debugger;
       notebooks = this.props.notebooks.map(notebook => (
         <NotebookDropdownItem key={notebook.id} notebook={notebook} />
       ));
+      // debugger;
       notes = this.props.notes;
+      // debugger;
+      lastNoteId = notes[notes.length - 1].id;
     }
     // debugger;
 
@@ -128,7 +142,7 @@ class Sidebar extends React.Component {
           {/* to="/app/notes" */}
           {/* <li> */}
 
-          <Link to={`/app/notes`}>
+          <Link to={`/app/notes/${lastNoteId}`}>
             <img src={window.allNotesURL} alt="all notes" />
             <p> All Notes </p>
           </Link>

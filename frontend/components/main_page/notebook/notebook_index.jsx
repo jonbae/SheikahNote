@@ -13,6 +13,7 @@ class NotebookIndex extends React.Component {
 
   componentDidMount() {
     this.props.requestAllNotebooks();
+    this.props.requestAllNotes();
   }
 
   render() {
@@ -23,7 +24,7 @@ class NotebookIndex extends React.Component {
         <NotebookIndexItem
           key={notebook.id}
           notebook={notebook}
-          // notes={selectNotebookNotes}
+          noteIds={notebook.noteIds}
           openModal={this.props.openModal}
           deleteNotebook={this.props.deleteNotebook}
         />
