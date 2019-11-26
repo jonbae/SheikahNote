@@ -21,6 +21,7 @@ class Api::NotesController < ApplicationController
   def show
     @note = current_user.notes.find(params[:id])
     @note.author_id = current_user.id
+    @tags = @notes.tags
     if @note.save! 
       render :show
     else
