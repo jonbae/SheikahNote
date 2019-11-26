@@ -5,6 +5,7 @@ import NotebookIndexContainer from "./notebook/notebook_index_container";
 import NotebookShowContainer from "./notebook/notebook_show_container";
 import NoteIndexContainer from "./notes/note_index_container";
 import NoteShowContainer from "./notes/note_show_container";
+import TagsIndex from "./tags/tags_index";
 
 const MainSection = () => {
   return (
@@ -23,6 +24,7 @@ const MainSection = () => {
       <Route path="/app/notes" component={NoteIndexContainer} />
       <Route path="/app/notes/:noteId" component={NoteShowContainer} />
       {/* tags is similar  */}
+      <Route exact path="/app/tags" component={TagsIndex} />
     </>
   );
 };

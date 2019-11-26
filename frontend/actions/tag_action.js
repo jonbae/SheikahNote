@@ -19,12 +19,12 @@ export const removeTag = id => ({
     id
 });
 
-export const fetchTags = () => dispatch => {
+export const requestAllTags = () => dispatch => {
     return APIUtil.fetchTags().then(tags => dispatch(receiveTags(tags)));
 };
 
-export const fetchNotesWithTag = id => dispatch => {
-    return APIUtil.fetchTag(id).then(tag => dispatch(receiveTag(tag)));
+export const requestTag = id => dispatch => {
+    return APIUtil.fetchNotesWithTag(id).then(tag => dispatch(receiveTag(tag)));
 };
 
 export const createTag = tag => dispatch => {
@@ -54,7 +54,7 @@ export const removeTagging = noteId => ({
     noteId
 });
 
-export const fetchTaggings = () => dispatch => {
+export const requestAllTaggings = () => dispatch => {
     return APIUtil.fetchTaggings().then(taggings =>
         dispatch(receiveTaggings(taggings))
     );
