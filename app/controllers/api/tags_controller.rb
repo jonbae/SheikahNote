@@ -28,8 +28,4 @@ class Api::TagsController < ApplicationController
         params.require(:tag).permit(:name, :author_id)
     end
 
-
-
-
-
 end
