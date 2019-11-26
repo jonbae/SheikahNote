@@ -9,6 +9,8 @@
 User.destroy_all
 Notebook.destroy_all
 Note.destroy_all
+Tags.destroy_all
+Taggings.destroy_all 
 
 demo = User.create!( {username: 'demo123', email: 'demo@mail.com', password: 'password'} )
 zelda = User.create!(  {username: 'zelda', email: 'zelda@mail.com', password: 'password'} )
@@ -84,3 +86,10 @@ author_id: demo.id, notebook_id: mm_notebook.id})
 
 note9 = Note.create!( {title: "Lanayru", content: "Those who do not know the danger of wielding power will, before long, be ruled by it...Never forget that." , 
 author_id: demo.id, notebook_id: tp_notebook.id})
+
+
+moon_child_tag = Tag.create!({name: "Moon Child", author_id: demo.id})
+
+Tagging.create!({tag_id: moon_child_tag.id, note_id: note7.id})
+Tagging.create!({tag_id: moon_child_tag.id, note_id: note10.id})
+Tagging.create!({tag_id: moon_child_tag.id, note_id: note11.id})
