@@ -9,8 +9,8 @@
 User.destroy_all
 Notebook.destroy_all
 Note.destroy_all
-Tags.destroy_all
-Taggings.destroy_all 
+Tag.destroy_all
+Tagging.destroy_all 
 
 demo = User.create!( {username: 'demo123', email: 'demo@mail.com', password: 'password'} )
 zelda = User.create!(  {username: 'zelda', email: 'zelda@mail.com', password: 'password'} )
@@ -93,3 +93,9 @@ moon_child_tag = Tag.create!({name: "Moon Child", author_id: demo.id})
 Tagging.create!({tag_id: moon_child_tag.id, note_id: note7.id})
 Tagging.create!({tag_id: moon_child_tag.id, note_id: note10.id})
 Tagging.create!({tag_id: moon_child_tag.id, note_id: note11.id})
+
+people_tag = Tag.create!({name: "People", author_id: demo.id})
+
+Tagging.create!({tag_id: people_tag.id, note_id: note4.id})
+Tagging.create!({tag_id: people_tag.id, note_id: note5.id})
+
