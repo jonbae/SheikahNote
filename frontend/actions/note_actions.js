@@ -15,7 +15,8 @@ export const receiveAllNotes = notes => {
 export const receiveNote = payload => {
   return {
     type: RECEIVE_NOTE,
-    note: payload.note
+    note: payload.note,
+    tags: payload.tags
   };
 };
 

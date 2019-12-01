@@ -19,7 +19,7 @@ class NotebookIndex extends React.Component {
   render() {
     let notebooks;
     // notebook.id returns a warning get this checked out
-    if (this.props.notebooks !== undefined && this.props.notebooks !== 0) {
+    if (this.props.notebooks !== undefined && this.props.notebooks.length !== 0) {
       notebooks = this.props.notebooks.map(notebook => (
         <NotebookIndexItem
           key={notebook.id}

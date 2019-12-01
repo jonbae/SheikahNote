@@ -1,5 +1,4 @@
 import React from "react";
-// import LinkedList from "parchment/dist/src/collection/linked-list";
 import { Link } from "react-router-dom";
 class NoteShowHeader extends React.Component {
   constructor(props) {

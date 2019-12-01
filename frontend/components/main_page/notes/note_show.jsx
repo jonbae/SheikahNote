@@ -112,7 +112,11 @@ class NoteShow extends React.Component {
           />
         </div>
 
-        {/* <NoteShowFooter /> */}
+        <NoteShowFooter
+          requestAllTags={this.props.requestAllTags}
+          requestAllTaggings={this.props.requestAllTaggings}
+          note={this.props.note}
+        />
       </div>
     );
   }

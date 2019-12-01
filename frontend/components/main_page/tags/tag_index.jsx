@@ -1,4 +1,5 @@
 import React from "react";
+import { sortTagsByAlphabeticalOrder } from "../../../util/tags_util";
 
 // class TagIndex extends React.Component {
 //     constructor(props) {
@@ -21,29 +22,37 @@ import React from "react";
 // }
 
 class TagIndex extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
-    }
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
-    componentDidMount(){
-        this.props.requestAllTags()
-        debugger
-        this.props.requestAllTaggings()
-    }
+  componentDidMount() {
+    this.props.requestAllTags();
+    debugger;
+    this.props.requestAllTaggings();
+  }
 
-    render() {
-        let tags; 
-        if(this.props.tags !== undefined) {
-            return null
-        }
-
+  render() {
+    let tags;
+    if (this.props.tags !== undefined && this.props.tags.length !== 0) {
+      debugger;
+      tags = sortTagsByAlphabeticalOrder(this.props.tags).map(tag => {
         return (
-            <>
-                <div>THIS IS THE TAG INDEX</div>
-            </>
-        )    
+          <div>
+            {tag.name}
+          </div>
+        );
+      });
     }
+
+    return (
+      <div className="tag-index-frame">
+        <div>{tags}</div>
+        <div>THIS IS THE TAG INDEX</div>;
+      </div>
+    );
+  }
 }
 
 export default TagIndex;

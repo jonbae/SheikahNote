@@ -5,69 +5,69 @@ export const RECEIVE_TAG = "RECEIVE_TAG";
 export const REMOVE_TAG = "REMOVE_TAG";
 
 export const receiveTags = tags => ({
-    type: RECEIVE_TAGS,
-    tags
+  type: RECEIVE_TAGS,
+  tags
 });
 
 export const receiveTag = tag => ({
-    type: RECEIVE_TAG,
-    tag
+  type: RECEIVE_TAG,
+  tag
 });
 
 export const removeTag = id => ({
-    type: REMOVE_TAG,
-    id
+  type: REMOVE_TAG,
+  id
 });
 
 export const requestAllTags = () => dispatch => {
-    return APIUtil.fetchTags().then(tags => dispatch(receiveTags(tags)));
+  return APIUtil.fetchTags().then(tags => dispatch(receiveTags(tags)));
 };
 
 export const requestTag = id => dispatch => {
-    return APIUtil.fetchNotesWithTag(id).then(tag => dispatch(receiveTag(tag)));
+  return APIUtil.fetchNotesWithTag(id).then(tag => dispatch(receiveTag(tag)));
 };
 
 export const createTag = tag => dispatch => {
-    return APIUtil.createTag(tag).then(tag => dispatch(receiveTag(tag)));
+  return APIUtil.createTag(tag).then(tag => dispatch(receiveTag(tag)));
 };
 
 export const deleteTag = id => dispatch => {
-    return APIUtil.deleteTag(id).then(id => dispatch(removeTag(id)));
+  return APIUtil.deleteTag(id).then(id => dispatch(removeTag(id)));
 };
 
-export const RECIEVE_TAGGINGS = "RECEIVE_TAGGINGS";
-export const RECIEVE_TAGGING = "RECEIVE_TAGGING";
+export const RECEIVE_TAGGINGS = "RECEIVE_TAGGINGS";
+export const RECEIVE_TAGGING = "RECEIVE_TAGGING";
 export const REMOVE_TAGGING = "REMOVE_TAGGING";
 
 export const receiveTaggings = taggings => ({
-    type: RECEIVE_TAGGINGS,
-    taggings
+  type: RECEIVE_TAGGINGS,
+  taggings
 });
 
 export const receiveTagging = tagging => ({
-    type: RECEIVE_TAGGING,
-    tagging
+  type: RECEIVE_TAGGING,
+  tagging
 });
 
 export const removeTagging = noteId => ({
-    type: REMOVE_TAGGING,
-    noteId
+  type: REMOVE_TAGGING,
+  noteId
 });
 
 export const requestAllTaggings = () => dispatch => {
-    return APIUtil.fetchTaggings().then(taggings =>
-        dispatch(receiveTaggings(taggings))
-    );
+  return APIUtil.fetchTaggings().then(taggings =>
+    dispatch(receiveTaggings(taggings))
+  );
 };
 
 export const createTaggings = tagging => dispatch => {
-    return APIUtil.createTagging(tagging).then(tagging =>
-        dispatch(receiveTagging(tagging))
-    );
+  return APIUtil.createTagging(tagging).then(tagging =>
+    dispatch(receiveTagging(tagging))
+  );
 };
 
 export const deleteTagging = noteId => dispatch => {
-    return APIUtil.deleteTagging(noteId).then(noteId =>
-        dispatch(removeTagging(noteId))
-    );
+  return APIUtil.deleteTagging(noteId).then(noteId =>
+    dispatch(removeTagging(noteId))
+  );
 };

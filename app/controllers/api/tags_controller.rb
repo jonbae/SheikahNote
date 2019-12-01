@@ -13,9 +13,21 @@ class Api::TagsController < ApplicationController
     end
 
 
+
     def index 
         @tags = Tag.where(author_id: @current_user.id) 
     end
+
+    def show 
+        @tag = current_user.tags.find(params[:id])
+        @tag.author_id = current_user.id
+        if @tag.save! 
+            render :show
+        else
+            render json:@tag.errors.full_messages, status: 422
+        end
+    end
+
 
     def destroy 
         @tag = current_user.tags.find(params[:id])
