@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-import { selectAllNotes } from "../../../reducers/selectors";
+import { selectAllNotes, selectTaggedNotes } from "../../../reducers/selectors";
 import {
   requestAllNotebooks,
   requestNotebook
@@ -14,6 +14,11 @@ import {
   updateNote,
   deleteNote
 } from "../../../actions/note_actions";
+
+import {
+  requestAllTags,
+  requestAllTaggings
+} from "../../../actions/tag_action";
 
 import NoteIndex from "./note_index";
 
@@ -37,7 +42,7 @@ const mdp = dispatch => ({
   requestNotebook: notebookId => dispatch(requestNotebook(notebookId)),
   selectNotebook: notebookId => dispatch(selectNotebook(notebookId)),
   selectNote: noteId => dispatch(selectNote(noteId)),
-  equestAllTags: () => dispatch(requestAllTags()),
+  requestAllTags: () => dispatch(requestAllTags()),
   requestAllTaggings: () => dispatch(requestAllTaggings())
 });
 

@@ -30,14 +30,14 @@ class TagIndex extends React.Component {
 
   componentDidMount() {
     this.props.requestAllTags();
-    debugger;
+    // debugger;
     this.props.requestAllTaggings();
   }
 
   render() {
     let tags;
     if (this.props.tags !== undefined && this.props.tags.length !== 0) {
-      debugger;
+      // debugger;
       tags = sortTagsByAlphabeticalOrder(this.props.tags).map(tag => {
         return (
           <Link to={`/app/tags/${tag.id}`}>

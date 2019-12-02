@@ -34,8 +34,19 @@ class NoteIndex extends React.Component {
   //   this.props.selectNotebook(paramNotebookId);
   // }
 
-  renderSortedNotes() {
-    let sortedNotes = sortNotesByLastUpdate(this.props.notes).map(note =>
+  // taggedNotes() {
+  //   debugger;
+  //   if (this.props.tagId) {
+  //     let taggedNotes = this.state.notes.filter(note =>
+  //       note.tagIds.includes(this.props.tagId)
+  //     );
+
+  //     this.setState({ notes: taggedNotes });
+  //   }
+  // }
+
+  renderSortedNotes(notes) {
+    let sortedNotes = sortNotesByLastUpdate(notes).map(note =>
       <NoteIndexItem
         key={note.id}
         note={note}
@@ -80,6 +91,8 @@ class NoteIndex extends React.Component {
       ? `${this.props.title}`
       : "All Notes";
 
+    let notes = this.props.tagId ? this.props.taggedNotes : this.props.notes;
+
     return (
       <div className="note-index-frame">
         <header className="note-index-header">
@@ -92,7 +105,7 @@ class NoteIndex extends React.Component {
           {/* notes header options  */}
           <div className="note-index-options">
             {/* number of notes  */}
-            <p>{`${this.props.notes.length} notes`}</p>
+            <p>{`${notes.length} notes`}</p>
             {/* icons  */}
             <ul className="note-index-icons">
               {/* tags icon  */}
@@ -101,7 +114,7 @@ class NoteIndex extends React.Component {
           </div>
         </header>
         {/* list of notes with scroll bar  */}
-        {this.renderSortedNotes()}
+        {this.renderSortedNotes(notes)}
         {/* <div className="note-index-list">{notes}</div> */}
       </div>
     );

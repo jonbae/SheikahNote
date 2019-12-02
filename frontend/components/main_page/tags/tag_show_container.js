@@ -1,6 +1,10 @@
 import { connect } from "react-redux";
 
-import { selectNote, selectTaggedNotes } from "../../../reducers/selectors";
+import {
+  selectNote,
+  selectTaggedNotes,
+  selectAllNotes
+} from "../../../reducers/selectors";
 
 import {
   requestAllNotebooks,
@@ -25,8 +29,12 @@ import TagShow from "../notes/note_index";
 const msp = (state, ownProps) => {
   const tagId = parseInt(ownProps.match.params.tagId);
   return {
+    tagId,
+    // isTag: true,
+    taggedNotes: selectTaggedNotes(state, tagId),
+
     isNotebook: false,
-    notes: selectTaggedNotes(state, tagId),
+    notes: selectAllNotes(state), //selectTaggedNotes(state, tagId),
     path: `/app/tags/${tagId}/notes`
   };
 };

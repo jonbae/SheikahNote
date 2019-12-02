@@ -28,7 +28,7 @@ class NotebookIndexItem extends React.Component {
     const noteCount = this.props.noteIds.length;
     const noteIds = this.props.noteIds;
     if (noteIds.length !== 0 && noteIds !== undefined) {
-      debugger;
+      // debugger;
       return (
         <Link
           to={`/app/notebooks/${this.props.notebook.id}/notes/${

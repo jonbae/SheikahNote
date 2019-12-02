@@ -1,7 +1,6 @@
 export const sortTagsByAlphabeticalOrder = tags => {
   let tagsArr = Object.values(tags);
   tagsArr.sort((a, b) => {
-    debugger;
     if (a.name.toLowerCase() > b.name.toLowerCase()) {
       return 1;
     }
@@ -10,6 +9,5 @@ export const sortTagsByAlphabeticalOrder = tags => {
     }
     return 0;
   });
-  debugger;
   return tagsArr;
 };

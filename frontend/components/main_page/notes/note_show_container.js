@@ -21,7 +21,7 @@ const msp = (state, ownProps) => {
     title: "",
     content: ""
   };
-  debugger;
+  // debugger;
   const notebook = note ? selectNotebook(state, note.notebookId) : null;
 
   return {

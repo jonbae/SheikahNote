@@ -1,14 +1,14 @@
 import React from "react";
 
 import NoteShowHeader from "./note_header";
-import NoteShowEditor from "./note_editor";
+// import NoteShowEditor from "./note_editor";
 import NoteShowFooter from "./note_footer";
 import ReactQuill from "react-quill";
 import { debounce } from "lodash";
 
 class NoteShow extends React.Component {
   constructor(props) {
-    debugger;
+    // debugger;
     super(props);
     this.state = this.props.note;
 
@@ -36,12 +36,12 @@ class NoteShow extends React.Component {
   }
 
   componentDidMount() {
-    debugger;
+    // debugger;
     this.props.requestNote(this.props.noteId);
   }
 
   componentDidUpdate(prevProps) {
-    debugger;
+    // debugger;
     prevProps.match.params.noteId !== this.props.match.params.noteId
       ? this.props.requestNote(this.props.match.params.noteId)
       : null;
@@ -63,7 +63,7 @@ class NoteShow extends React.Component {
   // }
 
   autoUpdateTimer() {
-    debugger;
+    // debugger;
     if (this.autosaveTimer) {
       clearTimeout(this.autosaveTimer);
     }
@@ -74,7 +74,7 @@ class NoteShow extends React.Component {
   }
 
   update(field) {
-    debugger;
+    // debugger;
     return e => {
       if (field === "title") {
         this.autoUpdateTimer();
@@ -87,7 +87,7 @@ class NoteShow extends React.Component {
   }
 
   render() {
-    debugger;
+    // debugger;
     return (
       <div className="note-show-frame">
         <NoteShowHeader
