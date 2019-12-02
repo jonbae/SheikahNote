@@ -6,7 +6,7 @@ import NotebookShowContainer from "./notebook/notebook_show_container";
 import NoteIndexContainer from "./notes/note_index_container";
 import NoteShowContainer from "./notes/note_show_container";
 import TagIndexContainer from "./tags/tag_index_container";
-import TaggingIndexContainer from "./tags/tag_show_container";
+import TagShowContainer from "./tags/tag_show_container";
 
 const MainSection = () => {
   return (

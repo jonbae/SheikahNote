@@ -36,10 +36,9 @@ const mdp = dispatch => ({
   requestAllNotebooks: () => dispatch(requestAllNotebooks()),
   requestNotebook: notebookId => dispatch(requestNotebook(notebookId)),
   selectNotebook: notebookId => dispatch(selectNotebook(notebookId)),
-  selectNote: noteId => dispatch(selectNote(noteId))
+  selectNote: noteId => dispatch(selectNote(noteId)),
+  equestAllTags: () => dispatch(requestAllTags()),
+  requestAllTaggings: () => dispatch(requestAllTaggings())
 });
 
-export default connect(
-  msp,
-  mdp
-)(NoteIndex);
+export default connect(msp, mdp)(NoteIndex);

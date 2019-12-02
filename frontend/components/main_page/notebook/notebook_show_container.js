@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 
-import { selectAllNotes, selectNote } from "../../../reducers/selectors";
-import { selectNotebookNotes } from "../../../reducers/selectors";
+import { selectNote, selectNotebookNotes } from "../../../reducers/selectors";
+
 import {
   requestAllNotebooks,
   requestNotebook
@@ -16,6 +16,10 @@ import {
 
 //NotebookShow === NoteIndex
 import NotebookShow from "../notes/note_index";
+import {
+  requestAllTags,
+  requestAllTaggings
+} from "../../../actions/tag_action";
 
 const msp = (state, ownProps) => {
   const notebookId = parseInt(ownProps.match.params.notebookId);
@@ -40,10 +44,12 @@ const mdp = dispatch => ({
   updateNote: note => dispatch(updateNote(note)),
   deleteNote: id => dispatch(deleteNote(id)),
   requestAllNotebooks: () => dispatch(requestAllNotebooks()),
-  requestNotebook: notebookId => dispatch(requestNotebook(notebookId))
+  requestNotebook: notebookId => dispatch(requestNotebook(notebookId)),
+  selectNotebook: notebookId => dispatch(selectNotebook(notebookId)),
+  selectNote: noteId => dispatch(selectNote(noteId)),
+
+  requestAllTags: () => dispatch(requestAllTags()),
+  requestAllTaggings: () => dispatch(requestAllTaggings())
 });
 
-export default connect(
-  msp,
-  mdp
-)(NotebookShow);
+export default connect(msp, mdp)(NotebookShow);

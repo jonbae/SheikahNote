@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { setBlurListener } from "../../../util/blur_util";
-import NotebookNotesItem from "./notebook_notes_index";
+// import NotebookNotesItem from "./notebook_notes_index";
 import { selectNotebookNotes } from "../../../reducers/selectors";
 
 class NotebookIndexItem extends React.Component {

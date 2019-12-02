@@ -12,6 +12,8 @@ class NoteIndex extends React.Component {
   componentDidMount() {
     this.props.requestAllNotebooks();
     this.props.requestAllNotes();
+    this.props.requestAllTags();
+    this.props.requestAllTaggings();
   }
 
   // componentDidUpdate() {
@@ -33,7 +35,7 @@ class NoteIndex extends React.Component {
   // }
 
   renderSortedNotes() {
-    let sortedNotes = sortNotesByLastUpdate(this.props.notes).map(note => (
+    let sortedNotes = sortNotesByLastUpdate(this.props.notes).map(note =>
       <NoteIndexItem
         key={note.id}
         note={note}
@@ -42,9 +44,13 @@ class NoteIndex extends React.Component {
         history={this.props.history}
         path={this.props.path}
       />
-    ));
+    );
 
-    return <div className="note-index-list">{sortedNotes}</div>;
+    return (
+      <div className="note-index-list">
+        {sortedNotes}
+      </div>
+    );
   }
 
   render() {
@@ -79,7 +85,9 @@ class NoteIndex extends React.Component {
         <header className="note-index-header">
           {/* notes header  conditional render */}
           <div className="note-index-title">
-            <span>{notebookTitle}</span>
+            <span>
+              {notebookTitle}
+            </span>
           </div>
           {/* notes header options  */}
           <div className="note-index-options">

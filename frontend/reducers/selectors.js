@@ -47,6 +47,12 @@ export const selectAllTags = function(state) {
   // return allTags.filter( tag => state.entities.users[state.session.id].)
 };
 
+export const selectTaggedNotes = function(state, tagId) {
+  let notes = Object.values(state.entities.notes);
+  debugger;
+  return notes.filter(note => note.tagIds.includes(tagId));
+};
+
 // export const selectNotes = function(state) {
 //   return Object.values(state.entities.users.noteIds);
 // };

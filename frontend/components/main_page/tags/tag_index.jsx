@@ -1,5 +1,6 @@
 import React from "react";
 import { sortTagsByAlphabeticalOrder } from "../../../util/tags_util";
+import { Link } from "react-router-dom";
 
 // class TagIndex extends React.Component {
 //     constructor(props) {
@@ -39,16 +40,16 @@ class TagIndex extends React.Component {
       debugger;
       tags = sortTagsByAlphabeticalOrder(this.props.tags).map(tag => {
         return (
-          <div>
+          <Link to={`/app/tags/${tag.id}`}>
             {tag.name}
-          </div>
+          </Link>
         );
       });
     }
 
     return (
       <div className="tag-index-frame">
-        <div>{tags}</div>
+        <ul>{tags}</ul>
         <div>THIS IS THE TAG INDEX</div>;
       </div>
     );

@@ -1,11 +1,32 @@
 import { connect } from "react-redux";
 
+import { selectNote, selectTaggedNotes } from "../../../reducers/selectors";
+
+import {
+  requestAllNotebooks,
+  requestNotebook
+} from "../../../actions/notebook_actions";
+
+import {
+  requestAllNotes,
+  requestNote,
+  createNote,
+  updateNote,
+  deleteNote
+} from "../../../actions/note_actions";
+
+import {
+  requestAllTags,
+  requestAllTaggings
+} from "../../../actions/tag_action";
+
 import TagShow from "../notes/note_index";
 
-const msp = state => {
+const msp = (state, ownProps) => {
+  const tagId = parseInt(ownProps.match.params.tagId);
   return {
     isNotebook: false,
-    notes: selectTaggedNotes(state),
+    notes: selectTaggedNotes(state, tagId),
     path: `/app/tags/${tagId}/notes`
   };
 };
@@ -18,7 +39,12 @@ const mdp = dispatch => {
     updateNote: note => dispatch(updateNote(note)),
     deleteNote: id => dispatch(deleteNote(id)),
     requestAllNotebooks: () => dispatch(requestAllNotebooks()),
-    requestNotebook: notebookId => dispatch(requestNotebook(notebookId))
+    requestNotebook: notebookId => dispatch(requestNotebook(notebookId)),
+    selectNotebook: notebookId => dispatch(selectNotebook(notebookId)),
+    selectNote: noteId => dispatch(selectNote(noteId)),
+
+    requestAllTags: () => dispatch(requestAllTags()),
+    requestAllTaggings: () => dispatch(requestAllTaggings())
   };
 };
 
