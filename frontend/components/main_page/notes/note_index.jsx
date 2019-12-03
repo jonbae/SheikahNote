@@ -46,6 +46,7 @@ class NoteIndex extends React.Component {
   // }
 
   renderSortedNotes(notes) {
+    debugger;
     let sortedNotes = sortNotesByLastUpdate(notes).map(note =>
       <NoteIndexItem
         key={note.id}
@@ -56,7 +57,6 @@ class NoteIndex extends React.Component {
         path={this.props.path}
       />
     );
-
     return (
       <div className="note-index-list">
         {sortedNotes}

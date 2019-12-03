@@ -23,10 +23,12 @@ import {
 import NoteIndex from "./note_index";
 
 const msp = state => {
+  const notes = selectAllNotes(state);
   debugger;
+
   return {
     isNotebook: false,
-    notes: selectAllNotes(state),
+    notes,
     path: "/app/notes",
     selectedNotebookId: state.ui.notebookId,
     selectedNoteId: state.ui.noteId

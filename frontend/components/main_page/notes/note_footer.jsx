@@ -1,10 +1,11 @@
 import React from "react";
-import NoteShow from "./note_show";
 
 class NoteShowFooter extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = { name: "" };
+
+    this.addTag = this.addTag.bind(this);
   }
 
   componentDidMount() {
@@ -12,12 +13,16 @@ class NoteShowFooter extends React.Component {
     this.props.requestAllTags();
   }
 
-  onEnter(e) {
+  addTag(e) {
+    // debugger;
     if (e.keyCode == 13 && e.shiftKey == false) {
-      this.props.createTag(this.state);
+      // maybe no {}
+      const tagging = {
+        tagging: { note_id: this.props.note.id, name: this.state.name }
+      };
+      debugger;
+      this.props.createTagging(tagging);
       this.setState({ name: "" });
-    } else {
-      null;
     }
   }
 
@@ -25,9 +30,10 @@ class NoteShowFooter extends React.Component {
     // console.log(this.props.note);
     return (
       <div className="note-show-footer">
+        {/* add tag img  */}
         <input
           type="text"
-          onKeyDown={this.onEnter}
+          onKeyDown={this.addTag}
           onChange={e => this.setState({ name: e.target.value })}
           value={this.state.name}
         />

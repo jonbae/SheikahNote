@@ -13,6 +13,7 @@ import {
   requestAllTags
 } from "../../../actions/tag_action";
 import { selectNote, selectNotebook } from "../../../reducers/selectors";
+import { createTagging } from "../../../util/tags_api_util";
 
 const msp = (state, ownProps) => {
   // debugger;
@@ -38,7 +39,8 @@ const mdp = dispatch => ({
   deleteNote: id => dispatch(deleteNote(id)),
 
   requestAllTags: () => dispatch(requestAllTags()),
-  requestAllTaggings: () => dispatch(requestAllTaggings())
+  requestAllTaggings: () => dispatch(requestAllTaggings()),
+  createTagging: tagging => dispatch(createTagging(tagging))
 });
 
 export default connect(msp, mdp)(NoteShow);

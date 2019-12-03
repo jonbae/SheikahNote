@@ -18,14 +18,12 @@ class NoteIndexItem extends React.Component {
 
   noteSnippet() {
     const noteText = "<div>" + this.props.note.content + "</div>";
-    let plaintext = $(noteText)
-      .text()
-      .substring(0, 79);
+    let plaintext = $(noteText).text().substring(0, 79);
 
     if (noteText.length > 80) {
       plaintext += "...";
     }
-    debugger;
+    // debugger;
     return plaintext;
   }
 
@@ -39,11 +37,15 @@ class NoteIndexItem extends React.Component {
 
     return (
       <div className="note-index-item" onClick={this.handleClick}>
-        <li>{this.props.note.title}</li>
+        <li>
+          {this.props.note.title}
+        </li>
         <li className="note-index-item-chopped-content">
           {this.noteSnippet()}
         </li>
-        <li>{this.props.note.updated_at}</li>
+        <li>
+          {this.props.note.updated_at}
+        </li>
       </div>
     );
   }

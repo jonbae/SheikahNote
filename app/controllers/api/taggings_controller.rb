@@ -5,6 +5,14 @@ class Api::TaggingsController < ApplicationController
         @tagging = Tagging.new(tagging_params)
         # @tagging.note_id 
         # @tagging.tag_id
+        unless params[:tagging][:tag_id]
+            tag = Tag.find_by(name: params[:tagging][:name])
+            unless tag
+                tag = Tag.create(author_id: current_user.id, name: params[:tagging][:name])
+            end
+            @tagging.tag_id = tag.id
+        end
+
         if @tagging.save
             render :show
         else
@@ -21,7 +29,7 @@ class Api::TaggingsController < ApplicationController
     end
     
     private
-    def tagging_paams 
+    def tagging_params 
         params.require(:tagging).permit(:tag_id, :note_id)
     end
 
