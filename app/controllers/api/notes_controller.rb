@@ -7,6 +7,7 @@ class Api::NotesController < ApplicationController
     @note = Note.new(note_params)
     @note.author_id = current_user.id 
     if @note.save 
+      @tags = @note.tags
       render :show
     else
       render json:@note.errors.full_messages, status: 422 
@@ -32,6 +33,7 @@ class Api::NotesController < ApplicationController
   def update
     @note = current_user.notes.find(params[:id])
     if @note.update(note_params)
+      @tags = @note.tags
       render :show
     else 
       render json: @note.errors.full_messages, status: 422
@@ -41,6 +43,7 @@ class Api::NotesController < ApplicationController
   def destroy
     @note = current_user.notes.find(params[:id])
     @note.destroy 
+    @tags = @note.tags #?
     render json: @note 
   end
 
