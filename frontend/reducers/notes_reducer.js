@@ -17,6 +17,11 @@ const notesReducer = (state = {}, action) => {
       newState = Object.assign({}, state);
       delete newState[action.noteId];
       return newState;
+    // case RECEIVE_TAGGING:
+    //   newState = Object.assign({}, state);
+    //   newState[action.tagging.noteId].push(action.tag.id);
+    //   return newState;
+
     default:
       return state;
   }

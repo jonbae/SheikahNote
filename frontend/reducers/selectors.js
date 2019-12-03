@@ -53,6 +53,11 @@ export const selectTaggedNotes = function(state, tagId) {
   return notes.filter(note => note.tagIds.includes(tagId));
 };
 
+export const selectNoteTags = function(state, noteId) {
+  let tags = Object.values(state.entities.tags);
+  return tags.filter(tag => tag.noteIds.includes(noteId));
+};
+
 // export const selectNotes = function(state) {
 //   return Object.values(state.entities.users.noteIds);
 // };

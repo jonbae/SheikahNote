@@ -116,6 +116,7 @@ class NoteShow extends React.Component {
           requestAllTags={this.props.requestAllTags}
           requestAllTaggings={this.props.requestAllTaggings}
           createTagging={this.props.createTagging}
+          tags={this.props.tags}
           note={this.props.note}
         />
       </div>

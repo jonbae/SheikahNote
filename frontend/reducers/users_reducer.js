@@ -1,5 +1,7 @@
 import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
 import { RECEIVE_NOTEBOOK, REMOVE_NOTEBOOK } from "../actions/notebook_actions";
+import { RECEIVE_NOTE } from "../actions/note_actions";
+import { RECEIVE_TAG, REMOVE_TAG } from "../actions/tag_action";
 
 const usersReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -18,6 +20,15 @@ const usersReducer = (state = {}, action) => {
       newState[action.notebook.authorId].authoredNotebookIds.push(
         action.notebook.id
       );
+      return newState;
+    case RECEIVE_NOTE:
+      newState = Object.assign({}, state);
+      newState[action.note.authorId].authoredNoteIds.push(action.note.id);
+      return newState;
+
+    case RECEIVE_TAG:
+      newState = Object.assign({}, state);
+      newState[action.tag.authorId].authoredTagIds.push(action.tag.id);
       return newState;
 
     // case REMOVE_NOTEBOOK:

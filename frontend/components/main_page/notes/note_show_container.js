@@ -12,21 +12,26 @@ import {
   requestAllTaggings,
   requestAllTags
 } from "../../../actions/tag_action";
-import { selectNote, selectNotebook } from "../../../reducers/selectors";
+
+import {
+  selectNote,
+  selectNotebook,
+  selectNoteTags
+} from "../../../reducers/selectors";
+
 import { createTagging } from "../../../actions/tag_action";
 
 const msp = (state, ownProps) => {
-  // debugger;
-  // const noteId = parseInt(ownProps.match.params.noteId);
+  const noteId = parseInt(ownProps.match.params.noteId);
   const note = selectNote(state, parseInt(ownProps.match.params.noteId)) || {
     title: "",
     content: ""
   };
-  // debugger;
   const notebook = note ? selectNotebook(state, note.notebookId) : null;
-
+  const tags = selectNoteTags(state, noteId);
   return {
     // noteId,
+    tags,
     note,
     notebook
   };

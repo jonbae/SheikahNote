@@ -19,13 +19,12 @@ const notebooksReducer = (state = {}, action) => {
       return Object.assign({}, state, newState);
     case REMOVE_NOTEBOOK:
       newState = Object.assign({}, state);
-
       delete newState[action.notebookId];
       return newState;
 
     // remember to put receiveNotes
     // case RECEIVE_NOTES:
-    //   return Object.assign({}, state, action.notes)
+    //   return Object.assign({}, state, action.notes);
     default:
       return state;
   }

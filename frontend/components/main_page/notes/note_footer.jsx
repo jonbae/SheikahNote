@@ -1,4 +1,5 @@
 import React from "react";
+import TagItem from "../tags/tag_item";
 
 class NoteShowFooter extends React.Component {
   constructor(props) {
@@ -6,6 +7,7 @@ class NoteShowFooter extends React.Component {
     this.state = { name: "" };
 
     this.addTag = this.addTag.bind(this);
+    this.renderTags = this.renderTags.bind(this);
   }
 
   componentDidMount() {
@@ -29,11 +31,21 @@ class NoteShowFooter extends React.Component {
     }
   }
 
+  renderTags() {
+    let tags;
+    if (this.props.tags !== undefined && this.props.tags.length !== 0) {
+      // debugger;
+      tags = this.props.tags.map(tag => <TagItem key={tag.id} tag={tag} />);
+    }
+
+    return tags;
+  }
+
   render() {
-    // console.log(this.props.note);
     return (
       <div className="note-show-footer">
         {/* add tag img  */}
+        {this.renderTags()}
         <input
           type="text"
           onKeyDown={this.addTag}
