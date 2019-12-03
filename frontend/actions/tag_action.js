@@ -44,10 +44,13 @@ export const receiveTaggings = taggings => ({
   taggings
 });
 
-export const receiveTagging = tagging => ({
-  type: RECEIVE_TAGGING,
-  tagging
-});
+export const receiveTagging = tagging => {
+  debugger;
+  return {
+    type: RECEIVE_TAGGING,
+    tagging
+  };
+};
 
 export const removeTagging = noteId => ({
   type: REMOVE_TAGGING,
@@ -60,7 +63,8 @@ export const requestAllTaggings = () => dispatch => {
   );
 };
 
-export const createTaggings = tagging => dispatch => {
+export const createTagging = tagging => dispatch => {
+  debugger;
   return APIUtil.createTagging(tagging).then(tagging =>
     dispatch(receiveTagging(tagging))
   );

@@ -13,7 +13,7 @@ import {
   requestAllTags
 } from "../../../actions/tag_action";
 import { selectNote, selectNotebook } from "../../../reducers/selectors";
-import { createTagging } from "../../../util/tags_api_util";
+import { createTagging } from "../../../actions/tag_action";
 
 const msp = (state, ownProps) => {
   // debugger;

@@ -18,7 +18,10 @@ class NoteShowFooter extends React.Component {
     if (e.keyCode == 13 && e.shiftKey == false) {
       // maybe no {}
       const tagging = {
-        tagging: { note_id: this.props.note.id, name: this.state.name }
+        tagging: {
+          note_id: this.props.note.id,
+          name: this.state.name
+        }
       };
       debugger;
       this.props.createTagging(tagging);

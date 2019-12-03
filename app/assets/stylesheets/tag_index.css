@@ -1,0 +1,4 @@
+ul.tag-index-list {
+  display: flex;
+  flex-direction: column;
+}

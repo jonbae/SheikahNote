@@ -2,26 +2,6 @@ import React from "react";
 import { sortTagsByAlphabeticalOrder } from "../../../util/tags_util";
 import { Link } from "react-router-dom";
 
-// class TagIndex extends React.Component {
-//     constructor(props) {
-//         super(props);
-//         this.state={}
-//     }
-
-//     render() {
-//         if(!this.props.tags){
-//             return null
-//         }
-//         return (
-//         <>
-//         <div>{this.props.tags}</div>
-//         <div>this is the tags index</div>
-//         </>
-//         )
-//     }
-
-// }
-
 class TagIndex extends React.Component {
   constructor(props) {
     super(props);
@@ -49,7 +29,7 @@ class TagIndex extends React.Component {
 
     return (
       <div className="tag-index-frame">
-        <ul>{tags}</ul>
+        <ul className="tag-index-list">{tags}</ul>
         <div>THIS IS THE TAG INDEX</div>;
       </div>
     );

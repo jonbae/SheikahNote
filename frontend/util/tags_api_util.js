@@ -13,6 +13,7 @@ export const fetchNotesWithTag = id => {
 };
 
 export const createTag = tag => {
+  debugger;
   return $.ajax({
     url: `/api/tags`,
     method: "post",

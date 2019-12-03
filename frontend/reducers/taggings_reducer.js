@@ -9,8 +9,10 @@ const taggingsReducer = (state = {}, action) => {
   let newState;
   switch (action.type) {
     case RECEIVE_TAGGINGS:
+      debugger;
       return Object.assign({}, state, action.taggings);
     case RECEIVE_TAGGING:
+      debugger;
       newState = { [action.tagging.id]: action.tagging };
       return Object.assign({}, state, newState);
     case REMOVE_TAGGING:
