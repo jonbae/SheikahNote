@@ -11,7 +11,10 @@ class NoteIndex extends React.Component {
 
   componentDidMount() {
     this.props.requestAllNotebooks();
-    this.props.requestAllNotes();
+    this.props.requestAllNotes().then(res => {
+      debugger;
+      return this.props.history.push(`/app/notes/${this.props.notes[0].id}`);
+    });
     this.props.requestAllTags();
     this.props.requestAllTaggings();
   }
@@ -46,7 +49,6 @@ class NoteIndex extends React.Component {
   // }
 
   renderSortedNotes(notes) {
-    debugger;
     let sortedNotes = sortNotesByLastUpdate(notes).map(note =>
       <NoteIndexItem
         key={note.id}

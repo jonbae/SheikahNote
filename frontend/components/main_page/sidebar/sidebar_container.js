@@ -8,8 +8,13 @@ import {
   selectAllNotes
 } from "../../../reducers/selectors";
 import { createNote } from "../../../actions/note_actions";
+import { sortNotesByLastUpdate } from "../../../util/notes_util";
 
 const msp = (state, ownProps) => {
+  // let notes = selectAllNotes(state)
+  // let lastTaggedNote
+  // let lastNotebookNote
+  // let lastNote
   // debugger;
   return {
     currentUser: state.entities.users[state.session.id],
