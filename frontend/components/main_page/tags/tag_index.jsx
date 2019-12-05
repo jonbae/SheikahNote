@@ -20,16 +20,12 @@ class TagIndex extends React.Component {
       // debugger;
       tags = sortTagsByAlphabeticalOrder(this.props.tags).map(tag => {
         return (
-<<<<<<< HEAD
           <Link
             to={`/app/tags/${tag.id}/notes/${tag.noteIds[
               tag.noteIds.length - 1
             ]}`}
             key={tag.id}
           >
-=======
-          <Link to={`/app/tags/${tag.id}`}>
->>>>>>> parent of 66edae5... routing
             {tag.name}
           </Link>
         );
