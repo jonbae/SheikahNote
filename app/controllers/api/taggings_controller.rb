@@ -30,6 +30,7 @@ class Api::TaggingsController < ApplicationController
     
     private
     def tagging_params 
+        debugger
         params.require(:tagging).permit(:tag_id, :note_id)
     end
 

@@ -20,10 +20,12 @@ import {
   requestAllTaggings
 } from "../../../actions/tag_action";
 
+import { sortNotesByLastUpdate } from "../../../util/notes_util";
+
 import NoteIndex from "./note_index";
 
 const msp = state => {
-  const notes = selectAllNotes(state);
+  const notes = sortNotesByLastUpdate(selectAllNotes(state));
   debugger;
 
   return {
