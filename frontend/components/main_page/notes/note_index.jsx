@@ -11,13 +11,10 @@ class NoteIndex extends React.Component {
 
   componentDidMount() {
     this.props.requestAllNotebooks();
-    this.props.requestAllNotes();
-    // .then(res => {
-    //   debugger;
-    //   return this.props.history.push(
-    //     `${this.props.path}/${this.props.notes[0].id}`
-    //   );
-    // });
+    this.props.requestAllNotes().then(res => {
+      debugger;
+      return this.props.history.push(`/app/notes/${this.props.notes[0].id}`);
+    });
     this.props.requestAllTags();
     this.props.requestAllTaggings();
   }
@@ -52,7 +49,7 @@ class NoteIndex extends React.Component {
   // }
 
   renderSortedNotes(notes) {
-    let sortedNotes = notes.map(note =>
+    let sortedNotes = sortNotesByLastUpdate(notes).map(note =>
       <NoteIndexItem
         key={note.id}
         note={note}
@@ -96,8 +93,7 @@ class NoteIndex extends React.Component {
       ? `${this.props.title}`
       : "All Notes";
 
-    // let notes = !this.props.tagId ? this.props.taggedNotes : this.props.notes;
-    let notes = this.props.notes;
+    let notes = this.props.tagId ? this.props.taggedNotes : this.props.notes;
 
     return (
       <div className="note-index-frame">

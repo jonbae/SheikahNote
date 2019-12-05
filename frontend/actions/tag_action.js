@@ -65,10 +65,9 @@ export const requestAllTaggings = () => dispatch => {
 
 export const createTagging = tagging => dispatch => {
   debugger;
-  return APIUtil.createTagging(tagging).then(tagging => {
-    debugger;
-    return dispatch(receiveTagging(tagging));
-  });
+  return APIUtil.createTagging(tagging).then(tagging =>
+    dispatch(receiveTagging(tagging))
+  );
 };
 
 export const deleteTagging = noteId => dispatch => {

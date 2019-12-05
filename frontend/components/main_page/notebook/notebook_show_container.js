@@ -6,9 +6,6 @@ import {
   requestAllNotebooks,
   requestNotebook
 } from "../../../actions/notebook_actions";
-
-import { sortNotesByLastUpdate } from "../../../util/notes_util";
-
 import {
   requestAllNotes,
   requestNote,
@@ -35,7 +32,7 @@ const msp = (state, ownProps) => {
     // notebookTitle:
     //   state.entities.notebooks[ownProps.match.params.notebookId].title,
     isNotebook: true,
-    notes: sortNotesByLastUpdate(selectNotebookNotes(state, notebookId)),
+    notes: selectNotebookNotes(state, notebookId),
     path: `/app/notebooks/${notebookId}/notes`
   };
 };

@@ -13,6 +13,7 @@ export const fetchNote = id => {
 };
 
 export const createNote = note => {
+  debugger;
   return $.ajax({
     method: "post",
     url: `api/notes`,
@@ -25,7 +26,7 @@ export const updateNote = note => {
   return $.ajax({
     method: "patch",
     url: `api/notes/${note.id}`,
-    data: { note }``
+    data: { note }
   });
 };
 //    data: { notebook: { title: notebook.title } }

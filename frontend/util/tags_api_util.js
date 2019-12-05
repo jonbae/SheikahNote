@@ -36,7 +36,6 @@ export const fetchTaggings = () => {
 };
 
 export const createTagging = tagging => {
-  debugger;
   return $.ajax({
     url: "/api/taggings",
     method: "post",

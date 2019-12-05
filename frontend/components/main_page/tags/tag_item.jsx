@@ -7,6 +7,7 @@ class TagItem extends React.Component {
   }
 
   render() {
+    debugger;
     console.log(this.props.tag.name);
     return (
       <div>

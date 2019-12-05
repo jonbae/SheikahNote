@@ -38,6 +38,8 @@ class Sidebar extends React.Component {
   // }
 
   createNewNote(e) {
+    // debugger;
+    debugger;
     const blankNote = {
       title: "Untitled",
       content: "testblanks",

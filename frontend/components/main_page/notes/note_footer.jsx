@@ -20,8 +20,10 @@ class NoteShowFooter extends React.Component {
     if (e.keyCode == 13 && e.shiftKey == false) {
       // maybe no {}
       const tagging = {
-        note_id: this.props.note.id,
-        name: this.state.name
+        tagging: {
+          note_id: this.props.note.id,
+          name: this.state.name
+        }
       };
       debugger;
       this.props.createTagging(tagging);
@@ -32,11 +34,8 @@ class NoteShowFooter extends React.Component {
   renderTags() {
     let tags;
     if (this.props.tags !== undefined && this.props.tags.length !== 0) {
-      // debugger;
-      tags = this.props.tags.map(tag => {
-        // debugger;
-        return <TagItem key={tag.id} tag={tag} />;
-      });
+      debugger;
+      tags = this.props.tags.map(tag => <TagItem key={tag.id} tag={tag} />);
     }
 
     return tags;
