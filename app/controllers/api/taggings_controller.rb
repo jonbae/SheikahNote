@@ -20,10 +20,6 @@ class Api::TaggingsController < ApplicationController
         end
     end
 
-    def index 
-        @taggings = current_user.taggings
-    end
-
     def destroy
         @tagging = Tagging.find(params[:id])
         # @tagging = Tagging.find_by(tag_id: params[:tagging][:tag_id], note_id: params[:tagging][:note_id])

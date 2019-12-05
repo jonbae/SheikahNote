@@ -40,6 +40,7 @@ export const selectNotebook = function(state, notebookId) {
 
 export const selectAllTags = function(state) {
   let allTags = Object.values(state.entities.tags);
+  debugger;
   return allTags.filter(tag =>
     state.entities.users[state.session.id].authoredTagIds.includes(tag.id)
   );
@@ -48,20 +49,15 @@ export const selectAllTags = function(state) {
 
 export const selectTaggedNotes = function(state, tagId) {
   let notes = Object.values(state.entities.notes);
+  debugger;
   return notes.filter(note => note.tagIds.includes(tagId));
 };
 
-// export const selectNoteTags = function(state, noteId) {
-//   let tags = Object.values(state.entities.tags);
-//   return tags.filter(tag => tag.noteIds.includes(noteId));
-// };
-
-export const selectNoteTaggings = function(state, noteId) {
-  let taggings = Object.values(state.entities.taggings);
-  return taggings.filter(tagging => tagging.noteId === noteId);
+export const selectNoteTags = function(state, noteId) {
+  let tags = Object.values(state.entities.tags);
+  return tags.filter(tag => tag.noteIds.includes(noteId));
 };
 
-// export const s
 // export const selectNotes = function(state) {
 //   return Object.values(state.entities.users.noteIds);
 // };

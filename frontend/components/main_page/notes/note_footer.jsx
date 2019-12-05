@@ -33,10 +33,14 @@ class NoteShowFooter extends React.Component {
     let tags;
     if (this.props.tags !== undefined && this.props.tags.length !== 0) {
       // debugger;
+<<<<<<< HEAD
       tags = this.props.tags.map(tag => {
         // debugger;
         return <TagItem key={tag.id} tag={tag} />;
       });
+=======
+      tags = this.props.tags.map(tag => <TagItem key={tag.id} tag={tag} />);
+>>>>>>> parent of 66edae5... routing
     }
 
     return tags;

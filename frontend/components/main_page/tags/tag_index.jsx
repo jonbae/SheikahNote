@@ -10,22 +10,26 @@ class TagIndex extends React.Component {
 
   componentDidMount() {
     this.props.requestAllTags();
+    // debugger;
     this.props.requestAllTaggings();
   }
 
   render() {
     let tags;
     if (this.props.tags !== undefined && this.props.tags.length !== 0) {
+      // debugger;
       tags = sortTagsByAlphabeticalOrder(this.props.tags).map(tag => {
-        // console.log(tag.noteIds.length - 1);
-        debugger;
         return (
+<<<<<<< HEAD
           <Link
             to={`/app/tags/${tag.id}/notes/${tag.noteIds[
               tag.noteIds.length - 1
             ]}`}
             key={tag.id}
           >
+=======
+          <Link to={`/app/tags/${tag.id}`}>
+>>>>>>> parent of 66edae5... routing
             {tag.name}
           </Link>
         );
@@ -34,10 +38,8 @@ class TagIndex extends React.Component {
 
     return (
       <div className="tag-index-frame">
-        <ul className="tag-index-list">
-          {tags}
-        </ul>
-        <div>THIS IS THE TAG INDEX</div>
+        <ul className="tag-index-list">{tags}</ul>
+        <div>THIS IS THE TAG INDEX</div>;
       </div>
     );
   }

@@ -32,10 +32,6 @@ class User < ApplicationRecord
     foreign_key: :author_id, 
     class_name: :Tag 
 
-  has_many :taggings, 
-    through: :tags, 
-    source: :taggings
-
 
   attr_reader :password
   after_initialize :ensure_session_token 
