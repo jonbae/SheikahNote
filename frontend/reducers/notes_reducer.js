@@ -23,9 +23,7 @@ const notesReducer = (state = {}, action) => {
       newState = Object.assign({}, state);
       debugger;
       //spaghetti code should change tagging.tagging to tagging
-      newState[action.tagging.tagging.noteId].taggingIds.push(
-        action.tagging.tagging.id
-      );
+      newState[action.tagging.noteId].taggingIds.push(action.tagging.id);
       return newState;
 
     default:

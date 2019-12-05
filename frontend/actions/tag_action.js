@@ -9,9 +9,9 @@ export const receiveTags = tags => ({
   tags
 });
 
-export const receiveTag = tag => ({
+export const receiveTag = payload => ({
   type: RECEIVE_TAG,
-  tag
+  tag: payload.tag
 });
 
 export const removeTag = id => ({
@@ -44,11 +44,11 @@ export const receiveTaggings = taggings => ({
   taggings
 });
 
-export const receiveTagging = tagging => {
+export const receiveTagging = payload => {
   debugger;
   return {
     type: RECEIVE_TAGGING,
-    tagging
+    tagging: payload.tagging
   };
 };
 

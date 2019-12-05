@@ -24,6 +24,6 @@ Rails.application.routes.draw do
     #   resources :tags, only: [:create, :destroy] 
     # end
     
-    resources :taggings, only: [:create, :destroy, :index]
+    resources :taggings, only: [:create, :destroy, :index, :show]
   end
 end

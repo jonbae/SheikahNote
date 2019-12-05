@@ -20,6 +20,22 @@ class Api::TaggingsController < ApplicationController
         end
     end
 
+
+    def index 
+        @taggings = current_user.taggings 
+    end
+
+    def show 
+        @tagging = current_user.taggings.find(params[:id])
+        if @tagging.save! 
+            render :show
+        else
+            render json:@tagging.errors.full_messages, status: 422
+        end
+    end
+
+
+
     def destroy
         @tagging = Tagging.find(params[:id])
         # @tagging = Tagging.find_by(tag_id: params[:tagging][:tag_id], note_id: params[:tagging][:note_id])
@@ -30,7 +46,6 @@ class Api::TaggingsController < ApplicationController
     
     private
     def tagging_params 
-        debugger
         params.require(:tagging).permit(:tag_id, :note_id)
     end
 
