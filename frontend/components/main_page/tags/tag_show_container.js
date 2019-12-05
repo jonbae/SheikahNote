@@ -32,7 +32,7 @@ const msp = (state, ownProps) => {
   const tagId = parseInt(ownProps.match.params.tagId);
   return {
     tagId,
-    // isTag: true,
+    // isTag: true,//
     notes: sortNotesByLastUpdate(selectTaggedNotes(state, tagId)),
 
     isNotebook: false,
