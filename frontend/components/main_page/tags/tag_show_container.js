@@ -30,11 +30,11 @@ const msp = (state, ownProps) => {
   const tagId = parseInt(ownProps.match.params.tagId);
   return {
     tagId,
-    // isTag: true,
-    taggedNotes: selectTaggedNotes(state, tagId),
-    //test on master branch
+    // isTag: true,//
+    notes: sortNotesByLastUpdate(selectTaggedNotes(state, tagId)),
+
     isNotebook: false,
-    notes: selectAllNotes(state), //selectTaggedNotes(state, tagId),
+    untaggedNotes: selectAllNotes(state), //selectTaggedNotes(state, tagId),
     path: `/app/tags/${tagId}/notes`
   };
 };
