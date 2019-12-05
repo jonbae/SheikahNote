@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-import { selectAllNotes, selectTaggedNotes } from "../../../reducers/selectors";
+import { selectAllNotes } from "../../../reducers/selectors";
 import {
   requestAllNotebooks,
   requestNotebook

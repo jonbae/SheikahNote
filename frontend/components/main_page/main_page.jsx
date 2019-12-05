@@ -7,7 +7,7 @@ import MainSection from "./main_section";
 const MainPage = props => {
   // fullscreen mode
   if (props.fullScreen === true) {
-    debugger;
+    // debugger;
     return (
       <main className="main-page-frame">
         <NoteShowContainer />

@@ -24,6 +24,7 @@ class TagIndex extends React.Component {
             to={`/app/tags/${tag.id}/notes/${tag.noteIds[
               tag.noteIds.length - 1
             ]}`}
+            key={tag.id}
           >
             {tag.name}
           </Link>
