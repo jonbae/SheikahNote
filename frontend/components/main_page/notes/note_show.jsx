@@ -38,6 +38,8 @@ class NoteShow extends React.Component {
   componentDidMount() {
     // debugger;
     this.props.requestNote(this.props.noteId);
+    this.props.requestAllTaggings();
+    this.props.requestAllTags();
   }
 
   componentDidUpdate(prevProps) {
@@ -117,6 +119,7 @@ class NoteShow extends React.Component {
           requestAllTaggings={this.props.requestAllTaggings}
           createTagging={this.props.createTagging}
           tags={this.props.tags}
+          taggings={this.props.taggings}
           note={this.props.note}
         />
       </div>

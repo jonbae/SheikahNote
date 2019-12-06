@@ -1,5 +1,6 @@
 import React from "react";
 import TagItem from "../tags/tag_item";
+// import isEqual from "lodash.isequal";
 
 class NoteShowFooter extends React.Component {
   constructor(props) {
@@ -15,6 +16,15 @@ class NoteShowFooter extends React.Component {
     this.props.requestAllTags();
   }
 
+  componentDidUpdate(prevProps) {
+    if (
+      JSON.stringify(prevProps.taggings) !== JSON.stringify(this.props.taggings)
+    ) {
+      debugger;
+      this.props.requestAllTags();
+    }
+  }
+
   addTag(e) {
     // debugger;
     if (e.keyCode == 13 && e.shiftKey == false) {
@@ -28,6 +38,8 @@ class NoteShowFooter extends React.Component {
       debugger;
       this.props.createTagging(tagging);
       this.setState({ name: "" });
+      // this.props.requestAllTags();
+      debugger;
     }
   }
 

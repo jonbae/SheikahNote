@@ -26,7 +26,6 @@ import NoteIndex from "./note_index";
 
 const msp = state => {
   const notes = sortNotesByLastUpdate(selectAllNotes(state));
-  debugger;
 
   return {
     isNotebook: false,

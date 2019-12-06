@@ -52,11 +52,53 @@ export const selectTaggedNotes = function(state, tagId) {
   debugger;
   return notes.filter(note => note.tagIds.includes(tagId));
 };
-
+//test
 export const selectNoteTags = function(state, noteId) {
-  let tags = Object.values(state.entities.tags);
-  return tags.filter(tag => tag.noteIds.includes(noteId));
+  // let tags = Object.values(state.entities.tags);
+  // return tags.filter(tag => tag.noteIds.includes(noteId));
+  let noteTaggings = selectNoteTaggings(state, noteId);
+  return Object.values(state.entities.tags).filter(tag => {
+    const tagInTagging = noteTaggings.filter(tagging => {
+      return tagging.tagId === tag.id;
+    });
+
+    return tagInTagging.length > 0;
+  });
 };
+
+export const selectNoteTaggings = function(state, noteId) {
+  let taggings = Object.values(state.entities.taggings);
+  return taggings.filter(tagging => tagging.noteId === noteId);
+};
+
+export const selectTaggingTags = function(state, taggingId) {
+  let tags = Object.values(state.entities.tags);
+  return tags.filter(tag => tag.taggingId === taggingId);
+};
+
+// export const findTagsForSelectedNote = (state, noteId = state.ui.selectedNoteId) => {
+//   if (!state.ui.selectedNoteId) {
+//     return {};
+//   }
+
+//   const taggingsForSelectedNote = findTaggingsForSelectedNote(state, noteId);
+
+//   if (Object.keys(taggingsForSelectedNote).length === 0) {
+//     return {};
+//   }
+//   return pickBy(state.entities.tags, (tag, tagId) => {
+
+//     const tagExistsInTaggings =
+//       Object.keys(pickBy(taggingsForSelectedNote, (tagging, taggingId) => {
+//         return tagging.tag_id === tag.id;
+//         // console.log(`taging tag id: ${tagging.tag_id}, tag id: ${tag.id}`)
+
+//       })).length > 0;
+//     // console.log(`tagExistsInTaggings: ${tagExistsInTaggings}`)
+
+//     return tagExistsInTaggings;
+//   })
+// }
 
 // export const selectNotes = function(state) {
 //   return Object.values(state.entities.users.noteIds);

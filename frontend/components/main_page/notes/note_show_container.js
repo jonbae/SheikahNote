@@ -16,7 +16,9 @@ import {
 import {
   selectNote,
   selectNotebook,
-  selectNoteTags
+  selectNoteTags,
+  selectNoteTaggings,
+  selectTaggingTags
 } from "../../../reducers/selectors";
 
 import { createTagging } from "../../../actions/tag_action";
@@ -28,9 +30,14 @@ const msp = (state, ownProps) => {
     content: ""
   };
   const notebook = note ? selectNotebook(state, note.notebookId) : null;
+  const taggings = selectNoteTaggings(state, noteId);
+
   const tags = selectNoteTags(state, noteId);
+  debugger;
+  // selectNoteTags(state, noteId);
   return {
-    // noteId,
+    noteId,
+    taggings,
     tags,
     note,
     notebook

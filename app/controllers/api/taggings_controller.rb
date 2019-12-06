@@ -9,6 +9,7 @@ class Api::TaggingsController < ApplicationController
             tag = Tag.find_by(name: params[:tagging][:name])
             unless tag
                 tag = Tag.create(author_id: current_user.id, name: params[:tagging][:name])
+                
             end
             @tagging.tag_id = tag.id
         end
