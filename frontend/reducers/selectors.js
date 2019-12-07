@@ -40,16 +40,26 @@ export const selectNotebook = function(state, notebookId) {
 
 export const selectAllTags = function(state) {
   let allTags = Object.values(state.entities.tags);
+<<<<<<< HEAD
   debugger;
   // return allTags.filter(tag => tag.authorId == state.session.id);
   return allTags.filter(tag =>
     state.entities.users[state.session.id].authoredTagIds.includes(tag.id)
   );
+=======
+  return allTags.filter(tag => tag.taggingIds.length !== 0);
+  // debugger;
+  // return allTags.filter(tag =>
+  //   state.entities.users[state.session.id].authoredTagIds.includes(tag.id)
+  // );
+  // return allTags.filter( tag => state.entities.users[state.session.id].)
+  // return allTags;
+>>>>>>> test
 };
 
 export const selectTaggedNotes = function(state, tagId) {
   let notes = Object.values(state.entities.notes);
-  debugger;
+  // debugger;
   return notes.filter(note => note.tagIds.includes(tagId));
 };
 //test

@@ -28,6 +28,7 @@ class Api::TaggingsController < ApplicationController
 
     def show 
         @tagging = current_user.taggings.find(params[:id])
+       # @tags = @tagging.tags
         if @tagging.save! 
             render :show
         else
@@ -38,17 +39,29 @@ class Api::TaggingsController < ApplicationController
 
 
     def destroy
+<<<<<<< HEAD
         debugger
+=======
+        
+>>>>>>> test
         @tagging = Tagging.find(params[:id])
         @tag = Tag.find(@tagging.tag_id) 
         # @tagging = Tagging.find_by(tag_id: params[:tagging][:tag_id], note_id: params[:tagging][:note_id])
         @tagging.destroy
+<<<<<<< HEAD
         debugger
+=======
+        
+>>>>>>> test
 
         if(@tag.taggings.length == 0)
             @tag.destroy
         end
+<<<<<<< HEAD
         render "api/tags/show"
+=======
+        render "api/taggings/show"
+>>>>>>> test
     end
     
     private

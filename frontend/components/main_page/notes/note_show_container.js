@@ -54,7 +54,11 @@ const mdp = dispatch => ({
   requestAllTags: () => dispatch(requestAllTags()),
   requestAllTaggings: () => dispatch(requestAllTaggings()),
   createTagging: tagging => dispatch(createTagging(tagging)),
+<<<<<<< HEAD
   deleteTagging: id => dispatch(deleteTagging(id))
+=======
+  deleteTagging: tagging => dispatch(deleteTagging(tagging))
+>>>>>>> test
 });
 
 export default connect(msp, mdp)(NoteShow);

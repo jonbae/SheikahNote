@@ -1,5 +1,11 @@
-import { RECEIVE_TAGS, RECEIVE_TAG, REMOVE_TAG } from "../actions/tag_action";
-import { RECEIVE_TAGGING, REMOVE_TAGGING } from "../actions/tag_action";
+import {
+  RECEIVE_TAGS,
+  RECEIVE_TAG,
+  REMOVE_TAG,
+  RECEIVE_TAGGING,
+  REMOVE_TAGGING
+} from "../actions/tag_action";
+
 const tagsReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState;
@@ -11,20 +17,24 @@ const tagsReducer = (state = {}, action) => {
       return Object.assign({}, state, newState);
     case REMOVE_TAG:
       newState = Object.assign({}, state);
-      debugger;
       delete newState[action.id];
       return newState;
-    case RECEIVE_TAGGING:
-      newState = Object.assign({}, state);
-      debugger;
-      newState[action.tagging.tagId].taggingIds.push(action.tagging.id);
-      return newState;
+
+    // case RECEIVE_TAGGING:
+    //   newState = Object.assign({}, state);
+    //   newState[action.tagging.tagId].taggingIds.push(action.tagging.id);
+    //   return newState;
     case REMOVE_TAGGING:
       newState = Object.assign({}, state);
-      debugger;
-      newState[action.tagging.tagId].taggingIds.filter(
+      let newTaggings = newState[action.tagging.tagId].taggingIds.filter(
         taggingId => taggingId !== action.tagging.id
       );
+
+      newState[action.tagging.tagId].taggingIds = newTaggings;
+      //   newState = { [action.tagging.tagId]: { taggingIds: newTaggings } };
+      debugger;
+      return Object.assign({}, state, newState);
+
     default:
       return state;
   }
