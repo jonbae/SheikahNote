@@ -1,5 +1,6 @@
 import React from "react";
 import TagItem from "../tags/tag_item";
+import { selectTaggingFromTag } from "../../../reducers/selectors";
 // import isEqual from "lodash.isequal";
 
 class NoteShowFooter extends React.Component {
@@ -47,7 +48,16 @@ class NoteShowFooter extends React.Component {
     let tags;
     if (this.props.tags !== undefined && this.props.tags.length !== 0) {
       // debugger;
-      tags = this.props.tags.map(tag => <TagItem key={tag.id} tag={tag} />);
+      tags = this.props.tags.map(tag =>
+        <TagItem
+          key={tag.id}
+          tag={tag}
+          note={this.props.note}
+          // taggingIds={this.props.note.taggingIds}
+          tagging={selectTaggingFromTag(this.props.taggings, tag)}
+          deleteTagging={this.props.deleteTagging}
+        />
+      );
     }
 
     return tags;

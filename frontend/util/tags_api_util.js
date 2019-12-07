@@ -45,6 +45,7 @@ export const createTagging = tagging => {
 };
 
 export const deleteTagging = id => {
+  debugger;
   return $.ajax({
     url: `/api/taggings/${id}`,
     method: "delete"
