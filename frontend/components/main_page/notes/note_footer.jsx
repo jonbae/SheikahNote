@@ -53,10 +53,6 @@ class NoteShowFooter extends React.Component {
           // taggingIds={this.props.note.taggingIds}
           tagging={selectTaggingFromTag(this.props.taggings, tag)}
           deleteTagging={this.props.deleteTagging}
-<<<<<<< HEAD
-          delteTag={this.props.deleteTag}
-=======
->>>>>>> test
         />
       );
     }
