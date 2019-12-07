@@ -12,6 +12,8 @@ class Api::TagsController < ApplicationController
         end    
     end
 
+
+
     def index 
         @tags = Tag.where(author_id: @current_user.id) 
     end

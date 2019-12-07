@@ -9,6 +9,7 @@ class Api::TaggingsController < ApplicationController
             tag = Tag.find_by(name: params[:tagging][:name])
             unless tag
                 tag = Tag.create(author_id: current_user.id, name: params[:tagging][:name])
+                
             end
             @tagging.tag_id = tag.id
         end
@@ -20,16 +21,34 @@ class Api::TaggingsController < ApplicationController
         end
     end
 
+
     def index 
-        @taggings = current_user.taggings
+        @taggings = current_user.taggings 
     end
 
+    def show 
+        @tagging = current_user.taggings.find(params[:id])
+        if @tagging.save! 
+            render :show
+        else
+            render json:@tagging.errors.full_messages, status: 422
+        end
+    end
+
+
+
     def destroy
+        
         @tagging = Tagging.find(params[:id])
+        @tag = Tag.find(@tagging.tag_id) 
         # @tagging = Tagging.find_by(tag_id: params[:tagging][:tag_id], note_id: params[:tagging][:note_id])
         @tagging.destroy
-        @tag = Tag.find(params[:tagging][:tag_id])
-        render "api/tags/show"
+        
+
+        if(@tag.taggings.length == 0)
+            @tag.destroy
+        end
+        render "api/taggings/show"
     end
     
     private

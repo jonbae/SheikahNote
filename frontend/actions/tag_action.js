@@ -9,9 +9,9 @@ export const receiveTags = tags => ({
   tags
 });
 
-export const receiveTag = tag => ({
+export const receiveTag = payload => ({
   type: RECEIVE_TAG,
-  tag
+  tag: payload.tag
 });
 
 export const removeTag = id => ({
@@ -44,17 +44,18 @@ export const receiveTaggings = taggings => ({
   taggings
 });
 
-export const receiveTagging = tagging => {
+export const receiveTagging = payload => {
   debugger;
   return {
     type: RECEIVE_TAGGING,
-    tagging
+    tagging: payload.tagging
   };
 };
 
-export const removeTagging = noteId => ({
+export const removeTagging = payload => ({
   type: REMOVE_TAGGING,
-  noteId
+  tagging: payload.tagging,
+  id: payload.tagging.id
 });
 
 export const requestAllTaggings = () => dispatch => {
@@ -70,8 +71,9 @@ export const createTagging = tagging => dispatch => {
   );
 };
 
-export const deleteTagging = noteId => dispatch => {
-  return APIUtil.deleteTagging(noteId).then(noteId =>
-    dispatch(removeTagging(noteId))
+export const deleteTagging = tagging => dispatch => {
+  debugger;
+  return APIUtil.deleteTagging(tagging.id).then(id =>
+    dispatch(removeTagging(id))
   );
 };

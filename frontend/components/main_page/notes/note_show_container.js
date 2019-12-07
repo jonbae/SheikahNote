@@ -11,16 +11,18 @@ import {
 import {
   requestAllTaggings,
   requestAllTags,
-  createTagging,
   deleteTagging
 } from "../../../actions/tag_action";
 
 import {
   selectNote,
   selectNotebook,
-  // selectNoteTags
-  selectNoteTaggings
+  selectNoteTags,
+  selectNoteTaggings,
+  selectTaggingTags
 } from "../../../reducers/selectors";
+
+import { createTagging } from "../../../actions/tag_action";
 
 const msp = (state, ownProps) => {
   const noteId = parseInt(ownProps.match.params.noteId);
@@ -29,12 +31,11 @@ const msp = (state, ownProps) => {
     content: ""
   };
   const notebook = note ? selectNotebook(state, note.notebookId) : null;
-  // const tags = selectNoteTags(state, noteId);
   const taggings = selectNoteTaggings(state, noteId);
-  const tags = taggings.map(tagging => {
-    return state.entities.tags[tagging.tagId];
-  });
+
+  const tags = selectNoteTags(state, noteId);
   debugger;
+  // selectNoteTags(state, noteId);
   return {
     noteId,
     taggings,
@@ -53,7 +54,7 @@ const mdp = dispatch => ({
   requestAllTags: () => dispatch(requestAllTags()),
   requestAllTaggings: () => dispatch(requestAllTaggings()),
   createTagging: tagging => dispatch(createTagging(tagging)),
-  deleteTagging: id => dispatch(deleteTagging(id))
+  deleteTagging: tagging => dispatch(deleteTagging(tagging))
 });
 
 export default connect(msp, mdp)(NoteShow);

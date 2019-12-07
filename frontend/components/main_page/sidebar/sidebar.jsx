@@ -140,7 +140,7 @@ class Sidebar extends React.Component {
           {/* to="/app/notes" */}
           {/* <li> */}
 
-          <Link to={`/app/notes`}>
+          <Link to={`/app/notes/${lastNoteId}`}>
             <img src={window.allNotesURL} alt="all notes" />
             <p> All Notes </p>
           </Link>

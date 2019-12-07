@@ -7,7 +7,7 @@ import {
 } from "../../../actions/notebook_actions";
 
 import { selectNote, selectNotebook } from "../../../actions/ui_actions";
-import { sortNotesByLastUpdate } from "../../../util/notes_util";
+
 import {
   requestAllNotes,
   requestNote,
@@ -20,16 +20,19 @@ import {
   requestAllTaggings
 } from "../../../actions/tag_action";
 
+import { sortNotesByLastUpdate } from "../../../util/notes_util";
+
 import NoteIndex from "./note_index";
 
 const msp = state => {
   const notes = sortNotesByLastUpdate(selectAllNotes(state));
+
   return {
     isNotebook: false,
     notes,
-    path: "/app/notes"
-    // selectedNotebookId: state.ui.notebookId,
-    // selectedNoteId: state.ui.noteId
+    path: "/app/notes",
+    selectedNotebookId: state.ui.notebookId,
+    selectedNoteId: state.ui.noteId
   };
 };
 
