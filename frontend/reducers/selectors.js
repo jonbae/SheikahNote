@@ -76,6 +76,10 @@ export const selectTaggingTags = function(state, taggingId) {
   return tags.filter(tag => tag.taggingId === taggingId);
 };
 
+export const selectTaggingFromTag = (taggings, tag) => {
+  return taggings.find(tagging => tag.id === tagging.tagId);
+};
+
 // export const findTagsForSelectedNote = (state, noteId = state.ui.selectedNoteId) => {
 //   if (!state.ui.selectedNoteId) {
 //     return {};

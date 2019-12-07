@@ -10,7 +10,8 @@ import {
 
 import {
   requestAllTaggings,
-  requestAllTags
+  requestAllTags,
+  deleteTagging
 } from "../../../actions/tag_action";
 
 import {
@@ -52,7 +53,8 @@ const mdp = dispatch => ({
 
   requestAllTags: () => dispatch(requestAllTags()),
   requestAllTaggings: () => dispatch(requestAllTaggings()),
-  createTagging: tagging => dispatch(createTagging(tagging))
+  createTagging: tagging => dispatch(createTagging(tagging)),
+  deleteTagging: id => dispatch(deleteTagging(id))
 });
 
 export default connect(msp, mdp)(NoteShow);

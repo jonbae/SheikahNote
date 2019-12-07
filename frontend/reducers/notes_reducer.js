@@ -4,7 +4,11 @@ import {
   REMOVE_NOTE
 } from "../actions/note_actions";
 
-import { RECEIVE_TAGGING, RECEIVE_TAG } from "../actions/tag_action";
+import {
+  RECEIVE_TAGGING,
+  RECEIVE_TAG,
+  REMOVE_TAGGING
+} from "../actions/tag_action";
 
 const notesReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -21,11 +25,13 @@ const notesReducer = (state = {}, action) => {
       return newState;
     case RECEIVE_TAGGING:
       newState = Object.assign({}, state);
-      debugger;
-      //spaghetti code should change tagging.tagging to tagging
       newState[action.tagging.noteId].taggingIds.push(action.tagging.id);
-
       return newState;
+    case REMOVE_TAGGING:
+      newState = Object.assign({}, state);
+      newState[action.tagging.noteId].taggingIds.filter(
+        taggingId => taggingId !== action.tagging.id
+      );
 
     default:
       return state;
