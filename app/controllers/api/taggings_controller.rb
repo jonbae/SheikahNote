@@ -38,17 +38,17 @@ class Api::TaggingsController < ApplicationController
 
 
     def destroy
-        
+        debugger
         @tagging = Tagging.find(params[:id])
         @tag = Tag.find(@tagging.tag_id) 
         # @tagging = Tagging.find_by(tag_id: params[:tagging][:tag_id], note_id: params[:tagging][:note_id])
         @tagging.destroy
-        
+        debugger
 
         if(@tag.taggings.length == 0)
             @tag.destroy
         end
-        render "api/taggings/show"
+        render "api/tags/show"
     end
     
     private

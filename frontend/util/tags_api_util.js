@@ -23,7 +23,7 @@ export const createTag = tag => {
 
 export const deleteTag = id => {
   return $.ajax({
-    url: `/api/tags/${id}`,
+    url: `/api/tags`,
     method: "delete"
   });
 };
