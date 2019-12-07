@@ -11,8 +11,7 @@ import {
 import {
   requestAllTaggings,
   requestAllTags,
-  deleteTagging,
-  deleteTag
+  deleteTagging
 } from "../../../actions/tag_action";
 
 import {
@@ -55,8 +54,7 @@ const mdp = dispatch => ({
   requestAllTags: () => dispatch(requestAllTags()),
   requestAllTaggings: () => dispatch(requestAllTaggings()),
   createTagging: tagging => dispatch(createTagging(tagging)),
-  deleteTagging: tagging => dispatch(deleteTagging(tagging)),
-  deleteTag: id => dispatch(deleteTag(id))
+  deleteTagging: tagging => dispatch(deleteTagging(tagging))
 });
 
 export default connect(msp, mdp)(NoteShow);

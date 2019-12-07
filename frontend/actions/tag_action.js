@@ -45,6 +45,7 @@ export const receiveTaggings = taggings => ({
 });
 
 export const receiveTagging = payload => {
+  debugger;
   return {
     type: RECEIVE_TAGGING,
     tagging: payload.tagging
@@ -64,12 +65,15 @@ export const requestAllTaggings = () => dispatch => {
 };
 
 export const createTagging = tagging => dispatch => {
+  debugger;
   return APIUtil.createTagging(tagging).then(tagging => {
+    debugger;
     return dispatch(receiveTagging(tagging));
   });
 };
 
 export const deleteTagging = tagging => dispatch => {
+  debugger;
   return APIUtil.deleteTagging(tagging.id).then(id =>
     dispatch(removeTagging(id))
   );

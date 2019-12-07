@@ -1,20 +1,9 @@
 import React from "react";
-import { removeTag } from "../../../actions/tag_action";
 
 class TagItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
-    this.removeTagging = this.removeTagging.bind(this);
-  }
-
-  removeTagging(tagging) {
-    this.props.deleteTagging(tagging);
-    debugger;
-    if (this.props.tag.taggingIds.length === 0) {
-      this.props.deleteTag(this.props.tag.id);
-    }
-    debugger;
   }
 
   render() {
@@ -26,7 +15,7 @@ class TagItem extends React.Component {
     // });
     // console.log(deleteId);
     return (
-      <div onClick={() => this.removeTagging(this.props.tagging)}>
+      <div onClick={() => this.props.deleteTagging(this.props.tagging)}>
         {this.props.tag.name}
       </div>
     );
