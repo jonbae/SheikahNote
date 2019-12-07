@@ -13,7 +13,9 @@ class NoteIndex extends React.Component {
     this.props.requestAllNotebooks();
     this.props.requestAllNotes().then(res => {
       debugger;
-      return this.props.history.push(`/app/notes/${this.props.notes[0].id}`);
+      return this.props.history.push(
+        `${this.props.path}/${this.props.notes[0].id}`
+      );
     });
     this.props.requestAllTags();
     this.props.requestAllTaggings();

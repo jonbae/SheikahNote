@@ -19,6 +19,8 @@ import {
   deleteNote
 } from "../../../actions/note_actions";
 
+import { sortNotesByLastUpdate } from "../../../util/notes_util";
+
 import {
   requestAllTags,
   requestAllTaggings
@@ -31,10 +33,10 @@ const msp = (state, ownProps) => {
   return {
     tagId,
     // isTag: true,//
-    notes: sortNotesByLastUpdate(selectTaggedNotes(state, tagId)),
+    taggedNotes: sortNotesByLastUpdate(selectTaggedNotes(state, tagId)),
 
     isNotebook: false,
-    untaggedNotes: selectAllNotes(state), //selectTaggedNotes(state, tagId),
+    notes: selectAllNotes(state), //selectTaggedNotes(state, tagId),
     path: `/app/tags/${tagId}/notes`
   };
 };
