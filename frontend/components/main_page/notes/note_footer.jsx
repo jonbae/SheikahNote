@@ -21,7 +21,6 @@ class NoteShowFooter extends React.Component {
     if (
       JSON.stringify(prevProps.taggings) !== JSON.stringify(this.props.taggings)
     ) {
-      debugger;
       this.props.requestAllTags();
     }
   }
@@ -36,7 +35,6 @@ class NoteShowFooter extends React.Component {
           name: this.state.name
         }
       };
-      debugger;
       this.props.createTagging(tagging);
       this.setState({ name: "" });
       // this.props.requestAllTags();
@@ -56,6 +54,7 @@ class NoteShowFooter extends React.Component {
           // taggingIds={this.props.note.taggingIds}
           tagging={selectTaggingFromTag(this.props.taggings, tag)}
           deleteTagging={this.props.deleteTagging}
+          delteTag={this.props.deleteTag}
         />
       );
     }

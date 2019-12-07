@@ -41,10 +41,10 @@ export const selectNotebook = function(state, notebookId) {
 export const selectAllTags = function(state) {
   let allTags = Object.values(state.entities.tags);
   debugger;
+  // return allTags.filter(tag => tag.authorId == state.session.id);
   return allTags.filter(tag =>
     state.entities.users[state.session.id].authoredTagIds.includes(tag.id)
   );
-  // return allTags.filter( tag => state.entities.users[state.session.id].)
 };
 
 export const selectTaggedNotes = function(state, tagId) {

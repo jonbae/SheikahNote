@@ -119,6 +119,7 @@ class NoteShow extends React.Component {
           requestAllTaggings={this.props.requestAllTaggings}
           createTagging={this.props.createTagging}
           deleteTagging={this.props.deleteTagging}
+          deleteTag={this.props.deleteTag}
           tags={this.props.tags}
           taggings={this.props.taggings}
           note={this.props.note}
