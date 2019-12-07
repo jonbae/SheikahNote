@@ -52,10 +52,9 @@ export const receiveTagging = payload => {
   };
 };
 
-export const removeTagging = payload => ({
+export const removeTagging = id => ({
   type: REMOVE_TAGGING,
-  tagging: payload.tagging,
-  id: payload.tagging.id
+  id
 });
 
 export const requestAllTaggings = () => dispatch => {
@@ -71,9 +70,7 @@ export const createTagging = tagging => dispatch => {
   );
 };
 
-export const deleteTagging = tagging => dispatch => {
+export const deleteTagging = id => dispatch => {
   debugger;
-  return APIUtil.deleteTagging(tagging.id).then(id =>
-    dispatch(removeTagging(id))
-  );
+  return APIUtil.deleteTagging(id).then(id => dispatch(removeTagging(id)));
 };

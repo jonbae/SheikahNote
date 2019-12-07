@@ -15,7 +15,7 @@ class TagItem extends React.Component {
     // });
     // console.log(deleteId);
     return (
-      <div onClick={() => this.props.deleteTagging(this.props.tagging)}>
+      <div onClick={() => this.props.deleteTagging(this.props.tagging.id)}>
         {this.props.tag.name}
       </div>
     );
