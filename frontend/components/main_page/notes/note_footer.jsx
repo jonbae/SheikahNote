@@ -36,11 +36,9 @@ class NoteShowFooter extends React.Component {
           name: this.state.name
         }
       };
-      debugger;
       this.props.createTagging(tagging);
       this.setState({ name: "" });
       // this.props.requestAllTags();
-      debugger;
     }
   }
 

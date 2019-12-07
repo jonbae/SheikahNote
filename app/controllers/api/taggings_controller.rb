@@ -28,6 +28,7 @@ class Api::TaggingsController < ApplicationController
 
     def show 
         @tagging = current_user.taggings.find(params[:id])
+       # @tags = @tagging.tags
         if @tagging.save! 
             render :show
         else

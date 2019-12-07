@@ -12,6 +12,7 @@ class TagIndex extends React.Component {
     this.props.requestAllTags();
     // debugger;
     this.props.requestAllTaggings();
+    this.forceUpdate();
   }
 
   render() {
