@@ -95,7 +95,7 @@ class NoteIndex extends React.Component {
       ? `${this.props.title}`
       : "All Notes";
 
-    let notes = this.props.tagId ? this.props.taggedNotes : this.props.notes;
+    let notes = this.props.notes;
 
     return (
       <div className="note-index-frame">

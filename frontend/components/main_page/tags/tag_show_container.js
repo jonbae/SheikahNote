@@ -33,10 +33,10 @@ const msp = (state, ownProps) => {
   return {
     tagId,
     // isTag: true,//
-    taggedNotes: sortNotesByLastUpdate(selectTaggedNotes(state, tagId)),
+    notes: sortNotesByLastUpdate(selectTaggedNotes(state, tagId)),
 
     isNotebook: false,
-    notes: selectAllNotes(state), //selectTaggedNotes(state, tagId),
+    untaggedNotes: selectAllNotes(state), //selectTaggedNotes(state, tagId),
     path: `/app/tags/${tagId}/notes`
   };
 };
