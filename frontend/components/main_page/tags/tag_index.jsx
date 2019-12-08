@@ -39,8 +39,12 @@ class TagIndex extends React.Component {
         });
         return (
           <ul key={key}>
-            <li>start</li>
-            {tagListItems}
+            <li>
+              {key}
+            </li>
+            <ul>
+              {tagListItems}
+            </ul>
           </ul>
         );
       });
@@ -59,8 +63,10 @@ class TagIndex extends React.Component {
 
     return (
       <div className="tag-index-frame">
-        <ul className="tag-index-list">{tags}</ul>
-        <div>THIS IS THE TAG INDEX</div>;
+        <div className="tag-index-header">Tags</div>
+        <ul className="tag-index-list">
+          {tags}
+        </ul>
       </div>
     );
   }
