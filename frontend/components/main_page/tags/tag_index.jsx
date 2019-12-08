@@ -17,19 +17,44 @@ class TagIndex extends React.Component {
 
   render() {
     let tags;
+    // let tagObject = {};
     if (this.props.tags !== undefined && this.props.tags.length !== 0) {
       // debugger;
-      tags = sortTagsByAlphabeticalOrder(this.props.tags).map(tag => {
+      //   Object.keys(obj).forEach(key=>{
+      //     console.log(`${key} : ${obj[key]}`);
+      //  });
+      console.log(this.props.tagObj);
+      tags = Object.keys(this.props.tagObj).map(key => {
+        let tagListItems = this.props.tagObj[key].map(tag => {
+          return (
+            <Link
+              to={`/app/tags/${tag.id}/notes/${tag.noteIds[
+                tag.noteIds.length - 1
+              ]}`}
+              key={tag.id}
+            >
+              {tag.name}
+            </Link>
+          );
+        });
         return (
-          <Link
-            to={`/app/tags/${tag.id}/notes/${tag.noteIds[
-              tag.noteIds.length - 1
-            ]}`}
-          >
-            {tag.name}
-          </Link>
+          <ul key={key}>
+            <li>start</li>
+            {tagListItems}
+          </ul>
         );
       });
+      // tags = this.props.tags.map(tag => {
+      //   return (
+      //     <Link
+      //       to={`/app/tags/${tag.id}/notes/${tag.noteIds[
+      //         tag.noteIds.length - 1
+      //       ]}`}
+      //     >
+      //       {tag.name}
+      //     </Link>
+      //   );
+      // });
     }
 
     return (
