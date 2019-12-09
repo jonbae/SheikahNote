@@ -361,7 +361,7 @@ $transition: 0.2s; */
 
 .note-show-footer {
   height: 50px;
-
+  overflow-x: scroll;
   display: flex;
   justify-content: flex-start;
   align-items: center;

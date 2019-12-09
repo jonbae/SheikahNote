@@ -11,6 +11,7 @@ ul[class^="tag-index-list-items"] {
 .tag-index-frame {
   width: 100vw;
   padding: 0 30px;
+  overflow-y: scroll;
 }
 
 .tag-index-header {
