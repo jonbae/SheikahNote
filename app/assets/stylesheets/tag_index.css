@@ -2,3 +2,57 @@ ul.tag-index-list {
   display: flex;
   flex-direction: column;
 }
+
+ul[class^="tag-index-list-items"] {
+  display: flex;
+  flex-direction: column;
+}
+
+.tag-index-frame {
+  width: 100vw;
+  padding: 0 30px;
+}
+
+.tag-index-header {
+  display: flex;
+  width: 983px;
+  height: 80px;
+  align-items: center;
+  border-bottom: solid #111 2px;
+}
+
+ul.tag-index-list {
+  padding: 0 10px;
+}
+
+li[class^="tag-index-list-header"] {
+  margin-bottom: 9px;
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+ul[class^="tag-index-list-"] {
+  margin-top: 25px;
+}
+
+li.tag-index-list-item {
+  margin-bottom: 4px;
+  height: 24px;
+  display: flex;
+  font-size: 13px;
+  align-items: center;
+}
+
+li.tag-index-list-item > p {
+  padding-left: 4px;
+  color: #cccccc;
+}
+
+li.tag-index-list-item > a {
+  color: black;
+  text-decoration: none;
+}
+
+div.tag-index-header > p {
+  font-weight: bolder;
+}

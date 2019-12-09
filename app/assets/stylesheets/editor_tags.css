@@ -4,3 +4,32 @@ section.note-tags {
   height: 52px;
   padding: 12px;
 }
+
+input.tag-input {
+  width: 698px;
+  padding-left: 15px;
+  border: none;
+}
+
+.tag-item {
+  border-style: none;
+  padding: 0 12px;
+  max-width: none;
+  height: 28px;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.67;
+  margin-right: 5px;
+  border-radius: 1em;
+  color: #666;
+  background: #f0f1f1;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: middle;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  white-space: nowrap;
+  outline: none;
+}

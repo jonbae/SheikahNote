@@ -10,11 +10,6 @@ class TagItem extends React.Component {
 
   removeTag(tagging) {
     this.props.deleteTagging(tagging);
-    debugger;
-    // if (this.props.tag.taggingIds.length === 0) {
-    //   deleteTag(this.props.tag.id);
-    // }
-    // debugger;
   }
 
   render() {
@@ -26,7 +21,10 @@ class TagItem extends React.Component {
     // });
     // console.log(deleteId);
     return (
-      <div onClick={() => this.removeTag(this.props.tagging)}>
+      <div
+        className="tag-item"
+        onClick={() => this.removeTag(this.props.tagging)}
+      >
         {this.props.tag.name}
       </div>
     );

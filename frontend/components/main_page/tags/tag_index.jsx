@@ -19,30 +19,28 @@ class TagIndex extends React.Component {
     let tags;
     // let tagObject = {};
     if (this.props.tags !== undefined && this.props.tags.length !== 0) {
-      // debugger;
-      //   Object.keys(obj).forEach(key=>{
-      //     console.log(`${key} : ${obj[key]}`);
-      //  });
-      console.log(this.props.tagObj);
       tags = Object.keys(this.props.tagObj).map(key => {
         let tagListItems = this.props.tagObj[key].map(tag => {
           return (
-            <Link
-              to={`/app/tags/${tag.id}/notes/${tag.noteIds[
-                tag.noteIds.length - 1
-              ]}`}
-              key={tag.id}
-            >
-              {tag.name}
-            </Link>
+            <li className="tag-index-list-item">
+              <Link
+                to={`/app/tags/${tag.id}/notes/${tag.noteIds[
+                  tag.noteIds.length - 1
+                ]}`}
+                key={tag.id}
+              >
+                {tag.name}
+              </Link>
+              <p>{`(${tag.taggingIds.length})`}</p>
+            </li>
           );
         });
         return (
-          <ul key={key}>
-            <li>
-              {key}
+          <ul key={key} className={`tag-index-list-${key.toUpperCase()}`}>
+            <li className={`tag-index-list-header-${key.toUpperCase()}`}>
+              {key.toUpperCase()}
             </li>
-            <ul>
+            <ul className={`tag-index-list-items-${key.toUpperCase()}`}>
               {tagListItems}
             </ul>
           </ul>
@@ -63,7 +61,9 @@ class TagIndex extends React.Component {
 
     return (
       <div className="tag-index-frame">
-        <div className="tag-index-header">Tags</div>
+        <div className="tag-index-header">
+          <p>Tags</p>
+        </div>
         <ul className="tag-index-list">
           {tags}
         </ul>

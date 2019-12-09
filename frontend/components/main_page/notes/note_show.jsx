@@ -97,13 +97,13 @@ class NoteShow extends React.Component {
           note={this.props.note}
           deleteNote={this.props.deleteNote}
         />
-
-        <div className="note-show-editor">
+        <div className="note-show-content">
           <input
             type="text"
             value={this.state.title}
             placeholder="Title"
             onChange={this.update("title")}
+            // className="note-show-editor-title"
           />
           <ReactQuill
             theme="snow"

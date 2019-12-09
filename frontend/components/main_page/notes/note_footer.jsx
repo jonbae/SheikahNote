@@ -70,6 +70,8 @@ class NoteShowFooter extends React.Component {
           onKeyDown={this.addTag}
           onChange={e => this.setState({ name: e.target.value })}
           value={this.state.name}
+          className="tag-input"
+          placeholder="add a tag"
         />
       </div>
     );
