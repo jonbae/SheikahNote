@@ -168,9 +168,7 @@
   width: 100%;
 } */
 
-/* 
-
-$lightgray: rgba(210, 210, 210, 0.5);
+/* $lightgray: rgba(210, 210, 210, 0.5);
 $gray: #a6a6a6;
 $hover-gray: #777777;
 $background-gray: #f2f2f2;
@@ -197,7 +195,7 @@ $transition: 0.2s; */
   flex-direction: column;
   justify-content: space-between;
 
-  border-bottom: 1px solid $lightgray;
+  border-bottom: 1px solid lightgray;
 }
 
 .note-show-header-top {
@@ -232,50 +230,50 @@ $transition: 0.2s; */
 .note-show-header-cluster a {
   display: flex;
   align-items: center;
-  transition: $transition;
+  transition: 0.2s;
 }
 
 .note-show-header-cluster svg {
-  fill: $gray;
-  transition: $transition;
+  fill: gray;
+  transition: 0.2s;
 }
 
 .note-show-header-cluster span {
   padding-right: 10px;
 
-  border-right: 1px solid $lightgray;
+  border-right: 1px solid lightgray;
 }
 
 .note-show-header-cluster span:hover > svg {
   border-radius: 2px;
   fill: #737373;
-  background-color: $background-gray;
+  background-color: #f2f2f2;
   cursor: pointer;
 }
 
 .note-show-header-cluster a {
   margin-left: 10px;
 
-  color: $gray;
+  color: gray;
 }
 
 .note-show-header-cluster a:hover {
   border-radius: 2px;
   color: #737373;
-  background-color: $background-gray;
+  background-color: #f2f2f2;
   cursor: pointer;
 }
 
 .note-show-header-cluster span:nth-child(2):hover > svg {
   fill: #737373;
-  background-color: $background-gray;
+  background-color: #f2f2f2;
   cursor: pointer;
 }
 
 .note-show-header-bottom p {
-  color: $gray;
+  color: gray;
   font-size: 14px;
-  transition: $transition;
+  transition: 0.2s;
 }
 
 .note-show-content {
@@ -311,14 +309,14 @@ $transition: 0.2s; */
 /* DROPDOWN */
 
 .note-show-dots svg {
-  fill: $gray;
-  transition: $transition;
+  fill: gray;
+  transition: 0.2s;
 }
 
 .note-show-dots svg:hover {
   border-radius: 2px;
-  fill: $hover-gray;
-  background-color: $background-gray;
+  fill: #777777;
+  background-color: #f2f2f2;
   cursor: pointer;
 }
 
@@ -350,7 +348,7 @@ $transition: 0.2s; */
   border: none;
   font-size: 14px;
   color: #a6a6a6;
-  transition: $transition;
+  transition: 0.2s;
 }
 
 .note-show-dropdown button:hover {
@@ -408,8 +406,8 @@ $transition: 0.2s; */
 }
 
 .note-show-footer-tag-arrow svg {
-  fill: $gray;
-  transition: $transition;
+  fill: gray;
+  transition: 0.2s;
 }
 
 .note-show-footer-tag-arrow svg:hover {
@@ -444,11 +442,11 @@ $transition: 0.2s; */
   border: none;
   font-size: 14px;
   color: #a6a6a6;
-  transition: $transition;
+  transition: 0.2s;
 }
 
 .note-show-footer-tag-dropdown button:hover {
-  background-color: $background-gray;
+  background-color: #f2f2f2;
 }
 
 .ql-toolbar.ql-snow {
