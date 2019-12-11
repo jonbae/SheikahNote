@@ -170,7 +170,12 @@
 
 /* 
 
+$lightgray: rgba(210, 210, 210, 0.5);
+$gray: #a6a6a6;
+$hover-gray: #777777;
+$background-gray: #f2f2f2;
 
+$transition: 0.2s; */
 
 .note-show-container {
   position: relative;
@@ -192,7 +197,7 @@
   flex-direction: column;
   justify-content: space-between;
 
-  border-bottom: 1px solid lightgrey;
+  border-bottom: 1px solid $lightgray;
 }
 
 .note-show-header-top {
@@ -238,7 +243,7 @@
 .note-show-header-cluster span {
   padding-right: 10px;
 
-  border-right: 1px solid lightgrey;
+  border-right: 1px solid $lightgray;
 }
 
 .note-show-header-cluster span:hover > svg {
