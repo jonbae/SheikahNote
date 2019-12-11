@@ -170,12 +170,7 @@
 
 /* 
 
-$lightgray: rgba(210, 210, 210, 0.5);
-$gray: #a6a6a6;
-$hover-gray: #777777;
-$background-gray: #f2f2f2;
 
-$transition: 0.2s; */
 
 .note-show-container {
   position: relative;
@@ -197,7 +192,7 @@ $transition: 0.2s; */
   flex-direction: column;
   justify-content: space-between;
 
-  border-bottom: 1px solid $lightgray;
+  border-bottom: 1px solid lightgrey;
 }
 
 .note-show-header-top {
@@ -243,7 +238,7 @@ $transition: 0.2s; */
 .note-show-header-cluster span {
   padding-right: 10px;
 
-  border-right: 1px solid $lightgray;
+  border-right: 1px solid lightgrey;
 }
 
 .note-show-header-cluster span:hover > svg {
