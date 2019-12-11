@@ -305,15 +305,15 @@
 
 /* DROPDOWN */
 
-.note-show-dots svg {
+/* .note-show-dots svg {
   fill: $gray;
   transition: $transition;
-}
+} */
 
 .note-show-dots svg:hover {
   border-radius: 2px;
-  fill: $hover-gray;
-  background-color: $background-gray;
+  /* fill: $hover-gray; */
+  /* background-color: $background-gray; */
   cursor: pointer;
 }
 
@@ -345,7 +345,7 @@
   border: none;
   font-size: 14px;
   color: #a6a6a6;
-  transition: $transition;
+  /* transition: $transition; */
 }
 
 .note-show-dropdown button:hover {
@@ -402,10 +402,10 @@
   outline: none;
 }
 
-.note-show-footer-tag-arrow svg {
+/* .note-show-footer-tag-arrow svg {
   fill: $gray;
   transition: $transition;
-}
+} */
 
 .note-show-footer-tag-arrow svg:hover {
   border-radius: 2px;
@@ -439,12 +439,12 @@
   border: none;
   font-size: 14px;
   color: #a6a6a6;
-  transition: $transition;
+  /* transition: $transition; */
 }
 
-.note-show-footer-tag-dropdown button:hover {
-  background-color: $background-gray;
-}
+/* .note-show-footer-tag-dropdown button:hover {
+   background-color: $background-gray;
+} */
 
 .ql-toolbar.ql-snow {
   position: absolute;
