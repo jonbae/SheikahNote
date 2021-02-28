@@ -25,6 +25,6 @@ export const formatTime = (time) => {
   } else if (diff >= 1 && diff < 24) {
     return `${Math.floor(diff)} hours ago`;
   } else {
-    return then.date();
+    return then.format('MM-DD-YYYY');
   }
 }
