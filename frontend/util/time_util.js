@@ -19,12 +19,12 @@ export const formatTime = (time) => {
   console.log(now);
   let then = moment(datetime);
   let diff = (now - then) / 3600000;
+  console.log(then.format('MM-DD-YYYY'));
   if (diff < 1) {
     return "less than an hour ago";
   } else if (diff >= 1 && diff < 24) {
-    return `${diff} hours ago`;
+    return `${Math.floor(diff)} hours ago`;
   } else {
-    console.log(then.date());
     return then.date();
   }
 }
