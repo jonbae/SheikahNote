@@ -42,7 +42,6 @@ class NotebookForm extends React.Component {
             </div>
             <p className={`form-tagline ${this.props.hiddenClass}`}>
               Notebooks are useful for grouping notes around a common topic.
-              They can be private or shared.
             </p>
           </div>
 

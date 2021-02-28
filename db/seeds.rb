@@ -22,6 +22,10 @@ botw_notebook = Notebook.create!(  {title: 'Breath of the Wild', author_id: zeld
 ww_notebook = Notebook.create!(    {title: 'Wind Waker', author_id: demo.id} )
 tp_notebook = Notebook.create!( {title: 'Twilight Princess', author_id: demo.id})
 
+persado_notebook = Notebook.create!( {title: 'Welcome Persado', author_id:demo.id })
+
+persado_note_1 = Note.create!({ title: 'cover letter', content: 'add', notebook_id: persado_notebook.id, author_id: demo.id})
+
 
 diary1 = Note.create!( {title: "Zelda's diary entry 1", content:"After meeting with the Champions, 
 I left to research the ancient technology, but nothing of note came of my research. 

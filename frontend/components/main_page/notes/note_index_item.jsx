@@ -1,4 +1,6 @@
 import React from "react";
+import moment from "moment";
+import {formatTime} from "../../../util/time_util"
 
 class NoteIndexItem extends React.Component {
   constructor(props) {
@@ -27,6 +29,10 @@ class NoteIndexItem extends React.Component {
     return plaintext;
   }
 
+  timeFormat(time) {
+    return formatTime(time)
+  }
+
   render() {
     // let plainText = this.props.note.content
     //   ? $(this.props.note.content).text()
@@ -34,6 +40,7 @@ class NoteIndexItem extends React.Component {
 
     // const choppedContent =
     //   plainText.length > 60 ? plainText.slice(0, 60) + "..." : plainText;
+    let dt = this.props.note.updated_at;
 
     return (
       <div className="note-index-item" onClick={this.handleClick}>
@@ -44,7 +51,7 @@ class NoteIndexItem extends React.Component {
           {this.noteSnippet()}
         </li>
         <li>
-          {this.props.note.updated_at}
+          {this.timeFormat(dt)}
         </li>
       </div>
     );

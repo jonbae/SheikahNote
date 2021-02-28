@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { setBlurListener } from "../../../util/blur_util";
 // import NotebookNotesItem from "./notebook_notes_index";
 import { selectNotebookNotes } from "../../../reducers/selectors";
+import { formatTime } from "../../../util/time_util";
 
 class NotebookIndexItem extends React.Component {
   constructor(props) {
@@ -22,6 +23,10 @@ class NotebookIndexItem extends React.Component {
 
   hidden() {
     this.setState({ isHidden: true });
+  }
+
+  timeFormat(time) {
+    return formatTime(time);
   }
 
   renderLinkOrLi() {
@@ -96,7 +101,7 @@ class NotebookIndexItem extends React.Component {
           {/* bonus: notebook author */}
 
           {/* updated at */}
-          <li>{this.props.notebook.updated_at}</li>
+          <li>{this.timeFormat(this.props.notebook.updated_at)}</li>
 
           {/* bonus: shared with  */}
 
