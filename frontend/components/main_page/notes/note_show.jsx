@@ -8,7 +8,7 @@ import { debounce } from "lodash";
 
 class NoteShow extends React.Component {
   constructor(props) {
-    // debugger;
+    //  
     super(props);
     this.state = this.props.note;
 
@@ -36,14 +36,14 @@ class NoteShow extends React.Component {
   }
 
   componentDidMount() {
-    // debugger;
+    //  
     this.props.requestNote(this.props.noteId);
     this.props.requestAllTaggings();
     this.props.requestAllTags();
   }
 
   componentDidUpdate(prevProps) {
-    // debugger;
+    //  
     prevProps.match.params.noteId !== this.props.match.params.noteId
       ? this.props.requestNote(this.props.match.params.noteId)
       : null;

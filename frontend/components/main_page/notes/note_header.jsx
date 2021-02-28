@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 class NoteShowHeader extends React.Component {
   constructor(props) {
-    // debugger;
+    //  
     super(props);
     this.state = {
       isHidden: true
@@ -17,7 +17,7 @@ class NoteShowHeader extends React.Component {
 
   handleFullscreen() {
     // console.log("fullscreen");
-    // debugger;
+    //  
     // this.props.toggleFullScreen();
   }
 
@@ -26,7 +26,7 @@ class NoteShowHeader extends React.Component {
   }
 
   hidden() {
-    // debugger;
+    //  
     this.setState({ isHidden: true });
   }
 

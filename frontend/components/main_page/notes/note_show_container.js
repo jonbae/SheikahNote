@@ -34,7 +34,7 @@ const msp = (state, ownProps) => {
   const taggings = selectNoteTaggings(state, noteId);
 
   const tags = selectNoteTags(state, noteId);
-  debugger;
+   
   // selectNoteTags(state, noteId);
   return {
     noteId,

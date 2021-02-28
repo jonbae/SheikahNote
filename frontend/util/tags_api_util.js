@@ -13,7 +13,7 @@ export const fetchNotesWithTag = id => {
 };
 
 export const createTag = tag => {
-  debugger;
+   
   return $.ajax({
     url: `/api/tags`,
     method: "post",
@@ -44,7 +44,7 @@ export const createTagging = tagging => {
 };
 
 export const deleteTagging = id => {
-  debugger;
+   
   return $.ajax({
     url: `/api/taggings/${id}`,
     method: "delete"

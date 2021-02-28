@@ -12,7 +12,7 @@ class NoteIndex extends React.Component {
   componentDidMount() {
     this.props.requestAllNotebooks();
     this.props.requestAllNotes().then(res => {
-      debugger;
+       
       return this.props.history.push(
         `${this.props.path}/${this.props.notes[0].id}`
       );
@@ -31,16 +31,16 @@ class NoteIndex extends React.Component {
   // }
 
   // checkNoteRoute() {
-  //   debugger;
+  //    
   //   let paramNotebookId = this.props.match.params.notebookId
   //     ? this.props.match.params.notebookId
   //     : -1;
-  //   debugger;
+  //    
   //   this.props.selectNotebook(paramNotebookId);
   // }
 
   // taggedNotes() {
-  //   debugger;
+  //    
   //   if (this.props.tagId) {
   //     let taggedNotes = this.state.notes.filter(note =>
   //       note.tagIds.includes(this.props.tagId)
@@ -70,7 +70,7 @@ class NoteIndex extends React.Component {
 
   render() {
     // let notes;
-    // debugger;
+    //  
     // if (this.props.notes !== undefined && this.props.notes !== 0) {
     //   notes = this.props.notes.map(note => (
     //     <NoteIndexItem
@@ -85,7 +85,7 @@ class NoteIndex extends React.Component {
     // }
 
     // if (this.props.notes.length !== 0 && this.props.notes !== undefined) {
-    //   debugger;
+    //    
     //   const firstNote = this.props.notes[0];
 
     //   return <Redirect to={`/app/notes/${firstNote.id}`} />;

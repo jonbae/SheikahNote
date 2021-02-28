@@ -32,7 +32,7 @@ const tagsReducer = (state = {}, action) => {
 
       newState[action.tagging.tagId].taggingIds = newTaggings;
       //   newState = { [action.tagging.tagId]: { taggingIds: newTaggings } };
-      debugger;
+       
       return Object.assign({}, state, newState);
 
     default:

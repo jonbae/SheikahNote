@@ -13,7 +13,7 @@ export const fetchNote = id => {
 };
 
 export const createNote = note => {
-  debugger;
+   
   return $.ajax({
     method: "post",
     url: `api/notes`,

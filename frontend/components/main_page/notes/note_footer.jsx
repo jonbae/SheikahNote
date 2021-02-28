@@ -26,7 +26,7 @@ class NoteShowFooter extends React.Component {
   }
 
   addTag(e) {
-    // debugger;
+    //  
     if (e.keyCode == 13 && e.shiftKey == false) {
       // maybe no {}
       const tagging = {
@@ -44,7 +44,7 @@ class NoteShowFooter extends React.Component {
   renderTags() {
     let tags;
     if (this.props.tags !== undefined && this.props.tags.length !== 0) {
-      // debugger;
+      //  
       tags = this.props.tags.map(tag =>
         <TagItem
           key={tag.id}

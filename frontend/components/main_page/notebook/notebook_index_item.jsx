@@ -33,7 +33,7 @@ class NotebookIndexItem extends React.Component {
     const noteCount = this.props.noteIds.length;
     const noteIds = this.props.noteIds;
     if (noteIds.length !== 0 && noteIds !== undefined) {
-      // debugger;
+      //  ;
       return (
         <Link
           to={`/app/notebooks/${this.props.notebook.id}/notes/${
@@ -91,7 +91,7 @@ class NotebookIndexItem extends React.Component {
   render() {
     const hiddenClass = this.state.isHidden ? "hidden-dropdown" : "";
     // let { notebook } = this.props.notebook;
-    // debugger;
+    //  ;
     const noteCount = this.props.notebook.noteIds.length;
     return (
       <>
