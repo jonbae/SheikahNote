@@ -36,7 +36,7 @@ class NoteShow extends React.Component {
   }
 
   componentDidMount() {
-    //  
+    this.props.requestAllNotes();
     this.props.requestNote(this.props.noteId);
     this.props.requestAllTaggings();
     this.props.requestAllTags();
@@ -95,7 +95,9 @@ class NoteShow extends React.Component {
         <NoteShowHeader
           notebook={this.props.notebook}
           note={this.props.note}
+          notes={this.props.notes}
           deleteNote={this.props.deleteNote}
+          history={this.props.history}
         />
         <div className="note-show-content">
           <input

@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { sortNotesByLastUpdate } from "../../../util/notes_util";
+
 class NoteShowHeader extends React.Component {
   constructor(props) {
     //  
@@ -10,7 +12,7 @@ class NoteShowHeader extends React.Component {
     this.handleFullscreen = this.handleFullscreen.bind(this);
     this.toggleHidden = this.toggleHidden.bind(this);
     this.hidden = this.hidden.bind(this);
-    this.deleteNoteThenHideDropdown = this.deleteNoteThenHideDropdown.bind(
+    this.deleteNoteThenHideDropdownThenShowNextNote = this.deleteNoteThenHideDropdownThenShowNextNote.bind(
       this
     );
   }
@@ -30,11 +32,14 @@ class NoteShowHeader extends React.Component {
     this.setState({ isHidden: true });
   }
 
-  deleteNoteThenHideDropdown(id) {
+  deleteNoteThenHideDropdownThenShowNextNote(id) {
     this.props.deleteNote(id).then(
       this.hidden()
       //<Redirect to={}/>
-    );
+    ).then(
+      this.props.history.push(`/app/notes/${sortNotesByLastUpdate(this.props.notes)[0].id}`)
+      // console.log(this.props)
+    )
   }
   render() {
     const hiddenClass = this.state.isHidden ? "hidden-dropdown" : "";
@@ -81,7 +86,7 @@ class NoteShowHeader extends React.Component {
           >
             <p
               onClick={() =>
-                this.deleteNoteThenHideDropdown(this.props.note.id)}
+                this.deleteNoteThenHideDropdownThenShowNextNote(this.props.note.id)}
             >
               Delete Note
             </p>

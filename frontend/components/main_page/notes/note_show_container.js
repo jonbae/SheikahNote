@@ -19,7 +19,8 @@ import {
   selectNotebook,
   selectNoteTags,
   selectNoteTaggings,
-  selectTaggingTags
+  selectTaggingTags,
+  selectAllNotes
 } from "../../../reducers/selectors";
 
 import { createTagging } from "../../../actions/tag_action";
@@ -34,20 +35,21 @@ const msp = (state, ownProps) => {
   const taggings = selectNoteTaggings(state, noteId);
 
   const tags = selectNoteTags(state, noteId);
-   
+  const notes = selectAllNotes(state);
   // selectNoteTags(state, noteId);
   return {
     noteId,
     taggings,
     tags,
     note,
-    notebook
+    notebook,
+    notes
   };
 };
 
 const mdp = dispatch => ({
   requestNote: id => dispatch(requestNote(id)),
-  // createNote: note => dispatch(createNote(note)),
+  requestAllNotes: () => dispatch(requestAllNotes()),
   updateNote: note => dispatch(updateNote(note)),
   deleteNote: id => dispatch(deleteNote(id)),
 
