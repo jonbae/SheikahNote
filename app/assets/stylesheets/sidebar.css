@@ -40,20 +40,47 @@ ul.sidebar-links {
   flex-direction: column;
 }
 
-button.create-new-note {
-  display: flex;
+div.create-new-note-container {
+  display: flex; 
   margin: 13px 10px;
   height: 36px;
   padding: 4px;
+  /* width: 215px; */
+  margin: 0 auto;
+  margin-bottom: 10px; /* double check px */
+}
+
+button.create-new-note {
+
+  display: flex;
+  border: 0;
+  background: #68f8f9;
+  /* border-radius: 20px; */
+  align-items: center;
+  color: black;
+}
+div.create-new-note-container > button:first-child {
+  border-radius: 20px 0 0 20px;
+  width: 160px;
+}
+
+div.create-new-note-container > button:last-child {
+  border-radius: 0 20px 20px 0;
+  width: 50px;
+  padding-left: 25px;
+}
+
+
+/* img.create-new-note-carat {
+  margin-left: 20px;
   border: 0;
   background: #68f8f9;
   border-radius: 20px;
   align-items: center;
   color: black;
-  width: 215px;
-  margin: 0 auto;
-  margin-bottom: 10px; /* double check px */
-}
+} */
+
+
 
 button.create-new-note p {
   font-size: 15px;
@@ -108,6 +135,10 @@ ul.sidebar-links a:hover {
   display: none;
 }
 
+.hidden-notebook-note-dropdown {
+  display:none;
+}
+
 /* css animation for side carat */
 .filled-down-carat {
   transform: rotate(90deg);
@@ -122,11 +153,21 @@ section.dropdown-menu {
   border-radius: 3px;
   width: 317px;
   min-height: auto;
-  overflow-y: scroll;
+  overflow: hidden;
 }
 
 .sidebar-position {
   top: 58px;
+}
+
+.new-notebook-note-dropdown-position{
+  top: 100px;
+  left: 70px;
+}
+
+.new-notebook-note-dropdown > div,
+.new-notebook-note-dropdown > div > p{
+  color: black;
 }
 
 .account-header {
@@ -184,11 +225,26 @@ p.sidebar-account-title {
   margin: 0;
 }
 
-a.notebook-link {
+.notebook-link {
   display: flex;
   align-items: center;
 }
 
 .notebook-link > p {
   color: white;
+  cursor: pointer;
+}
+
+.notebook-highlight {
+  display: flex;
+  align-items: center; 
+}
+
+.notebook-highlight > p{
+  color: black; 
+  cursor: pointer; 
+}
+
+.notebook-highlight:hover {
+  background-color: #cccccc;
 }

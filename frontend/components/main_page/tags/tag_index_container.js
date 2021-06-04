@@ -25,16 +25,13 @@ const msp = (state, ownProps) => {
   let tagObj = {};
   if (tags) {
     tags.forEach(tag => {
-      debugger;
       if (tagObj[tag.name[0]] === undefined) {
         return Object.assign(tagObj, { [tag.name[0]]: [tag] });
       } else {
-        debugger;
         return tagObj[tag.name[0]].push(tag);
       }
     });
   }
-  debugger;
   return {
     tags,
     tagObj
@@ -42,7 +39,6 @@ const msp = (state, ownProps) => {
 };
 
 const mdp = dispatch => {
-  debugger;
   return {
     requestAllTaggings: () => dispatch(requestAllTaggings()),
     requestAllTags: () => dispatch(requestAllTags())

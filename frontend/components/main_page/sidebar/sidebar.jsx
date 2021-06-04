@@ -8,18 +8,26 @@ class Sidebar extends React.Component {
     super(props);
     this.state = {
       isAccountHidden: true,
-      isNotebooksHidden: true
+      isNotebooksHidden: true, 
+      isNewNotebookNoteHidden: true
     };
     this.accountHidden = this.accountHidden.bind(this);
     this.toggleAccountHidden = this.toggleAccountHidden.bind(this);
-
     this.toggleNotebooksHidden = this.toggleNotebooksHidden.bind(this);
     this.createNewNote = this.createNewNote.bind(this);
+    this.toggleNewNotebookNoteHidden = this.toggleNewNotebookNoteHidden.bind(this);
+    this.newNotebookNoteHidden = this.newNotebookNoteHidden.bind(this);
+    this.createNewNotebookNote = this.createNewNotebookNote.bind(this); 
+    this.createNewGenericNote = this.createNewGenericNote.bind(this);
   }
 
-  // componentDidMount() {
-  //   this.props.requestAllNotes();
-  // }
+  toggleNewNotebookNoteHidden() {
+    this.setState({ isNewNotebookNoteHidden: !this.state.isNewNotebookNoteHidden });
+  }
+
+  newNotebookNoteHidden() {
+    this.setState({ isNewNotebookNoteHidden: true });
+  }
 
   toggleAccountHidden() {
     this.setState({ isAccountHidden: !this.state.isAccountHidden });
@@ -33,26 +41,28 @@ class Sidebar extends React.Component {
     this.setState({ isNotebooksHidden: !this.state.isNotebooksHidden });
   }
 
-  // pushHistory() {
-  //   this.props.history.push("")
-  // }
+  createNewNote(e, notebook, notebookRoute)  {
 
-  createNewNote(e) {
-    // debugger;
-    debugger;
     const blankNote = {
       title: "Untitled",
       content: "testblanks",
       author_id: this.props.currentUser.id,
-      notebook_id: this.props.notebooks[0].id
-      // change the notebookId
+      notebook_id: notebook.id
     };
     const that = this;
-    // debugger;
+
     this.props.createNote(blankNote).then(res => {
-      // debugger;
-      that.props.history.push(`/app/notes/${res.note.id}`);
+      const notebookSlug = notebookRoute ? `/notebooks/${notebook.id}` : "";
+      that.props.history.push(`/app${notebookSlug}/notes/${res.note.id}`);
     });
+  };
+
+  createNewNotebookNote(e,notebook) {
+    this.createNewNote(e,notebook,true)
+  }
+
+  createNewGenericNote(e) {
+    this.createNewNote(e,this.props.notebooks[0], false)
   }
 
   render() {
@@ -63,11 +73,13 @@ class Sidebar extends React.Component {
     const hiddenNotebooksClass = this.state.isNotebooksHidden
       ? "hidden-dropdown"
       : "";
+
+    const hiddenNewNotebookNoteClass = this.state.isNewNotebookNoteHidden ? "hidden-notebook-note-dropdown" : "";
     const downCarat = this.state.isNotebooksHidden ? "" : "filled-down-carat";
     let notes;
     let notebooks;
     let lastNoteId;
-    // debugger;
+    let notebookNoteCreations; 
     // notebook.id returns a warning get this checked out
     if (
       this.props.notebooks !== undefined &&
@@ -75,16 +87,21 @@ class Sidebar extends React.Component {
       this.props.notes !== undefined &&
       this.props.notes.length !== 0
     ) {
-      // debugger;
       notebooks = this.props.notebooks.map(notebook =>
         <NotebookDropdownItem key={notebook.id} notebook={notebook} />
       );
-      // debugger;
       notes = this.props.notes;
-      // debugger;
       lastNoteId = notes[notes.length - 1].id;
+      
+      notebookNoteCreations = this.props.notebooks.map(notebook => {
+        return (
+          <div onClick={(e) => this.createNewNotebookNote(e,notebook)} className=" notebook-highlight" key={notebook.id}>
+            <img src={window.blackNotebookURL} alt="small black notebook" />
+            <p>{notebook.title}</p>
+          </div>
+        )
+      })
     }
-    // debugger;
 
     return (
       <nav className="sidebar-frame">
@@ -131,10 +148,38 @@ class Sidebar extends React.Component {
         {/* bonus: search bar  */}
 
         {/* create note button  */}
-        <button className="create-new-note" onClick={this.createNewNote}>
-          <img src={window.blackPlusURL} alt="black plus" />
-          <p className="create-new-note-text">Create new note</p>
-        </button>
+
+        <div className="create-new-note-container">
+
+          <button className="create-new-note" onClick={this.createNewGenericNote}>
+            <img src={window.blackPlusURL} alt="black plus" />
+            <p className="create-new-note-text">Create new note</p>
+             
+          </button>
+          <button className="create-new-note" 
+                onClick={this.toggleNewNotebookNoteHidden} 
+                onBlur={this.newNotebookNoteHidden}  
+                tabIndex="0"
+          >
+
+            <img
+                className="filled-down-carat create-new-note-carat"
+                src={window.blackFilledSideCaratURL}
+                alt="filled down carat"
+
+              />
+            <section className={`new-notebook-note-dropdown new-notebook-note-dropdown-position dropdown-menu ${hiddenNewNotebookNoteClass}`}>
+            {/* noteboook note dropdown */}
+            <div>Create new note in:</div>
+            {/* list */}
+
+            {notebookNoteCreations}
+        </section>
+          </button>
+
+        
+        </div>
+       
         {/* all notes  */}
         <ul className="sidebar-links">
           {/* to="/app/notes" */}

@@ -10,7 +10,6 @@ class TagIndex extends React.Component {
 
   componentDidMount() {
     this.props.requestAllTags();
-    // debugger;
     this.props.requestAllTaggings();
     this.forceUpdate();
   }
@@ -22,12 +21,12 @@ class TagIndex extends React.Component {
       tags = Object.keys(this.props.tagObj).map(key => {
         let tagListItems = this.props.tagObj[key].map(tag => {
           return (
-            <li className="tag-index-list-item">
+            <li key={tag.id} className="tag-index-list-item">
               <Link
                 to={`/app/tags/${tag.id}/notes/${tag.noteIds[
                   tag.noteIds.length - 1
                 ]}`}
-                key={tag.id}
+                
               >
                 {tag.name}
               </Link>
