@@ -23,9 +23,10 @@ class TagItem extends React.Component {
     return (
       <div
         className="tag-item"
-        onClick={() => this.removeTag(this.props.tagging)}
       >
         {this.props.tag.name}
+        &nbsp; 
+        <span onClick={() => this.removeTag(this.props.tagging)}>✕</span> 
       </div>
     );
   }
