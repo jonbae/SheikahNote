@@ -89,7 +89,6 @@ class NoteShow extends React.Component {
   }
 
   render() {
-    // debugger;
     return (
       <div className="note-show-frame">
         <NoteShowHeader

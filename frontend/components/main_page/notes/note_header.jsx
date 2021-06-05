@@ -35,11 +35,11 @@ class NoteShowHeader extends React.Component {
   deleteNoteThenHideDropdownThenShowNextNote(id) {
     this.props.deleteNote(id).then(
       this.hidden()
-      //<Redirect to={}/>
-    ).then(
-      this.props.history.push(`/app/notes/${sortNotesByLastUpdate(this.props.notes)[0].id}`)
-      // console.log(this.props)
-    )
+    ).then(res => {
+      let sortedNotes = sortNotesByLastUpdate(this.props.notes);
+
+      this.props.history.push(`/app/notes/${sortedNotes[0].id}`)
+    })
   }
   render() {
     const hiddenClass = this.state.isHidden ? "hidden-dropdown" : "";
