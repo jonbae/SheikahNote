@@ -122,7 +122,8 @@ ul.sidebar-links li a {
   left: 9px; /* do not change this! */
 }
 
-ul.notebook-dropdown > a img {
+ul.notebook-dropdown > a img, 
+ul.notebook-dropdown > li img {
   margin-left: 26px;
 }
 

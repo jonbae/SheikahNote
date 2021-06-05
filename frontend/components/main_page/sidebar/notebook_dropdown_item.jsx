@@ -10,25 +10,33 @@ class NotebookDropdownItem extends React.Component {
 
   render(){
 
-    // if(notebook) {
-    const notes = this.props.notebook.notes; 
-    let sortedNotes = sortNotesByLastUpdate(notes); 
-    
+    if(this.props.notebook) {
+      const notes = this.props.notebook.notes; 
+      let sortedNotes = sortNotesByLastUpdate(notes); 
+
     return (
+
+      sortedNotes.length === 0 ? 
       
-      <Link to={`/app/notebooks/${this.props.notebook.id}/notes/${sortedNotes[0].id}`}>
+
+    (
+      <li>
         <img src={window.smallWhiteNotebookURL} alt="small white notebook" />
         <p>{this.props.notebook.title}</p>
-      </Link>
+      </li>
+    ) :
+    (
+        
+      <Link to={`/app/notebooks/${this.props.notebook.id}/notes/${sortedNotes[0].id}`}>
+      <img src={window.smallWhiteNotebookURL} alt="small white notebook" />
+      <p>{this.props.notebook.title}</p>
+    </Link>
 
+  ) 
     )
+    }
   }
-  // }
-// <li>
-//   <img src={window.smallWhiteNotebookURL} alt="small white notebook" />
-//   <p>{notebook.title}</p>
-// </li>
-// );
+
 }
 
 export default NotebookDropdownItem;
