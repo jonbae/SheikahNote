@@ -10,7 +10,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --watch --mode=development",
-    "postinstall": "webpack"
+    "postinstall": "webpack",
+    "heroku-prebuild": "npm i -f",
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
