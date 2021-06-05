@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 import { logout } from "../../../actions/session_actions";
 import {
   selectAllNotebooks,
-  selectNotes,
-  selectNotebookNotes
+  selectNotebookNotes,
+  selectAllNotes
 } from "../../../reducers/selectors";
 
 import {
@@ -21,17 +21,25 @@ import NotebookIndex from "./notebook_index";
 import { openModal, closeModal } from "../../../actions/ui_actions";
 import { request } from "http";
 
-const msp = (state, ownProps) => ({
-  // const notebookId = parseInt(ownProps.match.params.notebookId);
-  // return (
-  //     notebookId
-  // );
+const msp = (state, ownProps) => {
+  
+  let notebooks = selectAllNotebooks(state)
+  // debugger;
+  if(notebooks.length !== 0) {
 
-  // notes: selectNotes(state),
-  // notes: selectNotebookNotes(state,notebookId)
-  notebooks: selectAllNotebooks(state),
+    notebooks = notebooks.map( notebook => {
+      let notes = selectNotebookNotes(state,notebook.id)
+      notebook = {...notebook, notes}
+      return notebook;
+    })
+  }
+  return {
+  // const notebookId = parseInt(ownProps.match.params.notebookId);
+
+  // notes: selectAllNotes(state),
+  notebooks: notebooks,
   formType: "Create new notebook"
-});
+}};
 
 const mdp = dispatch => ({
   requestAllNotebooks: () => dispatch(requestAllNotebooks()),

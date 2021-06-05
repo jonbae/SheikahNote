@@ -4,6 +4,7 @@ import { setBlurListener } from "../../../util/blur_util";
 // import NotebookNotesItem from "./notebook_notes_index";
 import { selectNotebookNotes } from "../../../reducers/selectors";
 import { formatTime } from "../../../util/time_util";
+import { sortNotesByLastUpdate } from "../../../util/notes_util"
 
 class NotebookIndexItem extends React.Component {
   constructor(props) {
@@ -30,14 +31,17 @@ class NotebookIndexItem extends React.Component {
   }
 
   renderLinkOrLi() {
-    const noteCount = this.props.noteIds.length;
-    const noteIds = this.props.noteIds;
-    if (noteIds.length !== 0 && noteIds !== undefined) {
+    const noteCount = this.props.notebook.notes.length;
+    // const noteIds = this.props.noteIds;
+    const notes = this.props.notebook.notes; 
+    let sortedNotes = sortNotesByLastUpdate(notes); 
+    console.log(sortedNotes)
+    if (notes.length !== 0 && notes !== undefined) {
       //  ;
       return (
         <Link
           to={`/app/notebooks/${this.props.notebook.id}/notes/${
-            noteIds[noteIds.length - 1]
+            sortedNotes[0].id
           }`}
         >
           {/* drop down arrow */}
@@ -92,7 +96,7 @@ class NotebookIndexItem extends React.Component {
     const hiddenClass = this.state.isHidden ? "hidden-dropdown" : "";
     // let { notebook } = this.props.notebook;
     //  ;
-    const noteCount = this.props.notebook.noteIds.length;
+    const noteCount = this.props.notebook.notes.length;
     return (
       <>
         <ul className="notebooks-index-item">

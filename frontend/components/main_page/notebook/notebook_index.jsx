@@ -24,7 +24,6 @@ class NotebookIndex extends React.Component {
         <NotebookIndexItem
           key={notebook.id}
           notebook={notebook}
-          noteIds={notebook.noteIds}
           openModal={this.props.openModal}
           deleteNotebook={this.props.deleteNotebook}
         />

@@ -43,7 +43,6 @@ class NoteShow extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    //  
     prevProps.match.params.noteId !== this.props.match.params.noteId
       ? this.props.requestNote(this.props.match.params.noteId)
       : null;

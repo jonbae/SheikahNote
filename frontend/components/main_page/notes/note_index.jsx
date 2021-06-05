@@ -11,12 +11,15 @@ class NoteIndex extends React.Component {
 
   componentDidMount() {
     this.props.requestAllNotebooks();
-    this.props.requestAllNotes().then(res => {
-       
-      return this.props.history.push(
-        `${this.props.path}/${this.props.notes[0].id}`
-      );
-    });
+    this.props.requestAllNotes()//.then(res => {
+      //  debugger;
+      // console.log(this.props.path)
+      // console.log(this.props.notes[0].id)
+
+      // return this.props.history.push(
+      //   `${this.props.path}/${this.props.notes[0].id}`
+      // );
+    //});
     this.props.requestAllTags();
     this.props.requestAllTaggings();
   }
