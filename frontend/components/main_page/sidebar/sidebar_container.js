@@ -5,15 +5,26 @@ import Sidebar from "./sidebar";
 import { requestAllNotes } from "../../../actions/note_actions";
 import {
   selectAllNotebooks,
-  selectAllNotes
+  selectAllNotes,
+  selectNotebookNotes
 } from "../../../reducers/selectors";
 import { createNote } from "../../../actions/note_actions";
 
 const msp = (state, ownProps) => {
   // debugger;
+  let notebooks = selectAllNotebooks(state)
+  // debugger;
+  if(notebooks.length !== 0) {
+
+    notebooks = notebooks.map( notebook => {
+      let notes = selectNotebookNotes(state,notebook.id)
+      notebook = {...notebook, notes}
+      return notebook;
+    })
+  }
   return {
     currentUser: state.entities.users[state.session.id],
-    notebooks: selectAllNotebooks(state),
+    notebooks,
     // firstNote: state.entities.notes[0]
     notes: selectAllNotes(state)
   };

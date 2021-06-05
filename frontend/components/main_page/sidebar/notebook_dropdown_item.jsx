@@ -1,16 +1,34 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { sortNotesByLastUpdate } from "../../../util/notes_util";
 
-const NotebookDropdownItem = ({ notebook }) => (
-  <Link to={`/app/notebooks/${notebook.id}`}>
-    <img src={window.smallWhiteNotebookURL} alt="small white notebook" />
-    <p>{notebook.title}</p>
-  </Link>
+class NotebookDropdownItem extends React.Component {
+  
+  constructor(props){
+    super(props);
+  }
 
-  // <li>
-  //   <img src={window.smallWhiteNotebookURL} alt="small white notebook" />
-  //   <p>{notebook.title}</p>
-  // </li>
-);
+  render(){
+
+    // if(notebook) {
+    const notes = this.props.notebook.notes; 
+    let sortedNotes = sortNotesByLastUpdate(notes); 
+    
+    return (
+      
+      <Link to={`/app/notebooks/${this.props.notebook.id}/notes/${sortedNotes[0].id}`}>
+        <img src={window.smallWhiteNotebookURL} alt="small white notebook" />
+        <p>{this.props.notebook.title}</p>
+      </Link>
+
+    )
+  }
+  // }
+// <li>
+//   <img src={window.smallWhiteNotebookURL} alt="small white notebook" />
+//   <p>{notebook.title}</p>
+// </li>
+// );
+}
 
 export default NotebookDropdownItem;
