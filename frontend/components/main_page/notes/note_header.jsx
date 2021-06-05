@@ -4,7 +4,6 @@ import { sortNotesByLastUpdate } from "../../../util/notes_util";
 
 class NoteShowHeader extends React.Component {
   constructor(props) {
-    //  
     super(props);
     this.state = {
       isHidden: true
@@ -37,8 +36,17 @@ class NoteShowHeader extends React.Component {
       this.hidden()
     ).then(res => {
       let sortedNotes = sortNotesByLastUpdate(this.props.notes);
-
-      this.props.history.push(`/app/notes/${sortedNotes[0].id}`)
+      let path = this.props.location.pathname
+      let notebookId = parseInt(this.props.match.params.notebookId)
+      let pathWithoutNoteId = path.split('/').slice(0,-1)
+      const hasNotebooksPath = (pathWithoutNoteId.find(ele => ele === 'notebooks'))
+      if(hasNotebooksPath){
+        sortedNotes = sortedNotes.filter( sortedNote => {
+          return sortedNote.notebookId === notebookId
+        })
+      }
+      pathWithoutNoteId = pathWithoutNoteId.join('/')
+      this.props.history.push(`${pathWithoutNoteId}/${sortedNotes[0].id}`)
     })
   }
   render() {

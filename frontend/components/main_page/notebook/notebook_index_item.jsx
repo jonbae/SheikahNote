@@ -35,7 +35,6 @@ class NotebookIndexItem extends React.Component {
     // const noteIds = this.props.noteIds;
     const notes = this.props.notebook.notes; 
     let sortedNotes = sortNotesByLastUpdate(notes); 
-    console.log(sortedNotes)
     if (notes.length !== 0 && notes !== undefined) {
       //  ;
       return (
