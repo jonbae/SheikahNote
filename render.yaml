@@ -1,12 +1,12 @@
 databases:
-  - name: SheikahNote
-    databaseName: SheikahNote_production
-    user: SheikahNote
+  - name: sheikah_note
+    databaseName: sheikah_note_production
+    user: sheikah_note
     plan: free
 
 services:
   - type: web
-    name: SheikahNote
+    name: sheikah_note
     runtime: ruby
     plan: free
     buildCommand: './bin/render-build.sh'
@@ -15,7 +15,7 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: SheikahNote
+          name: sheikah_note
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
