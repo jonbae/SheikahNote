@@ -19,12 +19,10 @@ import { requestAllNotes } from "../../../actions/note_actions";
 import NotebookIndex from "./notebook_index";
 
 import { openModal, closeModal } from "../../../actions/ui_actions";
-import { request } from "http";
 
 const msp = (state, ownProps) => {
   
   let notebooks = selectAllNotebooks(state)
-  // debugger;
   if(notebooks.length !== 0) {
 
     notebooks = notebooks.map( notebook => {
@@ -34,18 +32,14 @@ const msp = (state, ownProps) => {
     })
   }
   return {
-  // const notebookId = parseInt(ownProps.match.params.notebookId);
-
-  // notes: selectAllNotes(state),
-  notebooks: notebooks,
-  formType: "Create new notebook"
-}};
+    notebooks: notebooks,
+    formType: "Create new notebook"
+  }
+};
 
 const mdp = dispatch => ({
   requestAllNotebooks: () => dispatch(requestAllNotebooks()),
   requestNotebook: id => dispatch(requestNotebook(id)),
-  // createNotebook: notebook => dispatch(createNotebook(notebook)),
-  // updateNotebook: notebook => dispatch(updateNotebook(notebook)),
   deleteNotebook: id => dispatch(deleteNotebook(id)),
   requestAllNotes: () => dispatch(requestAllNotes()),
 
