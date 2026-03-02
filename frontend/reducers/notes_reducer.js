@@ -30,11 +30,10 @@ const notesReducer = (state = {}, action) => {
       return newState;
     case REMOVE_TAGGING:
       newState = Object.assign({}, state);
-
-      newState[action.tagging.noteId].taggingIds.filter(
+      newState[action.tagging.noteId].taggingIds = newState[action.tagging.noteId].taggingIds.filter(
         taggingId => taggingId !== action.tagging.id
       );
-
+      return newState;
     default:
       return state;
   }

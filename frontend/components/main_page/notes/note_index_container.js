@@ -31,8 +31,8 @@ const msp = state => {
     isNotebook: false,
     notes,
     path: "/app/notes",
-    selectedNotebookId: state.ui.notebookId,
-    selectedNoteId: state.ui.noteId
+    selectedNotebookId: state.ui.selectedNotebookId,
+    selectedNoteId: state.ui.selectedNoteId
   };
 };
 

@@ -1,6 +1,7 @@
 export const OPEN_MODAL = "OPEN_MODAL";
 export const CLOSE_MODAL = "CLOSE_MODAL";
 export const FULLSCREEN = "FULLSCREEN";
+export const TOGGLE_FULLSCREEN = "TOGGLE_FULLSCREEN";
 export const SELECT_NOTE = "SELECT_NOTE";
 export const SELECT_NOTEBOOK = "SELECT_NOTEBOOK";
 

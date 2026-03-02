@@ -32,7 +32,7 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch => {
   return {
-    requestAllNotes: () => dispatch(requestAllNotes(id)),
+    requestAllNotes: () => dispatch(requestAllNotes()),
     logout: () => dispatch(logout()),
     createNote: note => dispatch(createNote(note))
   };

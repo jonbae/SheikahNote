@@ -38,8 +38,7 @@ import { TOGGLE_FULLSCREEN } from "../actions/ui_actions";
 export default function fullscreenReducer(state = false, action) {
   switch (action.type) {
     case TOGGLE_FULLSCREEN:
-      debugger;
-      return true;
+      return !state;
     default:
       return state;
   }

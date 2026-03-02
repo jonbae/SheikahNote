@@ -2,7 +2,8 @@ import {
   SELECT_NOTE,
   SELECT_NOTEBOOK,
   OPEN_MODAL,
-  CLOSE_MODAL
+  CLOSE_MODAL,
+  TOGGLE_FULLSCREEN
 } from "../actions/ui_actions";
 
 // import { combineReducers } from "redux";
@@ -50,6 +51,8 @@ const ui = (state = defaultUIState, action) => {
       return Object.assign({}, state, { modal: { type: action.modal } });
     case CLOSE_MODAL:
       return Object.assign({}, state, {}, { modal: null });
+    case TOGGLE_FULLSCREEN:
+      return Object.assign({}, state, { fullScreen: !state.fullScreen });
     default:
       return state;
   }
